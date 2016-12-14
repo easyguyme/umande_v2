@@ -20,7 +20,7 @@
                     <li><a href="#profile"><i class="fa fa-user"></i> Profile</a></li>
                     <li><a href="#projects"><i class="fa fa-battery-4"></i>Projects</a></li>
                     <li><a href="#pprojects"><i class="fa fa-battery-1"></i>Planned Projects</a></li>
-                    <li><a href="#budget"><i class="fa fa-bar-chart"></i>Bugdet</a></li>
+
                 </ol>
             </h1>
             <ol class="breadcrumb">
@@ -91,13 +91,21 @@
             <!-- /.row -->
             <!-- Top row -->
             <div class="row">
-                <div class="col-md-4" id="profile">
+                <div class="col-md-4" >
                     <div class="box box-danger">
                         <div class="box-header with-border">
                             <h3 class="box-title"><dt>Women Champions</dt></h3>
 
                             <div class="box-tools pull-right">
-                                <span class="label label-danger">8 Champions</span>
+                                <?php
+
+                                $query = $conn->query("select * from profiles where page='makina'") or die(mysql_error());
+                                $count = $query->rowcount();
+
+
+                                ?>
+
+                                <span class="label label-danger"><?php  echo $count;  ?> Champions</span>
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
 
@@ -106,47 +114,20 @@
                         <!-- /.box-header -->
                         <div class="box-body no-padding">
                             <ul class="users-list clearfix">
-                                <li>
-                                    <img src="dist/img/user1-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Alexander Pierce</a>
-                                    <span class="users-list-date">Today</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user8-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Norman</a>
-                                    <span class="users-list-date">Yesterday</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user7-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Jane Wangoi</a>
-                                    <span class="users-list-date">12 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user6-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">John</a>
-                                    <span class="users-list-date">12 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user2-160x160.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Alexander</a>
-                                    <span class="users-list-date">13 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user2-160x160.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Alexander</a>
-                                    <span class="users-list-date">13 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user2-160x160.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Alexander</a>
-                                    <span class="users-list-date">13 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user2-160x160.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Alexander</a>
-                                    <span class="users-list-date">13 Jan</span>
-                                </li>
 
+                                <?php
+
+                                $query = $conn->query("select * from profiles where page='makina'") or die(mysql_error());
+                                while ($row = $query->fetch()) {
+
+
+                                ?>
+                                <li>
+                                    <img src="makina/champs/<?php echo $row['image']; ?>" alt="User Image">
+                                    <a class="users-list-name" href="#"><?php echo $row['name']; ?></a>
+                                    <span class="users-list-date"><?php echo $row['age']; ?></span>
+                                </li>
+                                                        <?php }?>
                             </ul>
                             <!-- /.users-list -->
                         </div>
@@ -192,7 +173,7 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer text-center">
-                            <a href="javascript:void(0)" class="uppercase">Read More</a>
+                            <a href="profile/makina.html" class="uppercase">Read More</a>
                         </div>
                         <!-- /.box-footer-->
                     </div>
@@ -213,43 +194,81 @@
                         </div>
 
                         <!-- /.box-header -->
-                        <div class="box-body">
-                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-                                </ol>
-                                <div class="carousel-inner">
-                                    <div class="item active">
-                                        <img src="dist/img/makina.jpeg" alt="First slide">
+                        <div class="box box-solid">
 
-                                        <div class="carousel-caption">
-                                            Meeting held in Makina Ward facilitated by Nairobi city county officials on the proposed ward budgets
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <img src="dist/img/makina1.jpeg" alt="Second slide">
+                            <!-- /.box-header -->
+                            <style>
 
-                                        <div class="carousel-caption">
-                                            Meeting held in Makina Ward facilitated by Nairobi city county officials on the proposed ward budgets
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <img src="dist/img/makina2.jpeg" alt="Third slide">
 
-                                        <div class="carousel-caption">
-                                            Meeting held in Makina Ward facilitated by Nairobi city county officials on the proposed ward budgets
-                                        </div>
+                                .carousel-inner>.item>img, .carousel-inner>.item>a>img
+                                {
+                                    height:300px;
+                                    width:700px;
+                                }
+
+                            </style>
+                            <?php
+
+
+
+
+                            $query = $conn->query("select * from magallery") or die(mysql_error());
+                            $count = $query->rowcount();
+                            $slides='';
+                            $Indicators='';
+                            $counter=0;
+
+                            while ($row = $query->fetch())
+                            {
+
+                                $title = $row['title'];
+                                $desc = $row['desc'];
+                                $image = $row['image'];
+                                if($counter == 0)
+                                {
+                                    $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'" class="active"></li>';
+                                    $slides .= '<div class="item active">
+            <img src="makina/'.$image.'" alt="'.$title.'" />
+            <div class="carousel-caption">
+              <h3>'.$title.'</h3>
+              <p>'.$desc.'.</p>
+            </div>
+          </div>';
+
+                                }
+                                else
+                                {
+                                    $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'"></li>';
+                                    $slides .= '<div class="item">
+            <img src="makina/'.$image.'" alt="'.$title.'" />
+            <div class="carousel-caption">
+              <h3>'.$title.'</h3>
+              <p>'.$desc.'.</p>
+            </div>
+          </div>';
+                                }
+                                $counter++;
+                            }
+
+                            ?>
+                            <div class="box-body">
+                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <?php echo $Indicators; ?>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <?php echo $slides; ?>
                                     </div>
+
+                                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                        <span class="fa fa-angle-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                        <span class="fa fa-angle-right"></span>
+                                    </a>
                                 </div>
-                                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                                    <span class="fa fa-angle-left"></span>
-                                </a>
-                                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                                    <span class="fa fa-angle-right"></span>
-                                </a>
                             </div>
+                            <!-- /.box-body -->
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer text-center">
@@ -307,35 +326,19 @@
                                                             </tr>
                                                             </thead>
                                                             <tbody>
-                                                            <tr>
-                                                                <td><a href="#">Project 1</a></td>
-                                                                <td>1/11/2015</td>
+                                                            <?php
+                                                            $query = $conn->query("select * from makina_cproject where org='county'");
+                                                            while ($row = $query->fetch()) {
+                                                                $id = $row['id'];
+                                                                ?>
+                                                                <tr>
+                                                                    <td><?php echo $row['name']; ?></td>
+                                                                    <td><?php echo $row['sdate']; ?></td>
+                                                                    <td><?php echo $row['edate']; ?></td>
+                                                                    <td><span class="label label-success"><?php echo $row['status']; ?></span></td>
 
-                                                                <td>10/12/201</td>
-                                                                <td><span class="label label-success">Complete</span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="#">Project 2</a></td>
-                                                                <td>1/11/2015</td>
-
-                                                                <td>10/12/201</td>
-                                                                <td><span class="label label-success">Complete</span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="#">Project 3</a></td>
-                                                                <td>1/11/2015</td>
-
-                                                                <td>10/12/201</td>
-                                                                <td><span class="label label-success">Complete</span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="#">Project 4</a></td>
-                                                                <td>1/11/2015</td>
-
-                                                                <td>10/12/201</td>
-                                                                <td><span class="label label-success">Complete</span></td>
-                                                            </tr>
-
+                                                                </tr>
+                                                            <?php } ?>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -366,35 +369,19 @@
                                                             </tr>
                                                             </thead>
                                                             <tbody>
-                                                            <tr>
-                                                                <td><a href="#">Project 1</a></td>
-                                                                <td>1/11/2015</td>
+                                                            <?php
+                                                            $query = $conn->query("select * from makina_cproject where org='ngo'");
+                                                            while ($row = $query->fetch()) {
+                                                                $id = $row['id'];
+                                                                ?>
+                                                                <tr>
+                                                                    <td><?php echo $row['name']; ?></td>
+                                                                    <td><?php echo $row['sdate']; ?></td>
+                                                                    <td><?php echo $row['edate']; ?></td>
+                                                                    <td><span class="label label-success"><?php echo $row['status']; ?></span></td>
 
-                                                                <td>10/12/201</td>
-                                                                <td><span class="label label-success">Complete</span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="#">Project 2</a></td>
-                                                                <td>1/11/2015</td>
-
-                                                                <td>10/12/201</td>
-                                                                <td><span class="label label-success">Complete</span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="#">Project 3</a></td>
-                                                                <td>1/11/2015</td>
-
-                                                                <td>10/12/201</td>
-                                                                <td><span class="label label-success">Complete</span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="#">Project 4</a></td>
-                                                                <td>1/11/2015</td>
-
-                                                                <td>10/12/201</td>
-                                                                <td><span class="label label-success">Complete</span></td>
-                                                            </tr>
-
+                                                                </tr>
+                                                            <?php } ?>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -424,35 +411,19 @@
                                                             </tr>
                                                             </thead>
                                                             <tbody>
-                                                            <tr>
-                                                                <td><a href="#">Project 1</a></td>
-                                                                <td>1/11/2015</td>
+                                                            <?php
+                                                            $query = $conn->query("select * from makina_cproject where org='cbo'");
+                                                            while ($row = $query->fetch()) {
+                                                                $id = $row['id'];
+                                                                ?>
+                                                                <tr>
+                                                                    <td><?php echo $row['name']; ?></td>
+                                                                    <td><?php echo $row['sdate']; ?></td>
+                                                                    <td><?php echo $row['edate']; ?></td>
+                                                                    <td><span class="label label-success"><?php echo $row['status']; ?></span></td>
 
-                                                                <td>10/12/201</td>
-                                                                <td><span class="label label-success">Complete</span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="#">Project 2</a></td>
-                                                                <td>1/11/2015</td>
-
-                                                                <td>10/12/201</td>
-                                                                <td><span class="label label-success">Complete</span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="#">Project 3</a></td>
-                                                                <td>1/11/2015</td>
-
-                                                                <td>10/12/201</td>
-                                                                <td><span class="label label-success">Complete</span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="#">Project 4</a></td>
-                                                                <td>1/11/2015</td>
-
-                                                                <td>10/12/201</td>
-                                                                <td><span class="label label-success">Complete</span></td>
-                                                            </tr>
-
+                                                                </tr>
+                                                            <?php } ?>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -501,208 +472,124 @@
                                     <!-- Custom Tabs -->
                                     <div class="nav-tabs-custom">
                                         <ul class="nav nav-tabs">
-                                            <li class="active"><a href="#graph" data-toggle="tab">County Government Projects</a></li>
-                                            <li><a href="#gallery" data-toggle="tab">N.G.O Projects</a></li>
-                                            <li><a href="#projo" data-toggle="tab">C.B.O Projects</a></li>
-
+                                            <li class="active"><a href="#tab_1" data-toggle="tab">County Government Projects</a></li>
+                                            <li><a href="#tab_2" data-toggle="tab">N.G.O Projects</a></li>
+                                            <li><a href="#tab_3" data-toggle="tab">C.B.O Projects</a></li>
 
                                         </ul>
                                         <div class="tab-content">
-                                            <div class="tab-pane active" id="graph">
+                                            <div class="tab-pane active" id="tab_1">
                                                 <div class="box-body">
                                                     <ul class="products-list product-list-in-box">
+                                                        <?php
+                                                        $query = $conn->query("select * from makinacurrent where type='county'");
+                                                        while ($row = $query->fetch()) {
+
+                                                        ?>
                                                         <li class="item">
+
                                                             <div class="product-img">
-                                                                <img src="dist/img/gallery.jpg" alt="Product Image">
+                                                                <img src="dist/img/p.png" alt="Product Image">
                                                             </div>
                                                             <div class="product-info">
-                                                                <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                    <span class="label label-warning pull-right">70% complete</span></a>
+                                                                <a href="javascript:void(0)" class="product-title"><?php echo $row['name']; ?>
+                                                                    <span class="label label-warning pull-right"><?php echo $row['complete']; ?></span></a>
                                                                 <div class="progress progress-xxs">
-                                                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                                                    <div class="progress-bar progress-bar-danger" style="width: <?php echo $row['per']; ?>"></div>
                                                                 </div>
                         <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
+                          <?php echo $row['des']; ?>
                         </span>
+                                                                <?php }?>
                                                             </div>
                                                         </li>
+
                                                         <!-- /.item -->
-                                                        <li class="item">
-                                                            <div class="product-img">
-                                                                <img src="dist/img/gallery.jpg" alt="Product Image">
-                                                            </div>
-                                                            <div class="product-info">
-                                                                <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                    <span class="label label-warning pull-right">70% complete</span></a>
-                                                                <div class="progress progress-xxs">
-                                                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                                                </div>
-                        <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
-                        </span>
-                                                            </div>
-                                                        </li>
+
                                                         <!-- /.item -->
-                                                        <li class="item">
-                                                            <div class="product-img">
-                                                                <img src="dist/img/gallery.jpg" alt="Product Image">
-                                                            </div>
-                                                            <div class="product-info">
-                                                                <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                    <span class="label label-warning pull-right">70% complete</span></a>
-                                                                <div class="progress progress-xxs">
-                                                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                                                </div>
-                        <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
-                        </span>
-                                                            </div>
-                                                        </li>
+
                                                         <!-- /.item -->
 
                                                         <!-- /.item -->
                                                     </ul>
                                                     <!-- /.table-responsive -->
-                                                </div>
-                                                <!-- /.box-body -->
-                                                <div class="box-footer clearfix">
-
-                                                    <a href="#" class="btn btn-sm btn-success  center-block">View All current Projects</a>
                                                 </div>
                                             </div>
                                             <!-- /.tab-pane -->
-                                            <div class="tab-pane" id="gallery">
-
+                                            <div class="tab-pane" id="tab_2">
                                                 <div class="box-body">
                                                     <ul class="products-list product-list-in-box">
+                                                        <?php
+                                                        $query = $conn->query("select * from makinacurrent where type='ngo'");
+                                                        while ($row = $query->fetch()) {
+
+                                                        ?>
                                                         <li class="item">
+
                                                             <div class="product-img">
-                                                                <img src="dist/img/gallery.jpg" alt="Product Image">
+                                                                <img src="dist/img/p.png" alt="Product Image">
                                                             </div>
                                                             <div class="product-info">
-                                                                <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                    <span class="label label-warning pull-right">70% complete</span></a>
+                                                                <a href="javascript:void(0)" class="product-title"><?php echo $row['name']; ?>
+                                                                    <span class="label label-warning pull-right"><?php echo $row['complete']; ?></span></a>
                                                                 <div class="progress progress-xxs">
-                                                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                                                    <div class="progress-bar progress-bar-danger" style="width: <?php echo $row['per']; ?>"></div>
                                                                 </div>
                         <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
+                          <?php echo $row['des']; ?>
                         </span>
+                                                                <?php }?>
                                                             </div>
                                                         </li>
+
                                                         <!-- /.item -->
-                                                        <li class="item">
-                                                            <div class="product-img">
-                                                                <img src="dist/img/gallery.jpg" alt="Product Image">
-                                                            </div>
-                                                            <div class="product-info">
-                                                                <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                    <span class="label label-warning pull-right">70% complete</span></a>
-                                                                <div class="progress progress-xxs">
-                                                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                                                </div>
-                        <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
-                        </span>
-                                                            </div>
-                                                        </li>
+
                                                         <!-- /.item -->
-                                                        <li class="item">
-                                                            <div class="product-img">
-                                                                <img src="dist/img/gallery.jpg" alt="Product Image">
-                                                            </div>
-                                                            <div class="product-info">
-                                                                <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                    <span class="label label-warning pull-right">70% complete</span></a>
-                                                                <div class="progress progress-xxs">
-                                                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                                                </div>
-                        <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
-                        </span>
-                                                            </div>
-                                                        </li>
+
                                                         <!-- /.item -->
 
                                                         <!-- /.item -->
                                                     </ul>
                                                     <!-- /.table-responsive -->
                                                 </div>
-                                                <!-- /.box-body -->
-                                                <div class="box-footer clearfix">
-
-                                                    <a href="#" class="btn btn-sm btn-success  center-block">View All current Projects</a>
-                                                </div>
-                                                <!-- /.box-footer -->
                                             </div>
-
                                             <!-- /.tab-pane -->
-                                            <div class="tab-pane" id="projo">
-
+                                            <div class="tab-pane" id="tab_3">
                                                 <div class="box-body">
                                                     <ul class="products-list product-list-in-box">
+                                                        <?php
+                                                        $query = $conn->query("select * from makinacurrent where type='cbo'");
+                                                        while ($row = $query->fetch()) {
+
+                                                        ?>
                                                         <li class="item">
+
                                                             <div class="product-img">
-                                                                <img src="dist/img/gallery.jpg" alt="Product Image">
+                                                                <img src="dist/img/p.png" alt="Product Image">
                                                             </div>
                                                             <div class="product-info">
-                                                                <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                    <span class="label label-warning pull-right">70% complete</span></a>
+                                                                <a href="javascript:void(0)" class="product-title"><?php echo $row['name']; ?>
+                                                                    <span class="label label-warning pull-right"><?php echo $row['complete']; ?></span></a>
                                                                 <div class="progress progress-xxs">
-                                                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                                                    <div class="progress-bar progress-bar-danger" style="width: <?php echo $row['per']; ?>"></div>
                                                                 </div>
                         <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
+                          <?php echo $row['des']; ?>
                         </span>
+                                                                <?php }?>
                                                             </div>
                                                         </li>
+
                                                         <!-- /.item -->
-                                                        <li class="item">
-                                                            <div class="product-img">
-                                                                <img src="dist/img/gallery.jpg" alt="Product Image">
-                                                            </div>
-                                                            <div class="product-info">
-                                                                <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                    <span class="label label-warning pull-right">70% complete</span></a>
-                                                                <div class="progress progress-xxs">
-                                                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                                                </div>
-                        <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
-                        </span>
-                                                            </div>
-                                                        </li>
+
                                                         <!-- /.item -->
-                                                        <li class="item">
-                                                            <div class="product-img">
-                                                                <img src="dist/img/gallery.jpg" alt="Product Image">
-                                                            </div>
-                                                            <div class="product-info">
-                                                                <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                    <span class="label label-warning pull-right">70% complete</span></a>
-                                                                <div class="progress progress-xxs">
-                                                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                                                </div>
-                        <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
-                        </span>
-                                                            </div>
-                                                        </li>
+
                                                         <!-- /.item -->
 
                                                         <!-- /.item -->
                                                     </ul>
                                                     <!-- /.table-responsive -->
                                                 </div>
-                                                <!-- /.box-body -->
-                                                <div class="box-footer clearfix">
-
-                                                    <a href="#" class="btn btn-sm btn-success  center-block">View All current Projects</a>
-                                                </div>
-
-
-                                                <!-- /.box-body -->
-
                                             </div>
                                             <!-- /.tab-pane -->
                                         </div>
@@ -795,14 +682,14 @@
                                     <!-- Custom Tabs -->
                                     <div class="nav-tabs-custom">
                                         <ul class="nav nav-tabs">
-                                            <li class="active"><a href="#tab_1" data-toggle="tab">Graph</a></li>
-                                            <li><a href="#tab_2" data-toggle="tab">Gallery</a></li>
-                                            <li><a href="#tab_3" data-toggle="tab">Projects</a></li>
+                                            <li class="active"><a href="#tab_4" data-toggle="tab">Graph</a></li>
+                                            <li><a href="#tab_5" data-toggle="tab">Gallery</a></li>
+                                            <li><a href="#tab_6" data-toggle="tab">Projects</a></li>
 
 
                                         </ul>
                                         <div class="tab-content">
-                                            <div class="tab-pane active" id="tab_1">
+                                            <div class="tab-pane active" id="tab_4">
                                                 <div class="chart">
                                                     <canvas id="barCharts" style="height:230px"></canvas>
                                                 </div>
@@ -815,14 +702,89 @@
                                                     <p><?php echo $row['des']; ?></p>  <?php } ?>
                                             </div>
                                             <!-- /.tab-pane -->
-                                            <div class="tab-pane" id="tab_2">
+                                            <div class="tab-pane" id="tab_5">
+                                                <div class="box box-solid">
 
+                                                    <!-- /.box-header -->
+                                                    <style>
+
+
+                                                        .carousel-inner>.item>img, .carousel-inner>.item>a>img
+                                                        {
+                                                            height:300px;
+                                                            width:700px;
+                                                        }
+
+                                                    </style>
+                                                    <?php
+
+
+
+
+                                                    $query = $conn->query("select * from maproimg") or die(mysql_error());
+                                                    $count = $query->rowcount();
+                                                    $slides='';
+                                                    $Indicators='';
+                                                    $counter=0;
+
+                                                    while ($row = $query->fetch())
+                                                    {
+
+                                                        $title = $row['title'];
+                                                        $desc = $row['desc'];
+                                                        $image = $row['image'];
+                                                        if($counter == 0)
+                                                        {
+                                                            $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'" class="active"></li>';
+                                                            $slides .= '<div class="item active">
+            <img src="makina/gallery/'.$image.'" alt="'.$title.'" />
+            <div class="carousel-caption">
+              <h3>'.$title.'</h3>
+              <p>'.$desc.'.</p>
+            </div>
+          </div>';
+
+                                                        }
+                                                        else
+                                                        {
+                                                            $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'"></li>';
+                                                            $slides .= '<div class="item">
+            <img src="makina/gallery/'.$image.'" alt="'.$title.'" />
+            <div class="carousel-caption">
+              <h3>'.$title.'</h3>
+              <p>'.$desc.'.</p>
+            </div>
+          </div>';
+                                                        }
+                                                        $counter++;
+                                                    }
+
+                                                    ?>
+                                                    <div class="box-body">
+                                                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                                            <ol class="carousel-indicators">
+                                                                <?php echo $Indicators; ?>
+                                                            </ol>
+                                                            <div class="carousel-inner">
+                                                                <?php echo $slides; ?>
+                                                            </div>
+
+                                                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                                                <span class="fa fa-angle-left"></span>
+                                                            </a>
+                                                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                                                <span class="fa fa-angle-right"></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.box-body -->
+                                                </div>
 
                                                     <!-- /.box-footer -->
                                                 </div>
 
                                             <!-- /.tab-pane -->
-                                            <div class="tab-pane" id="tab_3">
+                                            <div class="tab-pane" id="tab_6">
 
                                                 <div class="box-header with-border">
                                                     <h3 class="box-title">Projects and Budget</h3>
@@ -832,63 +794,32 @@
                                                 <!-- /.box-header -->
                                                 <div class="box-body">
                                                     <ul class="products-list product-list-in-box">
+                                                        <?php
+                                                        $query = $conn->query("select * from planned where page='makina'");
+                                                        while ($row = $query->fetch()) {
+
+                                                        ?>
                                                         <li class="item">
                                                             <div class="product-img">
-                                                                <img src="dist/img/default-50x50.gif" alt="Product Image">
+                                                                <img src="dist/img/p.png" alt="Product Image">
                                                             </div>
                                                             <div class="product-info">
-                                                                <a href="javascript:void(0)" class="product-title">Samsung TV
-                                                                    <span class="label label-warning pull-right">$1800</span></a>
+                                                                <a href="javascript:void(0)" class="product-title"><?php echo $row['name']; ?>
+                                                                    <span class="label label-warning pull-right">Ksh.<?php echo $row['budget']; ?></span></a>
                                                                 <p>
-                                                                    Samsung 32" 1080p 60Hz LED Smart HDTV.dfmdkfmdgmdngkdnfkdsnfkrkknindkfndxkfnx
+                                                                    <?php echo $row['des']; ?>
                                                                 </p>
                                                             </div>
                                                         </li>
+                                                        <?php } ?>
                                                         <!-- /.item -->
-                                                        <li class="item">
-                                                            <div class="product-img">
-                                                                <img src="dist/img/default-50x50.gif" alt="Product Image">
-                                                            </div>
-                                                            <div class="product-info">
-                                                                <a href="javascript:void(0)" class="product-title">Bicycle
-                                                                    <span class="label label-info pull-right">$700</span></a>
-                        <span class="product-description">
-                          26" Mongoose Dolomite Men's 7-speed, Navy Blue.
-                        </span>
-                                                            </div>
-                                                        </li>
-                                                        <!-- /.item -->
-                                                        <li class="item">
-                                                            <div class="product-img">
-                                                                <img src="dist/img/default-50x50.gif" alt="Product Image">
-                                                            </div>
-                                                            <div class="product-info">
-                                                                <a href="javascript:void(0)" class="product-title">Xbox One <span class="label label-danger pull-right">$350</span></a>
-                        <span class="product-description">
-                          Xbox One Console Bundle with Halo Master Chief Collection.
-                        </span>
-                                                            </div>
-                                                        </li>
-                                                        <!-- /.item -->
-                                                        <li class="item">
-                                                            <div class="product-img">
-                                                                <img src="dist/img/default-50x50.gif" alt="Product Image">
-                                                            </div>
-                                                            <div class="product-info">
-                                                                <a href="javascript:void(0)" class="product-title">PlayStation 4
-                                                                    <span class="label label-success pull-right">$399</span></a>
-                        <span class="product-description">
-                          PlayStation 4 500GB Console (PS4)
-                        </span>
-                                                            </div>
-                                                        </li>
-                                                        <!-- /.item -->
+
                                                     </ul>
                                                 </div>
                                                 <!-- /.box-body -->
                                                 <div class="box-footer clearfix">
 
-                                                    <a href="#" class="btn btn-sm btn-danger  center-block">View AllProjects</a>
+                                                    <a href="#" class="btn btn-sm btn-danger  center-block">View All Projects</a>
                                                 </div>
 
 
