@@ -91,7 +91,7 @@
             <!-- /.row -->
             <!-- Top row -->
             <div class="row">
-                <div class="col-md-4" >
+                <div class="col-md-4" id="profile" >
                     <div class="box box-danger">
                         <div class="box-header with-border">
                             <h3 class="box-title"><dt>Women Champions</dt></h3>
@@ -1017,10 +1017,10 @@
 <!-- ChartJS 1.0.1 -->
 <script src="plugins/chartjs/Chart.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard2.js"></script>
+<script src="dist/js/pages/mapie.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<script src="dist/js/pages/bar.js"></script>
+<script src="dist/js/pages/mabar.js"></script>
 <script src="scroller/js/jssor.slider-21.1.6.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     jssor_1_slider_init = function() {

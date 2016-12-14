@@ -20,7 +20,7 @@
                     <li><a href="#profile"><i class="fa fa-user"></i> Profile</a></li>
                     <li><a href="#projects"><i class="fa fa-battery-4"></i>Projects</a></li>
                     <li><a href="#pprojects"><i class="fa fa-battery-1"></i>Planned Projects</a></li>
-                    <li><a href="#budget"><i class="fa fa-bar-chart"></i>Bugdet</a></li>
+
                 </ol>
             </h1>
             <ol class="breadcrumb">
@@ -33,14 +33,19 @@
         <section class="content">
             <!-- Top Info boxes -->
             <div class="row">
+                <?php
+                $query = $conn->query("select * from ptop where page='lindi'");
+                while ($row = $query->fetch()) {
+                $id = $row['id'];
+                ?>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="info-box">
                         <span class="info-box-icon bg-aqua"><i class="fa fa-female"></i></span>
 
                         <div class="info-box-content">
 
-                            <span class="info-box-number">C.B.O<small></small></span>
-                            <span class="info-box-number">101</span>
+                            <span class="info-box-number"><?php echo $row['lh']; ?><small></small></span>
+                            <span class="info-box-number"><?php echo $row['ln']; ?></span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -53,8 +58,8 @@
 
                         <div class="info-box-content">
 
-                            <span class="info-box-number">N.G.O<small></small></span>
-                            <span class="info-box-number">500</span>
+                            <span class="info-box-number"><?php echo $row['mh']; ?><small></small></span>
+                            <span class="info-box-number"><?php echo $row['mn']; ?></span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -71,9 +76,10 @@
 
                         <div class="info-box-content">
 
-                            <span class="info-box-number">ENVIRONMENTAL ORGS<small></small></span>
-                            <span class="info-box-number">302</span>
+                            <span class="info-box-number"><?php echo $row['rh']; ?><small></small></span>
+                            <span class="info-box-number"><?php echo $row['rn']; ?></span>
                         </div>
+                        <?php } ?>
                         <!-- /.info-box-content -->
                     </div>
                     <!-- /.info-box -->
@@ -84,14 +90,22 @@
             </div>
             <!-- /.row -->
             <!-- Top row -->
-            <div class="row" id="profile">
-                <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-4" id="profile" >
                     <div class="box box-danger">
                         <div class="box-header with-border">
                             <h3 class="box-title"><dt>Women Champions</dt></h3>
 
                             <div class="box-tools pull-right">
-                                <span class="label label-danger">8 Champions</span>
+                                <?php
+
+                                $query = $conn->query("select * from profiles where page='lindi'") or die(mysql_error());
+                                $count = $query->rowcount();
+
+
+                                ?>
+
+                                <span class="label label-danger"><?php  echo $count;  ?> Champions</span>
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
 
@@ -100,53 +114,26 @@
                         <!-- /.box-header -->
                         <div class="box-body no-padding">
                             <ul class="users-list clearfix">
-                                <li>
-                                    <img src="dist/img/user1-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Alexander Pierce</a>
-                                    <span class="users-list-date">Today</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user8-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Norman</a>
-                                    <span class="users-list-date">Yesterday</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user7-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Jane Wangoi</a>
-                                    <span class="users-list-date">12 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user6-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">John</a>
-                                    <span class="users-list-date">12 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user2-160x160.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Alexander</a>
-                                    <span class="users-list-date">13 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user2-160x160.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Alexander</a>
-                                    <span class="users-list-date">13 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user2-160x160.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Alexander</a>
-                                    <span class="users-list-date">13 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user2-160x160.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Alexander</a>
-                                    <span class="users-list-date">13 Jan</span>
-                                </li>
 
+                                <?php
+
+                                $query = $conn->query("select * from profiles where page='lindi'") or die(mysql_error());
+                                while ($row = $query->fetch()) {
+
+
+                                    ?>
+                                    <li>
+                                        <img src="lindi/champs/<?php echo $row['image']; ?>" alt="User Image">
+                                        <a class="users-list-name" href="#"><?php echo $row['name']; ?></a>
+                                        <span class="users-list-date"><?php echo $row['age']; ?></span>
+                                    </li>
+                                <?php }?>
                             </ul>
                             <!-- /.users-list -->
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer text-center">
-                            <a href="javascript:void(0)" class="uppercase">View All Champions</a>
+                            <a href="profile/lindi.html" class="uppercase">View All Champions</a>
                         </div>
                         <!-- /.box-footer -->
                     </div>
@@ -163,7 +150,11 @@
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
 
+                                <?php
+                                $query = $conn->query("select * from pdes where page='lindi'");
+                                while ($row = $query->fetch()) {
 
+                                ?>
 
                             </div>
                         </div>
@@ -172,21 +163,17 @@
                             <!-- Conversations are loaded here -->
                             <div class="box-body text-left">
                                 <dl>
-                                    <dt>Description lists</dt>
-                                    <dd>A description list is perfect for defining terms.</dd>
-                                    <dt>Euismod</dt>
-                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                                    <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                                    <dt>Euismod</dt>
-                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                    <dt><?php echo $row['head']; ?></dt>
+                                    <dd> <?php echo $row['des']; ?></dd>
+
 
                                 </dl>
                             </div>
-
+                            <?php } ?>
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer text-center">
-                            <a href="javascript:void(0)" class="uppercase">Read More</a>
+                            <a href="profile/lindi.html" class="uppercase">Read More</a>
                         </div>
                         <!-- /.box-footer-->
                     </div>
@@ -207,47 +194,85 @@
                         </div>
 
                         <!-- /.box-header -->
-                        <div class="box-body">
-                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-                                </ol>
-                                <div class="carousel-inner">
-                                    <div class="item active">
-                                        <img src="dist/img/gal1.jpg" alt="First slide">
+                        <div class="box box-solid">
 
-                                        <div class="carousel-caption">
-                                            First Slide
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <img src="dist/img/gal2.jpg" alt="Second slide">
+                            <!-- /.box-header -->
+                            <style>
 
-                                        <div class="carousel-caption">
-                                            Second Slide
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <img src="dist/img/gallery.jpg" alt="Third slide">
 
-                                        <div class="carousel-caption">
-                                            Third Slide
-                                        </div>
+                                .carousel-inner>.item>img, .carousel-inner>.item>a>img
+                                {
+                                    height:300px;
+                                    width:700px;
+                                }
+
+                            </style>
+                            <?php
+
+
+
+
+                            $query = $conn->query("select * from ligallery") or die(mysql_error());
+                            $count = $query->rowcount();
+                            $slides='';
+                            $Indicators='';
+                            $counter=0;
+
+                            while ($row = $query->fetch())
+                            {
+
+                                $title = $row['title'];
+                                $desc = $row['desc'];
+                                $image = $row['image'];
+                                if($counter == 0)
+                                {
+                                    $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'" class="active"></li>';
+                                    $slides .= '<div class="item active">
+            <img src="lindi/'.$image.'" alt="'.$title.'" />
+            <div class="carousel-caption">
+              <h3>'.$title.'</h3>
+              <p>'.$desc.'.</p>
+            </div>
+          </div>';
+
+                                }
+                                else
+                                {
+                                    $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'"></li>';
+                                    $slides .= '<div class="item">
+            <img src="lindi/'.$image.'" alt="'.$title.'" />
+            <div class="carousel-caption">
+              <h3>'.$title.'</h3>
+              <p>'.$desc.'.</p>
+            </div>
+          </div>';
+                                }
+                                $counter++;
+                            }
+
+                            ?>
+                            <div class="box-body">
+                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <?php echo $Indicators; ?>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <?php echo $slides; ?>
                                     </div>
+
+                                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                        <span class="fa fa-angle-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                        <span class="fa fa-angle-right"></span>
+                                    </a>
                                 </div>
-                                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                                    <span class="fa fa-angle-left"></span>
-                                </a>
-                                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                                    <span class="fa fa-angle-right"></span>
-                                </a>
                             </div>
+                            <!-- /.box-body -->
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer text-center">
-                            <a href="javascript:void(0)" class="uppercase">View More</a>
+                            <a href="profile/lindi.html" class="uppercase">View More</a>
                         </div>
                     </div>
                     <!-- /.box -->
@@ -261,507 +286,331 @@
             <div class="row" >
                 <!-- Left col -->
                 <div class="col-md-6">
-                    <!-- MAP & BOX PANE -->
-                    <div class="box box-solid">
+                    <div class="box box-success">
                         <div class="box-header with-border">
                             <h3 class="box-title"><dt>Completed Projects</dt></h3>
+
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
-
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                             </div>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <div class="box-group" id="accordion">
-                                <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
-                                <div class="panel box box-primary">
-                                    <div class="box-header with-border">
-                                        <h4 class="box-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                                County Government's Projects
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseOne" class="panel-collapse collapse in">
-                                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!-- Custom Tabs -->
+                                    <div class="nav-tabs-custom">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#county" data-toggle="tab">County Government Projects</a></li>
+                                            <li><a href="#ngo" data-toggle="tab">N.G.O Projects</a></li>
+                                            <li><a href="#cbo" data-toggle="tab">C.B.O Projects</a></li>
 
 
-                                            <!-- /.box-header -->
-                                            <div class="box-body">
-                                                <div class="table-responsive">
-                                                    <table class="table no-margin">
-                                                        <thead>
-                                                        <tr>
-                                                            <th>Name</th>
-                                                            <th>Start date</th>
-                                                            <th>End date</th>
-                                                            <th>Status</th>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="county">
 
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td><a href="#">Project 1</a></td>
-                                                            <td>1/11/2015</td>
+                                                <!-- /.box-header -->
+                                                <div class="box-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table no-margin">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>Name</th>
+                                                                <th>Start date</th>
+                                                                <th>End date</th>
+                                                                <th>Status</th>
 
-                                                            <td>10/12/201</td>
-                                                            <td><span class="label label-success">Complete</span></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><a href="#">Project 2</a></td>
-                                                            <td>1/11/2015</td>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <?php
+                                                            $query = $conn->query("select * from lindi_cproject where org='county'");
+                                                            while ($row = $query->fetch()) {
+                                                                $id = $row['id'];
+                                                                ?>
+                                                                <tr>
+                                                                    <td><?php echo $row['name']; ?></td>
+                                                                    <td><?php echo $row['sdate']; ?></td>
+                                                                    <td><?php echo $row['edate']; ?></td>
+                                                                    <td><span class="label label-success"><?php echo $row['status']; ?></span></td>
 
-                                                            <td>10/12/201</td>
-                                                            <td><span class="label label-success">Complete</span></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><a href="#">Project 3</a></td>
-                                                            <td>1/11/2015</td>
-
-                                                            <td>10/12/201</td>
-                                                            <td><span class="label label-success">Complete</span></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><a href="#">Project 4</a></td>
-                                                            <td>1/11/2015</td>
-
-                                                            <td>10/12/201</td>
-                                                            <td><span class="label label-success">Complete</span></td>
-                                                        </tr>
-
-                                                        </tbody>
-                                                    </table>
+                                                                </tr>
+                                                            <?php } ?>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!-- /.table-responsive -->
                                                 </div>
-                                                <!-- /.table-responsive -->
-                                            </div>
-                                            <!-- /.box-body -->
-                                            <div class="box-footer clearfix">
+                                                <!-- /.box-body -->
+                                                <div class="box-footer clearfix">
 
-                                                <a href="#" class="btn btn-sm btn-success  center-block">View All complete Projects</a>
-                                            </div>
-                                            <!-- /.box-footer -->
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel box box-danger">
-                                    <div class="box-header with-border">
-                                        <h4 class="box-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                                N.G.O's Projects
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseTwo" class="panel-collapse collapse">
-                                        <div class="box-body">
-
-
-                                            <!-- /.box-header -->
-                                            <div class="box-body">
-                                                <div class="table-responsive">
-                                                    <table class="table no-margin">
-                                                        <thead>
-                                                        <tr>
-                                                            <th>Name</th>
-                                                            <th>Start date</th>
-                                                            <th>End date</th>
-                                                            <th>Status</th>
-
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td><a href="#">Project 1</a></td>
-                                                            <td>1/11/2015</td>
-
-                                                            <td>10/12/201</td>
-                                                            <td><span class="label label-success">Complete</span></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><a href="#">Project 2</a></td>
-                                                            <td>1/11/2015</td>
-
-                                                            <td>10/12/201</td>
-                                                            <td><span class="label label-success">Complete</span></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><a href="#">Project 3</a></td>
-                                                            <td>1/11/2015</td>
-
-                                                            <td>10/12/201</td>
-                                                            <td><span class="label label-success">Complete</span></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><a href="#">Project 4</a></td>
-                                                            <td>1/11/2015</td>
-
-                                                            <td>10/12/201</td>
-                                                            <td><span class="label label-success">Complete</span></td>
-                                                        </tr>
-
-                                                        </tbody>
-                                                    </table>
+                                                    <a href="#" class="btn btn-sm btn-success  center-block">View All complete Projects</a>
                                                 </div>
-                                                <!-- /.table-responsive -->
+                                                <!-- /.box-body -->
+
                                             </div>
-                                            <!-- /.box-body -->
-                                            <div class="box-footer clearfix">
+                                            <!-- /.tab-pane -->
+                                            <div class="tab-pane" id="ngo">
 
-                                                <a href="#" class="btn btn-sm btn-success  center-block">View All complete Projects</a>
-                                            </div>
-                                            <!-- /.box-footer -->
+                                                <!-- /.box-header -->
+                                                <div class="box-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table no-margin">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>Name</th>
+                                                                <th>Start date</th>
+                                                                <th>End date</th>
+                                                                <th>Status</th>
 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel box box-success">
-                                    <div class="box-header with-border">
-                                        <h4 class="box-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                                C.B.O's Projects
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseThree" class="panel-collapse collapse">
-                                        <div class="box-body">
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <?php
+                                                            $query = $conn->query("select * from lindi_cproject where org='ngo'");
+                                                            while ($row = $query->fetch()) {
+                                                                $id = $row['id'];
+                                                                ?>
+                                                                <tr>
+                                                                    <td><?php echo $row['name']; ?></td>
+                                                                    <td><?php echo $row['sdate']; ?></td>
+                                                                    <td><?php echo $row['edate']; ?></td>
+                                                                    <td><span class="label label-success"><?php echo $row['status']; ?></span></td>
 
-
-                                            <!-- /.box-header -->
-                                            <div class="box-body">
-                                                <div class="table-responsive">
-                                                    <table class="table no-margin">
-                                                        <thead>
-                                                        <tr>
-                                                            <th>Name</th>
-                                                            <th>Start date</th>
-                                                            <th>End date</th>
-                                                            <th>Status</th>
-
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td><a href="#">Project 1</a></td>
-                                                            <td>1/11/2015</td>
-
-                                                            <td>10/12/201</td>
-                                                            <td><span class="label label-success">Complete</span></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><a href="#">Project 2</a></td>
-                                                            <td>1/11/2015</td>
-
-                                                            <td>10/12/201</td>
-                                                            <td><span class="label label-success">Complete</span></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><a href="#">Project 3</a></td>
-                                                            <td>1/11/2015</td>
-
-                                                            <td>10/12/201</td>
-                                                            <td><span class="label label-success">Complete</span></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><a href="#">Project 4</a></td>
-                                                            <td>1/11/2015</td>
-
-                                                            <td>10/12/201</td>
-                                                            <td><span class="label label-success">Complete</span></td>
-                                                        </tr>
-
-                                                        </tbody>
-                                                    </table>
+                                                                </tr>
+                                                            <?php } ?>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!-- /.table-responsive -->
                                                 </div>
-                                                <!-- /.table-responsive -->
-                                            </div>
-                                            <!-- /.box-body -->
-                                            <div class="box-footer clearfix">
+                                                <!-- /.box-body -->
+                                                <div class="box-footer clearfix">
 
-                                                <a href="#" class="btn btn-sm btn-success  center-block">View All complete Projects</a>
+                                                    <a href="#" class="btn btn-sm btn-success  center-block">View All complete Projects</a>
+                                                </div>
+                                                <!-- /.box-footer -->
                                             </div>
-                                            <!-- /.box-footer -->
 
+                                            <!-- /.tab-pane -->
+                                            <div class="tab-pane" id="cbo">
+
+                                                <div class="box-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table no-margin">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>Name</th>
+                                                                <th>Start date</th>
+                                                                <th>End date</th>
+                                                                <th>Status</th>
+
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <?php
+                                                            $query = $conn->query("select * from lindi_cproject where org='cbo'");
+                                                            while ($row = $query->fetch()) {
+                                                                $id = $row['id'];
+                                                                ?>
+                                                                <tr>
+                                                                    <td><?php echo $row['name']; ?></td>
+                                                                    <td><?php echo $row['sdate']; ?></td>
+                                                                    <td><?php echo $row['edate']; ?></td>
+                                                                    <td><span class="label label-success"><?php echo $row['status']; ?></span></td>
+
+                                                                </tr>
+                                                            <?php } ?>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!-- /.table-responsive -->
+                                                </div>
+                                                <!-- /.box-body -->
+                                                <div class="box-footer clearfix">
+
+                                                    <a href="#" class="btn btn-sm btn-success  center-block">View All complete Projects</a>
+                                                </div>
+
+
+                                                <!-- /.box-body -->
+
+                                            </div>
+                                            <!-- /.tab-pane -->
                                         </div>
+                                        <!-- /.tab-content -->
                                     </div>
+                                    <!-- nav-tabs-custom -->
                                 </div>
+                                <!-- /.col -->
                             </div>
+                            <!-- /.row -->
                         </div>
                         <!-- /.box-body -->
+
+                        <!-- /.footer -->
                     </div>
-                    <!-- /.box -->
-
-
-                    <!-- /.row -->
-
-                    <!-- TABLE: LATEST ORDERS -->
-
-                    <!-- /.box -->
                 </div>
-                <!-- /.col -->
-
                 <div class="col-md-6">
-
-                    <!-- /.box -->
-                    <!-- PRODUCT LIST -->
-                    <div class="box box-solid">
+                    <div class="box box-success">
                         <div class="box-header with-border">
                             <h3 class="box-title"><dt>Current Projects</dt></h3>
+
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
-
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                             </div>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <div class="box-group" id="accordion1">
-                                <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
-                                <div class="panel box box-primary">
-                                    <div class="box-header with-border">
-                                        <h4 class="box-title">
-                                            <a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1">
-                                                County Government's Projects
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseOne1" class="panel-collapse collapse in">
-                                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!-- Custom Tabs -->
+                                    <div class="nav-tabs-custom">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#tab_1" data-toggle="tab">County Government Projects</a></li>
+                                            <li><a href="#tab_2" data-toggle="tab">N.G.O Projects</a></li>
+                                            <li><a href="#tab_3" data-toggle="tab">C.B.O Projects</a></li>
 
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="tab_1">
+                                                <div class="box-body">
+                                                    <ul class="products-list product-list-in-box">
+                                                        <?php
+                                                        $query = $conn->query("select * from lindicurrent where type='county'");
+                                                        while ($row = $query->fetch()) {
 
-                                            <!-- /.box-header -->
-                                            <div class="box-body">
-                                                <ul class="products-list product-list-in-box">
-                                                    <li class="item">
-                                                        <div class="product-img">
-                                                            <img src="dist/img/gallery.jpg" alt="Product Image">
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                <span class="label label-warning pull-right">70% complete</span></a>
-                                                            <div class="progress progress-xxs">
-                                                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                                            </div>
-                        <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
-                        </span>
-                                                        </div>
-                                                    </li>
-                                                    <!-- /.item -->
-                                                    <li class="item">
-                                                        <div class="product-img">
-                                                            <img src="dist/img/gallery.jpg" alt="Product Image">
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                <span class="label label-warning pull-right">70% complete</span></a>
-                                                            <div class="progress progress-xxs">
-                                                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                                            </div>
-                        <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
-                        </span>
-                                                        </div>
-                                                    </li>
-                                                    <!-- /.item -->
-                                                    <li class="item">
-                                                        <div class="product-img">
-                                                            <img src="dist/img/gallery.jpg" alt="Product Image">
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                <span class="label label-warning pull-right">70% complete</span></a>
-                                                            <div class="progress progress-xxs">
-                                                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                                            </div>
-                        <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
-                        </span>
-                                                        </div>
-                                                    </li>
-                                                    <!-- /.item -->
+                                                        ?>
+                                                        <li class="item">
 
-                                                    <!-- /.item -->
-                                                </ul>
-                                                <!-- /.table-responsive -->
+                                                            <div class="product-img">
+                                                                <img src="dist/img/p.png" alt="Product Image">
+                                                            </div>
+                                                            <div class="product-info">
+                                                                <a href="javascript:void(0)" class="product-title"><?php echo $row['name']; ?>
+                                                                    <span class="label label-warning pull-right"><?php echo $row['complete']; ?></span></a>
+                                                                <div class="progress progress-xxs">
+                                                                    <div class="progress-bar progress-bar-danger" style="width: <?php echo $row['per']; ?>"></div>
+                                                                </div>
+                        <span class="product-description">
+                          <?php echo $row['des']; ?>
+                        </span>
+                                                                <?php }?>
+                                                            </div>
+                                                        </li>
+
+                                                        <!-- /.item -->
+
+                                                        <!-- /.item -->
+
+                                                        <!-- /.item -->
+
+                                                        <!-- /.item -->
+                                                    </ul>
+                                                    <!-- /.table-responsive -->
+                                                </div>
                                             </div>
-                                            <!-- /.box-body -->
-                                            <div class="box-footer clearfix">
+                                            <!-- /.tab-pane -->
+                                            <div class="tab-pane" id="tab_2">
+                                                <div class="box-body">
+                                                    <ul class="products-list product-list-in-box">
+                                                        <?php
+                                                        $query = $conn->query("select * from lindicurrent where type='ngo'");
+                                                        while ($row = $query->fetch()) {
 
-                                                <a href="#" class="btn btn-sm btn-success  center-block">View All current Projects</a>
+                                                        ?>
+                                                        <li class="item">
+
+                                                            <div class="product-img">
+                                                                <img src="dist/img/p.png" alt="Product Image">
+                                                            </div>
+                                                            <div class="product-info">
+                                                                <a href="javascript:void(0)" class="product-title"><?php echo $row['name']; ?>
+                                                                    <span class="label label-warning pull-right"><?php echo $row['complete']; ?></span></a>
+                                                                <div class="progress progress-xxs">
+                                                                    <div class="progress-bar progress-bar-danger" style="width: <?php echo $row['per']; ?>"></div>
+                                                                </div>
+                        <span class="product-description">
+                          <?php echo $row['des']; ?>
+                        </span>
+                                                                <?php }?>
+                                                            </div>
+                                                        </li>
+
+                                                        <!-- /.item -->
+
+                                                        <!-- /.item -->
+
+                                                        <!-- /.item -->
+
+                                                        <!-- /.item -->
+                                                    </ul>
+                                                    <!-- /.table-responsive -->
+                                                </div>
                                             </div>
-                                            <!-- /.box-footer -->
+                                            <!-- /.tab-pane -->
+                                            <div class="tab-pane" id="tab_3">
+                                                <div class="box-body">
+                                                    <ul class="products-list product-list-in-box">
+                                                        <?php
+                                                        $query = $conn->query("select * from lindicurrent where type='cbo'");
+                                                        while ($row = $query->fetch()) {
 
+                                                        ?>
+                                                        <li class="item">
+
+                                                            <div class="product-img">
+                                                                <img src="dist/img/p.png" alt="Product Image">
+                                                            </div>
+                                                            <div class="product-info">
+                                                                <a href="javascript:void(0)" class="product-title"><?php echo $row['name']; ?>
+                                                                    <span class="label label-warning pull-right"><?php echo $row['complete']; ?></span></a>
+                                                                <div class="progress progress-xxs">
+                                                                    <div class="progress-bar progress-bar-danger" style="width: <?php echo $row['per']; ?>"></div>
+                                                                </div>
+                        <span class="product-description">
+                          <?php echo $row['des']; ?>
+                        </span>
+                                                                <?php }?>
+                                                            </div>
+                                                        </li>
+
+                                                        <!-- /.item -->
+
+                                                        <!-- /.item -->
+
+                                                        <!-- /.item -->
+
+                                                        <!-- /.item -->
+                                                    </ul>
+                                                    <!-- /.table-responsive -->
+                                                </div>
+                                            </div>
+                                            <!-- /.tab-pane -->
                                         </div>
+                                        <!-- /.tab-content -->
                                     </div>
+                                    <!-- nav-tabs-custom -->
                                 </div>
-                                <div class="panel box box-danger">
-                                    <div class="box-header with-border">
-                                        <h4 class="box-title">
-                                            <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo1">
-                                                N.G.O's Projects
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseTwo1" class="panel-collapse collapse">
-                                        <div class="box-body">
-
-
-                                            <!-- /.box-header -->
-                                            <div class="box-body">
-                                                <ul class="products-list product-list-in-box">
-                                                    <li class="item">
-                                                        <div class="product-img">
-                                                            <img src="dist/img/gallery.jpg" alt="Product Image">
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                <span class="label label-warning pull-right">70% complete</span></a>
-                                                            <div class="progress progress-xxs">
-                                                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                                            </div>
-                        <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
-                        </span>
-                                                        </div>
-                                                    </li>
-                                                    <!-- /.item -->
-                                                    <li class="item">
-                                                        <div class="product-img">
-                                                            <img src="dist/img/gallery.jpg" alt="Product Image">
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                <span class="label label-warning pull-right">70% complete</span></a>
-                                                            <div class="progress progress-xxs">
-                                                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                                            </div>
-                        <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
-                        </span>
-                                                        </div>
-                                                    </li>
-                                                    <!-- /.item -->
-                                                    <li class="item">
-                                                        <div class="product-img">
-                                                            <img src="dist/img/gallery.jpg" alt="Product Image">
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                <span class="label label-warning pull-right">70% complete</span></a>
-                                                            <div class="progress progress-xxs">
-                                                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                                            </div>
-                        <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
-                        </span>
-                                                        </div>
-                                                    </li>
-                                                    <!-- /.item -->
-
-                                                    <!-- /.item -->
-                                                </ul>
-                                                <!-- /.table-responsive -->
-                                            </div>
-                                            <!-- /.box-body -->
-                                            <div class="box-footer clearfix">
-
-                                                <a href="#" class="btn btn-sm btn-success  center-block">View All current Projects</a>
-                                            </div>
-                                            <!-- /.box-footer -->
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel box box-success">
-                                    <div class="box-header with-border">
-                                        <h4 class="box-title">
-                                            <a data-toggle="collapse" data-parent="#accordion1" href="#collapseThree1">
-                                                C.B.O's Projects
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseThree1" class="panel-collapse collapse">
-                                        <div class="box-body">
-
-
-                                            <!-- /.box-header -->
-                                            <div class="box-body">
-                                                <ul class="products-list product-list-in-box">
-                                                    <li class="item">
-                                                        <div class="product-img">
-                                                            <img src="dist/img/gallery.jpg" alt="Product Image">
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                <span class="label label-warning pull-right">70% complete</span></a>
-                                                            <div class="progress progress-xxs">
-                                                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                                            </div>
-                        <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
-                        </span>
-                                                        </div>
-                                                    </li>
-                                                    <!-- /.item -->
-                                                    <li class="item">
-                                                        <div class="product-img">
-                                                            <img src="dist/img/gallery.jpg" alt="Product Image">
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                <span class="label label-warning pull-right">70% complete</span></a>
-                                                            <div class="progress progress-xxs">
-                                                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                                            </div>
-                        <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
-                        </span>
-                                                        </div>
-                                                    </li>
-                                                    <!-- /.item -->
-                                                    <li class="item">
-                                                        <div class="product-img">
-                                                            <img src="dist/img/gallery.jpg" alt="Product Image">
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <a href="javascript:void(0)" class="product-title">Gawa umeme
-                                                                <span class="label label-warning pull-right">70% complete</span></a>
-                                                            <div class="progress progress-xxs">
-                                                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                                            </div>
-                        <span class="product-description">
-                          The project was allocated a budget of Ksh. 10m
-                        </span>
-                                                        </div>
-                                                    </li>
-                                                    <!-- /.item -->
-
-                                                    <!-- /.item -->
-                                                </ul>
-                                                <!-- /.table-responsive -->
-                                            </div>
-                                            <!-- /.box-body -->
-                                            <div class="box-footer clearfix">
-
-                                                <a href="#" class="btn btn-sm btn-success  center-block">View All current Projects</a>
-                                            </div>
-                                            <!-- /.box-footer -->
-
-                                        </div>
-                                    </div>
-                                </div>
+                                <!-- /.col -->
                             </div>
+                            <!-- /.row -->
                         </div>
                         <!-- /.box-body -->
+
+                        <!-- /.footer -->
                     </div>
-                    <!-- /.box -->
                 </div>
                 <!-- /.col -->
             </div>
             <h2 class="page-header text-center" id="pprojects"><dt>PLANNED PROJECTS</dt></h2>
-            <div class="row">
-                <div class="col-md-5">
+            <div class="row" >
+                <div class="col-md-6">
                     <div class="box box-success">
                         <div class="box-header with-border">
                             <h3 class="box-title">Project Priorities Graph</h3>
@@ -775,7 +624,7 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="row">
-                                <div class="col-md-7">
+                                <div class="col-md-8">
 
                                     <div class="row">
                                         <div class="box-pane">
@@ -786,7 +635,7 @@
                                     <!-- ./chart-responsive -->
                                 </div>
                                 <!-- /.col -->
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <ul class="chart-legend clearfix">
                                         <li><i class="fa fa-circle-o text-red"></i> National Government</li>
                                         <li><i class="fa fa-circle-o text-green"></i> County Government</li>
@@ -800,16 +649,22 @@
                             </div>
                             <!-- /.row -->
                         </div>
-                        <div>
-                            <p>Umande brings together teams of resource persons who share a passion and commitment to learn from, share and achieve lasting change with people.  This team comprises community organizers, academics, geo-informatics, urban planning, human rights, civil engineering, social scientists, environmental, gender, youth and enterprise development resource persons Team members have several years of experience from diverse research, civil society and public sector agencies .</p>
-                        </div>
+                        <?php
+                        $query = $conn->query("select * from pieinfo where page='lindi'");
+                        while ($row = $query->fetch()) {
+
+                            ?>
+                            <div>
+                                <p> <?php echo $row['des']; ?></p>
+                            </div>
+                        <?php }?>
                         <!-- /.box-body -->
 
                         <!-- /.footer -->
                     </div>
                 </div>
 
-                <div class="col-md-7">
+                <div class="col-md-6">
                     <div class="box box-success">
                         <div class="box-header with-border">
                             <h3 class="box-title">Project Priorities Information</h3>
@@ -823,108 +678,159 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-12">
+                                    <!-- Custom Tabs -->
+                                    <div class="nav-tabs-custom">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#tab_4" data-toggle="tab">Graph</a></li>
+                                            <li><a href="#tab_5" data-toggle="tab">Gallery</a></li>
+                                            <li><a href="#tab_6" data-toggle="tab">Projects</a></li>
 
-                                    <div class="box-body">
-                                        <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
-                                            <ol class="carousel-indicators">
-                                                <li data-target="#carousel-example-generic1" data-slide-to="0" class="active"></li>
-                                                <li data-target="#carousel-example-generic1" data-slide-to="1" class=""></li>
-                                                <li data-target="#carousel-example-generic1" data-slide-to="2" class=""></li>
-                                            </ol>
-                                            <div class="carousel-inner">
-                                                <div class="item active">
-                                                    <iframe width="300" height="185" src="https://www.youtube.com/embed/Qftj6MdENb8?list=UUOKQjR2yISKjRSLRq80K5aQ" frameborder="0" allowfullscreen></iframe>
 
-                                                    <div class="carousel-caption">
-                                                        First Slide
-                                                    </div>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="tab_4">
+                                                <div class="chart">
+                                                    <canvas id="barCharts" style="height:230px"></canvas>
                                                 </div>
-                                                <div class="item">
-                                                    <img src="dist/img/gallery.jpg" alt="Second slide">
+                                                <?php
+                                                $query = $conn->query("select * from barinfo where page='lindi'");
+                                                while ($row = $query->fetch()) {
 
-                                                    <div class="carousel-caption">
-                                                        Second Slide
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <img src="dist/img/jiko.jpg" alt="Third slide">
+                                                    ?>
 
-                                                    <div class="carousel-caption">
-                                                        Third Slide
-                                                    </div>
-                                                </div>
+                                                    <p><?php echo $row['des']; ?></p>  <?php } ?>
                                             </div>
-                                            <a class="left carousel-control" href="#carousel-example-generic1" data-slide="prev">
-                                                <span class="fa fa-angle-left"></span>
-                                            </a>
-                                            <a class="right carousel-control" href="#carousel-example-generic1" data-slide="next">
-                                                <span class="fa fa-angle-right"></span>
-                                            </a>
-                                        </div>
-                                    </div>
+                                            <!-- /.tab-pane -->
+                                            <div class="tab-pane" id="tab_5">
+                                                <div class="box box-solid">
+
+                                                    <!-- /.box-header -->
+                                                    <style>
 
 
-                                    <p>Umande Trust is a rights-based agency, which believes that modest resources can significantly improve access to water and sanitation services if financial resources are strategically invested in support of community-led plans and actions. Our mission is to be the partner of choice in transforming water supply, sanitation and environmental services in close partnership with communities in Kenya’s urban centres.</p>
-                                    <!-- ./chart-responsive -->
-                                </div>
-                                <!-- /.col -->
-                                <div class="col-md-4">
-                                    <div class="box box-solid">
+                                                        .carousel-inner>.item>img, .carousel-inner>.item>a>img
+                                                        {
+                                                            height:300px;
+                                                            width:700px;
+                                                        }
 
-                                        <!-- /.box-header -->
-                                        <div class="box-body">
-                                            <div class="box-group" id="accordion2">
-                                                <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
-                                                <div class="panel box box-primary">
-                                                    <div class="box-header with-border">
-                                                        <h4 class="box-title">
-                                                            <a data-toggle="collapse" data-parent="#accordion2" href="#collapseOne2">
-                                                                Project #1
+                                                    </style>
+                                                    <?php
+
+
+
+
+                                                    $query = $conn->query("select * from liproimg") or die(mysql_error());
+                                                    $count = $query->rowcount();
+                                                    $slides='';
+                                                    $Indicators='';
+                                                    $counter=0;
+
+                                                    while ($row = $query->fetch())
+                                                    {
+
+                                                        $title = $row['title'];
+                                                        $desc = $row['desc'];
+                                                        $image = $row['image'];
+                                                        if($counter == 0)
+                                                        {
+                                                            $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'" class="active"></li>';
+                                                            $slides .= '<div class="item active">
+            <img src="lindi/gallery/'.$image.'" alt="'.$title.'" />
+            <div class="carousel-caption">
+              <h3>'.$title.'</h3>
+              <p>'.$desc.'.</p>
+            </div>
+          </div>';
+
+                                                        }
+                                                        else
+                                                        {
+                                                            $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'"></li>';
+                                                            $slides .= '<div class="item">
+            <img src="lindi/gallery/'.$image.'" alt="'.$title.'" />
+            <div class="carousel-caption">
+              <h3>'.$title.'</h3>
+              <p>'.$desc.'.</p>
+            </div>
+          </div>';
+                                                        }
+                                                        $counter++;
+                                                    }
+
+                                                    ?>
+                                                    <div class="box-body">
+                                                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                                            <ol class="carousel-indicators">
+                                                                <?php echo $Indicators; ?>
+                                                            </ol>
+                                                            <div class="carousel-inner">
+                                                                <?php echo $slides; ?>
+                                                            </div>
+
+                                                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                                                <span class="fa fa-angle-left"></span>
                                                             </a>
-                                                        </h4>
-                                                    </div>
-                                                    <div id="collapseOne2" class="panel-collapse collapse in">
-                                                        <div class="box-body">
-                                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                                                            wolf <a href="#">read more >></a>
+                                                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                                                <span class="fa fa-angle-right"></span>
+                                                            </a>
                                                         </div>
                                                     </div>
+                                                    <!-- /.box-body -->
                                                 </div>
-                                                <div class="panel box box-danger">
-                                                    <div class="box-header with-border">
-                                                        <h4 class="box-title">
-                                                            <a data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo2">
-                                                                Project #2
-                                                            </a>
-                                                        </h4>
-                                                    </div>
-                                                    <div id="collapseTwo2" class="panel-collapse collapse">
-                                                        <div class="box-body">
-                                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                                                            wolf .<a href="#">read more >></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="panel box box-success">
-                                                    <div class="box-header with-border">
-                                                        <h4 class="box-title">
-                                                            <a data-toggle="collapse" data-parent="#accordion2" href="#collapseThree2">
-                                                                Project #3
-                                                            </a>
-                                                        </h4>
-                                                    </div>
-                                                    <div id="collapseThree2" class="panel-collapse collapse">
-                                                        <div class="box-body">
-                                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                                                            wolf moon. <a href="#">read more >></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
+
+                                                <!-- /.box-footer -->
                                             </div>
+
+                                            <!-- /.tab-pane -->
+                                            <div class="tab-pane" id="tab_6">
+
+                                                <div class="box-header with-border">
+                                                    <h3 class="box-title">Projects and Budget</h3>
+
+
+                                                </div>
+                                                <!-- /.box-header -->
+                                                <div class="box-body">
+                                                    <ul class="products-list product-list-in-box">
+                                                        <?php
+                                                        $query = $conn->query("select * from planned where page='lindi'");
+                                                        while ($row = $query->fetch()) {
+
+                                                            ?>
+                                                            <li class="item">
+                                                                <div class="product-img">
+                                                                    <img src="dist/img/p.png" alt="Product Image">
+                                                                </div>
+                                                                <div class="product-info">
+                                                                    <a href="javascript:void(0)" class="product-title"><?php echo $row['name']; ?>
+                                                                        <span class="label label-warning pull-right">Ksh.<?php echo $row['budget']; ?></span></a>
+                                                                    <p>
+                                                                        <?php echo $row['des']; ?>
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+                                                        <?php } ?>
+                                                        <!-- /.item -->
+
+                                                    </ul>
+                                                </div>
+                                                <!-- /.box-body -->
+                                                <div class="box-footer clearfix">
+
+                                                    <a href="#" class="btn btn-sm btn-danger  center-block">View All Projects</a>
+                                                </div>
+
+
+                                                <!-- /.box-body -->
+
+                                            </div>
+                                            <!-- /.tab-pane -->
                                         </div>
-                                        <!-- /.box-body -->
+                                        <!-- /.tab-content -->
                                     </div>
+                                    <!-- nav-tabs-custom -->
                                 </div>
                                 <!-- /.col -->
                             </div>
@@ -936,67 +842,7 @@
                     </div>
                 </div>
             </div>
-<div class="row">
-    <div class="col-md-8">
 
-        <div class="box-default no-padding collapsed-box ">
-            <div class="box box-success ">
-                <div class="box-header with-border ">
-                    <h3 class="box-title" id="budget">Project Budget Chart</h3>
-
-                    <div class="box-tools pull-right ">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                    </div>
-                </div>
-                <div class="box-body">
-                    <div class="chart">
-                        <canvas id="barCharts" style="height:230px"></canvas>
-                    </div>
-                </div>
-                <!-- /.box-body -->
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="box box-warning direct-chat-warning">
-            <div class="box-header with-border">
-                <h3 class="box-title"><dt>Graph Explanation</dt></h3>
-
-                <div class="box-tools pull-right ">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-                <!-- Conversations are loaded here -->
-                <div class="box-body text-left">
-                    <dl>
-                        <dt>Description lists</dt>
-                        <dd>A description list is perfect for defining terms.</dd>
-                        <dt>Euismod</dt>
-                        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                        <dt>Euismod</dt>
-                        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-
-                    </dl>
-                </div>
-
-            </div>
-            <!-- /.box-body -->
-
-            <!-- /.box-footer-->
-        </div>
-
-    </div>
-
-
-</div>
             <div class="row">
                 <h2 class="page-header text-center"><dt>OUR PARTNERS</dt></h2>
                 <div class="box-default">
@@ -1171,10 +1017,10 @@
 <!-- ChartJS 1.0.1 -->
 <script src="plugins/chartjs/Chart.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard2.js"></script>
+<script src="dist/js/pages/lipie.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<script src="dist/js/pages/bar.js"></script>
+<script src="dist/js/pages/libar.js"></script>
 <script src="scroller/js/jssor.slider-21.1.6.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     jssor_1_slider_init = function() {

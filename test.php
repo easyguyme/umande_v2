@@ -1,75 +1,17 @@
-<div class="box box-solid">
-
-    <!-- /.box-header -->
-    <style>
-
-
-        .carousel-inner>.item>img, .carousel-inner>.item>a>img
-        {
-            height:300px;
-            width:700px;
-        }
-
-    </style>
-    <?php
-
-
-
-
-    $query = $conn->query("select * from maprofile") or die(mysql_error());
-    $count = $query->rowcount();
-    $slides='';
-    $Indicators='';
-    $counter=0;
-
-    while ($row = $query->fetch()) {
-
-        $title = $row['title'];
-        $desc = $row['desc'];
-        $image = $row['image'];
-        if($counter == 0)
-        {
-            $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'" class="active"></li>';
-            $slides .= '<div class="item active">
-            <img src="makina/'.$image.'" alt="'.$title.'" />
-            <div class="carousel-caption">
-              <h3>'.$title.'</h3>
-              <p>'.$desc.'.</p>
-            </div>
-          </div>';
-
-        }
-        else
-        {
-            $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'"></li>';
-            $slides .= '<div class="item">
-            <img src="makina/'.$image.'" alt="'.$title.'" />
-            <div class="carousel-caption">
-              <h3>'.$title.'</h3>
-              <p>'.$desc.'.</p>
-            </div>
-          </div>';
-        }
-        $counter++;
-    }
-
-    ?>
-    <div class="box-body">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <?php echo $Indicators; ?>
-            </ol>
-            <div class="carousel-inner">
-                <?php echo $slides; ?>
-            </div>
-
-            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                <span class="fa fa-angle-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                <span class="fa fa-angle-right"></span>
-            </a>
-        </div>
-    </div>
-    <!-- /.box-body -->
-</div>
+<section class="content-header">
+    <h1>
+        Women Voices, ICT Choices |
+        LAINI SABA Ward
+        <small>Version 1.0</small>
+        <ol class="breadcrumb" style="font-size:small;color: #b21628;">
+            <li><a href="#profile"><i class="fa fa-user"></i> Profile</a></li>
+            <li><a href="#projects"><i class="fa fa-battery-4"></i>Projects</a></li>
+            <li><a href="#pprojects"><i class="fa fa-battery-1"></i>Planned Projects</a></li>
+            <li><a href="#budget"><i class="fa fa-bar-chart"></i>Bugdet</a></li>
+        </ol>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Laini saba Ward</li>
+    </ol>
+</section>
