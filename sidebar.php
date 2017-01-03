@@ -46,7 +46,7 @@
                     <li><a href="saba.php"><i class="fa fa-female"></i>Laini Saba</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class="fa fa-maxcdn"></i> <span>In the Media</span></a></li>
+            <li><a href="media.php"><i class="fa fa-maxcdn"></i> <span>In the Media</span></a></li>
             <li class="treeview">
                 <a href="#"><i class="fa fa-plus-square-o"></i> <span>Areas Statistics</span>
             <span class="pull-right-container">

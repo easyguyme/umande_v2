@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<?php include('header.php'); ?>
+<link rel="stylesheet" href="weather/css/style.css">
+<link rel="stylesheet" href="calendar/css/style.css">
+<link rel="stylesheet" href="saa/css/style.css">
+<link rel="stylesheet" href="testimony/css/style.css">
+<body class="hold-transition skin-green sidebar-mini">
+<link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.8/validator.js">
+<div class="wrapper">
+    <?php include('top.php'); ?>
+    <!-- Left side column. contains the logo and sidebar -->
+    <?php include('sidebar.php'); ?>
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                Women Voices, ICT Choices
+                <small>Media</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">In the Media</li>
+            </ol>
+        </section>
+<section class="content">
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="box box-success">
+            <div class="box-header with-border">
+                <h3 class="box-title"><dt>Weather</dt></h3>
+
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding ">
+                <div class="loading"></div>
+
+                <div id='top'>
+                        <div id='location'>&nbsp</div>
+                    </div>
+                    <div id='middle'>
+                        <div id='icon'>
+                        </div>
+                        <div id='temp'></div>
+                    </div>
+                    <div id='bottom'>
+                        <div id='condition' class='under_icon'></div>
+                        <div id='info'>
+                            <div id='humidity' class='specs'>HUM: </div>
+                            <div id='precipitation' class='specs'>PREC:
+                            </div>
+                            <div id='wind' class='specs'>WIND:
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div id='switcher'>
+                    &deg F |  C&nbsp&nbsp
+                    <label class="switch">
+                        <input type="checkbox" id='please'>
+                        <div class="slider round"></div>
+                    </label></div>
+
+
+
+
+
+
+                <!-- /.users-list -->
+            </div>
+            <!-- /.box-body -->
+        <div class="box box-info">
+            <div class="box-header">
+                <i class="fa fa-envelope"></i>
+
+                <h3 class="box-title">Feedback</h3>
+                <!-- tools box -->
+                <div class="pull-right box-tools">
+                    <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fa fa-times"></i></button>
+                </div>
+                <!-- /. tools -->
+            </div>
+            <div class="box-body">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="emailto" placeholder="Your mail:" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div>
+                        <textarea class="textarea" placeholder="Your feedback" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="box-footer clearfix">
+                <button type="button" class="pull-right btn btn-default" id="sendEmail">Send
+                    <i class="fa fa-arrow-circle-right"></i></button>
+            </div>
+        </div>
+            <!-- /.box-footer -->
+        </div>
+
+    <div class="col-md-6">
+
+        <date-widget theme="tertiary"></date-widget>
+        <div class="calendar" id="calendar-app">
+            <div class="calendar--day-view" id="day-view">
+                <span class="day-view-exit" id="day-view-exit">&times;</span>
+                <span class="day-view-date" id="day-view-date">MAY 29 2016</span>
+                <div class="day-view-content">
+                    <div class="day-highlight">
+                        <span class="day-events" id="day-events"></span>. &nbsp; <span tabindex="0" onkeyup="if(event.keyCode != 13) return; this.click();" class="day-events-link" id="add-event" data-date>     </span>
+                    </div>
+                    <div class="day-add-event" id="add-day-event-box" data-active="false">
+                        <div class="row">
+                            <div class="half">
+                                <label class="add-event-label">
+                                    Name of event
+                                    <input type="text" class="add-event-edit add-event-edit--long" placeholder="New event" id="input-add-event-name">
+
+                                </label>
+                            </div>
+                            <div class="qtr">
+                                <label class="add-event-label">
+                                    Start Time
+                                    <input type="text" class="add-event-edit" placeholder="8:15" id="input-add-event-start-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
+                                    <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-start-ampm" data-options="a,p,am,pm">
+                                </label>
+                            </div>
+                            <div class="qtr">
+                                <label class="add-event-label">
+                                    End Time
+                                    <input type="text" class="add-event-edit" placeholder="9" id="input-add-event-end-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
+                                    <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-end-ampm" data-options="a,p,am,pm">
+                                </label>
+                            </div>
+                            <div class="half">
+                                <a onkeyup="if(event.keyCode != 13) return; this.click();" tabindex="0" id="add-event-save" class="event-btn--save event-btn">save</a>
+                                <a tabindex="0" id="add-event-cancel" class="event-btn--cancel event-btn">cancel</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="day-events-list" class="day-events-list">
+
+                    </div>
+                    <div class="day-inspiration-quote" id="inspirational-quote">
+                        Every child is an artist.  The problem is how to remain an artist once he grows up. –Pablo Picasso
+                    </div>
+                </div>
+            </div>
+            <div class="calendar--view" id="calendar-view">
+                <div class="cview__month">
+                    <span class="cview__month-last" id="calendar-month-last">Apr</span>
+                    <span class="cview__month-current" id="calendar-month">May</span>
+                    <span class="cview__month-next" id="calendar-month-next">Jun</span>
+                </div>
+                <div class="cview__header">Sun</div>
+                <div class="cview__header">Mon</div>
+                <div class="cview__header">Tue</div>
+                <div class="cview__header">Wed</div>
+                <div class="cview__header">Thu</div>
+                <div class="cview__header">Fri</div>
+                <div class="cview__header">Sat</div>
+                <div class="calendar--view" id="dates">
+                </div>
+            </div>
+            <div class="footer">
+                <span><span id="footer-date" class="footer__link"></span></span>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <div class="box-header with-border">
+                <h3 class="box-title"><dt>GALLERY</dt></h3>
+
+
+            </div>
+            <div class="box box-success">
+
+                <!-- /.box-header -->
+                <style>
+
+
+                    .carousel-inner>.item>img, .carousel-inner>.item>a>img
+                    {
+                        height:300px;
+                        width:700px;
+                    }
+
+                </style>
+                <?php
+
+
+
+
+                $query = $conn->query("select * from mediaimg") or die(mysql_error());
+                $count = $query->rowcount();
+                $slides='';
+                $Indicators='';
+                $counter=0;
+
+                while ($row = $query->fetch())
+                {
+
+                    $title = $row['title'];
+                    $desc = $row['desc'];
+                    $image = $row['image'];
+                    if($counter == 0)
+                    {
+                        $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'" class="active"></li>';
+                        $slides .= '<div class="item active">
+            <img src="media/'.$image.'" alt="'.$title.'" />
+            <div class="carousel-caption">
+              <h3>'.$title.'</h3>
+              <p>'.$desc.'.</p>
+            </div>
+          </div>';
+
+                    }
+                    else
+                    {
+                        $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'"></li>';
+                        $slides .= '<div class="item">
+            <img src="media/'.$image.'" alt="'.$title.'" />
+            <div class="carousel-caption">
+              <h3>'.$title.'</h3>
+              <p>'.$desc.'.</p>
+            </div>
+          </div>';
+                    }
+                    $counter++;
+                }
+
+                ?>
+                <div class="box-body">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <?php echo $Indicators; ?>
+                        </ol>
+                        <div class="carousel-inner">
+                            <?php echo $slides; ?>
+                        </div>
+
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="fa fa-angle-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="fa fa-angle-right"></span>
+                        </a>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="box box-danger">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><dt>Downloads and Publications</dt></h3>
+
+                </div>
+                <ul class="timeline">
+                    <!-- timeline time label -->
+
+                    <?php
+                    $query = $conn->query("select * from downloads limit 3");
+                    while ($row = $query->fetch()) {
+
+                    ?>
+                    <li>
+                        <i class="fa  fa-envelope bg-blue"></i>
+
+                        <div class="timeline-item">
+
+                            <h3 class="timeline-header"><a href="#"><?php echo $row['name']; ?></a> <?php echo $row['sub']; ?></h3>
+
+                            <div class="timeline-body">
+                                <?php echo $row['des']; ?>
+                            </div>
+                            <div class="timeline-footer">
+                                <a href="<?php echo $row['link']; ?>" class="btn  fa fa-download " > Download</a>
+
+                            </div>
+                        </div>
+                    </li>
+                    <?php } ?>
+                    <!-- END timeline item -->
+                    <!-- timeline item -->
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="testimonials">
+
+                <div class="block">
+
+                    <h3>Testimonials</h3>
+                    <h5>What people say about us</h5>
+
+                </div>
+                <?php
+                $query = $conn->query("select * from testimony");
+                while ($row = $query->fetch()) {
+
+                ?>
+                <blockquote class="block">
+
+                    <p>"<?php echo $row['message']; ?>"</p>
+
+                    <footer>
+                        <cite><span><?php echo $row['name']; ?></span></cite>
+                    </footer>
+
+                </blockquote>
+
+                <?php } ?>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <?php include('social.php'); ?>
+
+
+
+
+
+
+
+
+</section>
+
+    </div>
+    <?php include('footer.php'); ?>
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Create the tabs -->
+        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+            <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- Home tab content -->
+            <div class="tab-pane active" id="control-sidebar-home-tab">
+                <h3 class="control-sidebar-heading">Upcoming Activities</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript::;">
+                            <i class="menu-icon fa fa-users bg-red"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Annual General Meeting</h4>
+
+                                <p>Will be held on November 24th at KICC starting from 10.00am </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+                <h3 class="control-sidebar-heading">Elimu Grant target</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript::;">
+                            <h4 class="control-sidebar-subheading">
+                                Contributions
+                <span class="pull-right-container">
+                  <span class="label label-danger pull-right">70%</span>
+                </span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+            </div>
+            <!-- /.tab-pane -->
+            <!-- Stats tab content -->
+            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+            <!-- /.tab-pane -->
+            <!-- Settings tab content -->
+            <div class="tab-pane" id="control-sidebar-settings-tab">
+                <form method="post">
+                    <h3 class="control-sidebar-heading">General Settings</h3>
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Terms and Conditions Apply
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>
+                            By using this dashboard you accept our <a href="#"> Terms and Conditions</a>
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+                </form>
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+    </aside>
+    <div class="control-sidebar-bg"></div>
+</div>
+<script src="weather/js/index.js"></script>
+<script src="calendar/js/index.js"></script>
+<?php include('hscripts.php'); ?>
+<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+
+<script src="saa/js/index.js"></script>
+</body>
+</html>

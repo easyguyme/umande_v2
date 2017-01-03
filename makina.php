@@ -133,7 +133,7 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer text-center">
-                            <a href="profile/makina.html" class="uppercase">View All Champions</a>
+                            <a href="profile/makina.php" class="uppercase">View All Champions</a>
                         </div>
                         <!-- /.box-footer -->
                     </div>
@@ -173,7 +173,7 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer text-center">
-                            <a href="profile/makina.html" class="uppercase">Read More</a>
+                            <a href="profile/makina.php" class="uppercase">Read More</a>
                         </div>
                         <!-- /.box-footer-->
                     </div>
@@ -272,7 +272,7 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer text-center">
-                            <a href="profile/makina.html" class="uppercase">View More</a>
+                            <a href="profile/makina.php" class="uppercase">View More</a>
                         </div>
                     </div>
                     <!-- /.box -->
@@ -908,15 +908,7 @@
     </div>
     <!-- /.content-wrapper -->
 
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="pull-right hidden-xs">
-            Developed by <a href="#">Mitchsofts</a>
-        </div>
-        <!-- Default to the left -->
-        <strong>Copyright &copy; 2016 <a href="#">Umande Trust</a>.</strong> All rights reserved.
-    </footer>
-
+    <?php include('footer.php'); ?>
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
         <!-- Create the tabs -->

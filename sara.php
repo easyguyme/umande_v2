@@ -133,7 +133,7 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer text-center">
-                            <a href="profile/sarangombe.html" class="uppercase">View All Champions</a>
+                            <a href="profile/sara.php" class="uppercase">View All Champions</a>
                         </div>
                         <!-- /.box-footer -->
                     </div>
@@ -173,7 +173,7 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer text-center">
-                            <a href="profile/sarangombe.html" class="uppercase">Read More</a>
+                            <a href="profile/sara.php" class="uppercase">Read More</a>
                         </div>
                         <!-- /.box-footer-->
                     </div>
@@ -272,7 +272,7 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer text-center">
-                            <a href="profile/sarangombe.html" class="uppercase">View More</a>
+                            <a href="profile/sara.php" class="uppercase">View More</a>
                         </div>
                     </div>
                     <!-- /.box -->

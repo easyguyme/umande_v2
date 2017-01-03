@@ -282,5 +282,16 @@ desired effect
 
 <!-- jQuery 2.2.3 -->
 <?php include('hscripts.php'); ?>
+
+
+<script type="text/javascript">
+    $("#read").click(function() {
+
+        $("#hidden").show();
+        $("#read").hide();
+
+    });
+
+</script>
 </body>
 </html>
