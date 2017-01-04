@@ -1,14 +1,15 @@
 <div class="col-md-6">
     <div class="box box-solid">
         <div class="box-header with-border">
-            <h3 class="box-title"><dt>Quotes of the day</dt></h3>
+            <?php
+            $query = $conn->query("select * from hquotes");
+            while ($row = $query->fetch()) {
+            $id = $row['id'];
+            ?>
+            <h3 class="box-title"><dt><?php echo $row['title']; ?></dt></h3>
         </div>
         <!-- /.box-header -->
-        <?php
-        $query = $conn->query("select * from hquotes");
-        while ($row = $query->fetch()) {
-        $id = $row['id'];
-        ?>
+
         <div class="box-body">
             <div class="box-group" id="accordion">
                 <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
@@ -16,7 +17,7 @@
                     <div class="box-header with-border">
                         <h4 class="box-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                Inspirational Quotes
+                                <?php echo $row['inspiretitle']; ?>
                             </a>
                         </h4>
                     </div>
@@ -33,7 +34,7 @@
                     <div class="box-header with-border">
                         <h4 class="box-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                Popular Quotes
+                                <?php echo $row['populartitle']; ?>
                             </a>
                         </h4>
                     </div>
@@ -50,7 +51,7 @@
                     <div class="box-header with-border">
                         <h4 class="box-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                Motivational Quotes
+                                <?php echo $row['motivatetitle']; ?>
                             </a>
                         </h4>
                     </div>

@@ -1,5 +1,10 @@
 <p class="text-center">
-    <strong>Upcoming Events</strong>
+    <?php
+    $query = $conn->query("select * from hevents where id=1");
+    while ($row = $query->fetch()) {
+    ?>
+    <strong><?php echo $row['title']; ?></strong>
+    <?php } ?>
 </p>
 
 <div class="box box-success">

@@ -1,7 +1,13 @@
 <div class="col-md-6">
     <div class="box box-solid">
         <div class="box-header with-border">
-            <h3 class="box-title"><dt>Our Gallery</dt></h3>
+            <?php
+            $query = $conn->query("select * from hgallery where id=1");
+            while ($row = $query->fetch()) {
+
+            ?>
+            <h3 class="box-title"><dt> <?php echo $row['maintitle']; ?></dt></h3>
+            <?php } ?>
         </div>
         <!-- /.box-header -->
         <style>

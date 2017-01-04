@@ -24,6 +24,7 @@
         </section>
 
         <!-- Main content -->
+<!--todo add editable heading-->
         <section class="content">
             <div class="row">
                 <div class="col-lg-4 col-xs-6">
@@ -37,7 +38,7 @@
                         <div class="icon">
                             <i class="ion ion-camera"></i>
                         </div>
-                        <a href="#" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="#myModal" data-toggle="modal" data-target="#myModal" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -71,70 +72,213 @@
                     </div>
                 </div>
                 <!-- ./col -->
+<!---->
+                <!-- ./col -->
+            </div>
+<!--            second row-->
+            <div class="row">
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Edit Map</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="small-box bg-green-active">
+                            <div class="inner">
+                                <h3>Map</h3>
+
+                                <p>To change the map on the home page (be sure you know what you are doing)</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-map"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+
+                            <div class="info-box">
+                                <span class="info-box-icon bg-purple"><i class="ion ion-location"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Sarang'ombe Voice centre</span>
+                                    <a href="javascript:void(0)" class="uppercase"><dt>Click to edit details</dt></a>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.description-block -->
+                            <div class="info-box">
+                                <span class="info-box-icon bg-green"><i class="ion ion-location"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Makina Voice centre</span>
+                                    <a href="javascript:void(0)" class="uppercase"><dt>Click to edit details</dt></a>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.description-block -->
+                            <div class="info-box">
+                                <span class="info-box-icon bg-blue"><i class="ion ion-location"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Laini Saba Voice centre</span>
+                                    <a href="javascript:void(0)" class="uppercase"><dt>Click to edit details</dt></a>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.description-block -->
+                        <div class="info-box">
+                            <span class="info-box-icon bg-aqua"><i class="ion ion-location"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Lindi Voice centre</span>
+                                <a href="javascript:void(0)" class="uppercase"><dt>Click to edit details</dt></a>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.description-block -->
+
+                    </div>
+
+                </div>
+
 
                 <!-- ./col -->
             </div>
+<!--third row-->
             <div class="row">
-                <div class="col-sm-3 col-xs-8">
-                    <!-- small box -->
-                    <div class="small-box bg-aqua">
-                        <div class="inner">
-                            <h3>150</h3>
-
-                            <p>New Orders</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-bag"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <div class="box box-warning">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Edit Quotes and Gallery</h3>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-green">
-                        <div class="inner">
-                            <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-                            <p>Bounce Rate</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-yellow">
-                        <div class="inner">
-                            <h3>44</h3>
+                    <div class="col-md-6 ">
 
-                            <p>User Registrations</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-red">
-                        <div class="inner">
-                            <h3>65</h3>
+                        <div class="info-box">
+                            <span class="info-box-icon bg-purple"><i class="ion ion-android-hangout"></i></span>
 
-                            <p>Unique Visitors</p>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Inspirational Quotes</span>
+                                <a href="javascript:void(0)" class="uppercase"><dt>Click to edit details</dt></a>
+                            </div>
+                            <!-- /.info-box-content -->
                         </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
+                        <!-- /.description-block -->
+                        <div class="info-box">
+                            <span class="info-box-icon bg-green"><i class="ion ion-android-hangout"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Popular Quotes</span>
+                                <a href="javascript:void(0)" class="uppercase"><dt>Click to edit details</dt></a>
+                            </div>
+                            <!-- /.info-box-content -->
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <!-- /.description-block -->
+                        <div class="info-box">
+                            <span class="info-box-icon bg-blue"><i class="ion ion-android-hangout"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Motivational Quotes</span>
+                                <a href="javascript:void(0)" class="uppercase"><dt>Click to edit details</dt></a>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.description-block -->
+                       
+
                     </div>
+
+                    <div class="col-md-6">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner">
+                                <h3>Gallery</h3>
+
+                                <p>To upload pictures on the gallery</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-camera"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+
                 </div>
+
+
                 <!-- ./col -->
+            </div>
+            
+<!--            social media-->
+
+            <div class="row">
+
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Edit social media links</h3>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-blue"><i class="fa fa-facebook"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text"> <a href="#">Facebook</a></span>
+                                <span class="info-box-number"> <a href="#">Edit</a></span>
+                            </div>
+
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-teal"><i class="fa fa-twitter"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text"> <a href="#">Twitter</a></span>
+                                <span class="info-box-number"> <a href="#">Edit</a></span>
+                            </div>
+
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+
+                    <!-- fix for small devices only -->
+                    <div class="clearfix visible-sm-block"></div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg"><i class="fa fa-instagram"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text"> <a href="#">Instagram</a></span>
+                                    <span class="info-box-number"> <a href="#">Edit</a></span>
+                                </div>
+
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-red-active"><i class="fa fa-youtube"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text"> <a href="#">Youtube</a></span>
+                                    <span class="info-box-number"> <a href="#">Edit</a></span>
+
+                                </div>
+
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+
+                </div>
+
+                <!-- /.col -->
             </div>
 
 
@@ -168,3 +312,4 @@
 </script>
 </body>
 </html>
+<?php include('logo_modal.php'); ?>

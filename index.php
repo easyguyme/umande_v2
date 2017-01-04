@@ -103,38 +103,28 @@ desired effect
                 <!-- Left col -->
                 <div class="col-md-6">
 
-                 <?php include ('mmap.php')?>
-
+                    <?php include ('mmap.php')?>
                 </div>
                 <!-- /.col -->
-
                 <div class="col-md-6">
                     <!-- Info Boxes Style 2 -->
                     <?php include ('locinfo.php')?>
-
                 </div>
                 <!-- /.col -->
             </div>
             <div class="row">
-
-
-                    <div class="row">
-                       <?php include ('hquotes.php')?>
-                        <!-- /.col -->
-                        <?php include ('hgallery.php')?>
-                        <!-- /.col -->
-                    </div>
-
-                    <!-- /.description-block -->
-
-
-
+                <div class="row">
+                    <?php include ('hquotes.php')?>
+                    <!-- /.col -->
+                    <?php include ('hgallery.php')?>
+                    <!-- /.col -->
+                </div>
+                <!-- /.description-block -->
             </div>   <!-- Info boxes -->
             <div class="row">
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box">
                         <span class="info-box-icon bg-blue"><i class="fa fa-facebook"></i></span>
-
                         <div class="info-box-content">
                             <span class="info-box-text"> <a href="#">On Facebook?</a></span>
                             <span class="info-box-number"> <a href="#">Like Us</a></span>
@@ -147,7 +137,6 @@ desired effect
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box">
                         <span class="info-box-icon bg-teal"><i class="fa fa-twitter"></i></span>
-
                         <div class="info-box-content">
                             <span class="info-box-text"> <a href="#">On Twitter?</a></span>
                             <span class="info-box-number"> <a href="#">Follow Us</a></span>
@@ -157,16 +146,12 @@ desired effect
                     <!-- /.info-box -->
                 </div>
                 <!-- /.col -->
-
                 <!-- fix for small devices only -->
                 <div class="clearfix visible-sm-block"></div>
-
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box">
                         <span class="info-box-icon bg"><i class="fa fa-instagram"></i></span>
-
                         <div class="info-box-content">
-
                             <span class="info-box-text"> <a href="#">On Instagram? </a></span>
                             <span class="info-box-number"> <a href="#">Follow Us</a></span>
                         </div>
@@ -178,7 +163,6 @@ desired effect
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box">
                         <span class="info-box-icon bg-red-active"><i class="fa fa-youtube"></i></span>
-
                         <div class="info-box-content">
                             <span class="info-box-text"> <a href="#">On Youtube?</a></span>
                             <span class="info-box-number"> <a href="#">Subscribe</a></span>
@@ -190,13 +174,11 @@ desired effect
                 <!-- /.col -->
             </div>
             <!-- /.row -->
-
             <!-- /.row -->
         </section>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-
     <!-- Main Footer -->
     <?php include('footer.php'); ?>
 
@@ -286,12 +268,9 @@ desired effect
 
 <script type="text/javascript">
     $("#read").click(function() {
-
         $("#hidden").show();
         $("#read").hide();
-
     });
-
 </script>
 </body>
 </html>

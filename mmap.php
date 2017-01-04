@@ -1,6 +1,11 @@
 <div class="box box-success">
     <div class="box-header with-border">
-        <h3 class="box-title text-center"><strong>Project Areas Location</strong></h3>
+        <?php
+        $query = $conn->query("select * from hmap");
+        while ($row = $query->fetch()) {
+
+        ?>
+        <h3 class="box-title text-center"><strong><?php echo $row['title']; ?></strong></h3>
 
 
     </div>
@@ -8,11 +13,7 @@
     <div class="box-body no-padding">
         <div class="row">
             <div class="">
-                <?php
-                $query = $conn->query("select * from hmap");
-                while ($row = $query->fetch()) {
-                $id = $row['id'];
-                ?>
+
                 <div class="pad"  >
 
                     <!-- Map will be created here -->
