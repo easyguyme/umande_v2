@@ -53,7 +53,8 @@
                         <div class="icon">
                             <i class="ion ion-information"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="#pdmyModal" data-toggle="modal" data-target="#pdModal" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
+
                     </div>
                 </div>
                 <!-- ./col -->
@@ -313,3 +314,4 @@
 </body>
 </html>
 <?php include('logo_modal.php'); ?>
+

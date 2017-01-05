@@ -65,14 +65,14 @@ desired effect
                                 <div class="col-md-3">
                                     <img class="img-responsive" src="<?php echo $row['logo']; ?>" alt="Photo">
 
-
+                                    <?php } ?>
                                     <!-- /Pic to be changed -->
                                 </div>
                                 <div class="col-md-4">
                                     <p>
-                                        <?php echo $row['info']; ?>
+                                        <?php include('homeinfo.php'); ?>
                                     </p>
-                                    <?php } ?>
+
                                     <!-- /Pic to be changed -->
                                 </div>
                                 <!-- /.col -->
