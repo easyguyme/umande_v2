@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php include('header.php'); ?>
-
+<?php  include('session.php'); ?>
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 

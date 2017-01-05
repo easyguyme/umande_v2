@@ -11,13 +11,13 @@
     <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
-        <form action="#" method="post">
+        <form  id="login_form" method="post">
             <div class="form-group has-feedback">
-                <input type="email" class="form-control" placeholder="Email">
+                <input type="text" class="form-control"  name="username" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control"  name="password" placeholder="Password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
@@ -26,12 +26,39 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    <button type="submit" name="login" class="btn btn-primary btn-block btn-flat">Sign In</button>
                 </div>
                 <!-- /.col -->
             </div>
         </form>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery("#login_form").submit(function(e){
+                    e.preventDefault();
+                    var formData = jQuery(this).serialize();
+                    $.ajax({
+                        type: "POST",
+                        url: "login.php",
+                        data: formData,
+                        success: function(html){
+                            if(html=='true')
+                            {
+                                $.jGrowl("Loading Please Wait......", { sticky: true });
+                                $.jGrowl("Welcome to the admin panel", { header: 'Access Granted' });
+                                var delay = 2000;
+                                setTimeout(function(){ window.location = 'dashboard.php'  }, delay);
+                            }
+                            else
+                            {
+                                $.jGrowl("Please Check your username and Password", { header: 'Login Failed' });
+                            }
+                        }
 
+                    });
+                    return false;
+                });
+            });
+        </script>
 
         <!-- /.social-auth-links -->
 
@@ -41,22 +68,9 @@
     </div>
     <!-- /.login-box-body -->
 </div>
-<!-- /.login-box -->
 
-<!-- jQuery 2.2.3 -->
-<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
-<!-- iCheck -->
-<script src="../../plugins/iCheck/icheck.min.js"></script>
-<script>
-    $(function () {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' // optional
-        });
-    });
-</script>
+
 </body>
+<?php include('hscripts.php'); ?>
+<?php include('script.php'); ?>
 </html>
