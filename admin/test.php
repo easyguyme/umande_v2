@@ -1,55 +1,82 @@
-<?php
-include('header.php');
-?>
-<body>
-<br>
-<br>
-<div class="container">
-    <div class="row-fluid">
-        <div class="span12">
-            <form class="form-horizontal" method="POST" enctype="multipart/form-data">
-                <div class="control-group">
-                    <label class="control-label" for="input01">Image:</label>
-                    <div class="controls">
-                        <input type="file" name="image" class="font" required>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <div class="controls">
-                        <button type="submit" name="submit" class="btn btn-success">Upload</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="span12">
-            <ul class="thumbnails">
-                <?php
-                $query=mysql_query("select * from image")or die(mysql_error());
-                while($row=mysql_fetch_array($query)){
-                    ?>
-                    <li class="span2">
-                        <div class="thumbnail"> <img src="<?php echo $row['location']; ?>" width="100" height="100" alt="" class="img-rounded"> </div>
-                    </li>
-                    <?php
-                }
-                ?>
-            </ul>
-        </div>
+<a href="addevent.php" class="btn  btn-success">Add Event</a>
+<div class="box box-info">
+
+    <div class="box-header with-border">
+        <h3 class="box-title">Edit Event</h3>
     </div>
-    <?php
-    if (isset($_POST['submit'])) {
+    <!-- /.box-header -->
+    <!-- form start -->
+    <form  method="post">
+        <div class="box-body">
+            <div class="form-group col-sm-10">
+                <?php
+                $query = $conn->query("select * from hevents");
+                while ($row = $query->fetch()) {
+                $id = $row['id'];
+                ?>
+                <label>Event name:</label>
 
-        $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-        $image_name = addslashes($_FILES['image']['name']);
-        $image_size = getimagesize($_FILES['image']['tmp_name']);
+                <div class="input-group  col-sm-8">
 
-        move_uploaded_file($_FILES["image"]["tmp_name"], "upload/" . $_FILES["image"]["name"]);
-        $location = "upload/" . $_FILES["image"]["name"];
+                    <input type="text" name="event" class="form-control" id="event" placeholder="Event name"  value="<?php echo $row['event']; ?>">
+                </div>
 
 
-        header('location:index.php');
-    }
-    ?>
+                <!-- /.input group -->
+            </div>
+
+            <div class="form-group col-sm-7">
+                <label>Event Date:From-To:</label>
+
+                <div class="input-group">
+
+                    <input type="text" name="tarehe" class="form-control " id="reservation" value="<?php echo $row['datere']; ?>">
+                </div>
+                <div class="form-group col-sm-7">
+                    <label>Event Status</label>
+                    <select name="status" class="form-control" required>
+                        <option><?php echo $row['status']; ?></option>
+                        <option>Ongoing</option>
+                        <option>Upcoming</option>
+                        <option>Cancelled</option>
+                    </select>
+                </div>
+                <!-- /.input group -->
+            </div>
+            <?php } ?>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            <button  name="save" class="btn btn-info">Save changes</button>
+        </div>
+        <!-- /.box-footer -->
+    </form>
 </div>
-</body>
-</html>
+
+<?php
+if (isset($_POST['save'])){
+    $event = $_POST['event'];
+    $tarehe = $_POST['tarehe'];
+    $status = $_POST['status'];
+
+
+    $conn->query("select * from hevents where event=$event")or die(mysql_error());
+
+    $count = $query->rowcount();
+
+    if ($count > 0){ ?>
+        <script>
+            alert('Data Already Exist');
+        </script>
+        <?php
+    }else{
+        $conn->query("insert into hevents (event,date,status) values('$event','$tarehe','$status')")or die(mysql_error());
+        ?>
+        <script>
+            window.location = "test.php";
+        </script>
+        <?php
+    }
+}
+?>
+<?php include('dbcon.php');?>

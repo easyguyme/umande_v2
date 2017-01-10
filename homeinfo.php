@@ -8,7 +8,7 @@ while ($row = $query->fetch()) {
 </p>
     <a  class="btn  "id="read" style="color: green;" >Read More...</a>
 <p id="hidden" hidden>
-    <?php echo $row['more']; ?>
+    <?php echo $row['remo']; ?>
 </p>
 
 

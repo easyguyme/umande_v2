@@ -25,7 +25,7 @@
 
 
 
-        $query = $conn->query("select * from hgallery") or die(mysql_error());
+        $query = $conn->query("select * from hgallery order by date desc") or die(mysql_error());
         $count = $query->rowcount();
         $slides='';
         $Indicators='';
@@ -35,13 +35,13 @@
         {
 
             $title = $row['title'];
-            $desc = $row['desc'];
+            $desc = $row['descp'];
             $image = $row['image'];
             if($counter == 0)
             {
                 $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'" class="active"></li>';
                 $slides .= '<div class="item active">
-            <img src="gallery/'.$image.'" alt="'.$title.'" />
+            <img src="admin/gallery/' .$image.'" alt="'.$title.'" />
             <div class="carousel-caption">
               <h3>'.$title.'</h3>
               <p>'.$desc.'.</p>
@@ -53,7 +53,7 @@
             {
                 $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'"></li>';
                 $slides .= '<div class="item">
-            <img src="gallery/'.$image.'" alt="'.$title.'" />
+            <img src="admin/gallery/' .$image.'" alt="'.$title.'" />
             <div class="carousel-caption">
               <h3>'.$title.'</h3>
               <p>'.$desc.'.</p>

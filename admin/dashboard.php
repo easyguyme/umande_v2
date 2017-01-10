@@ -69,7 +69,7 @@
                         <div class="icon">
                             <i class="ion ion-calendar"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="addevent.php" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -92,7 +92,7 @@
                             <div class="icon">
                                 <i class="ion ion-map"></i>
                             </div>
-                            <a href="#" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="update_map.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <div class="col-md-6 ">
@@ -102,7 +102,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Sarang'ombe Voice centre</span>
-                                    <a href="javascript:void(0)" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="update_location.php<?php echo '?id=1'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -112,7 +112,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Makina Voice centre</span>
-                                    <a href="javascript:void(0)" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="update_location.php<?php echo '?id=2'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -122,7 +122,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Laini Saba Voice centre</span>
-                                    <a href="javascript:void(0)" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="update_location.php<?php echo '?id=3'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -132,7 +132,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Lindi Voice centre</span>
-                                <a href="javascript:void(0)" class="uppercase"><dt>Click to edit details</dt></a>
+                                <a href="update_location.php<?php echo '?id=4'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -159,7 +159,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Inspirational Quotes</span>
-                                <a href="javascript:void(0)" class="uppercase"><dt>Click to edit details</dt></a>
+                                <a href="update_quote.php<?php echo '?id=1'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -169,7 +169,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Popular Quotes</span>
-                                <a href="javascript:void(0)" class="uppercase"><dt>Click to edit details</dt></a>
+                                <a href="update_quote.php<?php echo '?id=2'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -179,7 +179,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Motivational Quotes</span>
-                                <a href="javascript:void(0)" class="uppercase"><dt>Click to edit details</dt></a>
+                                <a href="update_quote.php<?php echo '?id=3'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -198,7 +198,7 @@
                             <div class="icon">
                                 <i class="ion ion-camera"></i>
                             </div>
-                            <a href="#" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="update_hgallery.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
 
@@ -314,4 +314,18 @@
 </body>
 </html>
 <?php include('logo_modal.php'); ?>
+<style>
+    .example-modal .modal {
+        position: relative;
+        top: auto;
+        bottom: auto;
+        right: auto;
+        left: auto;
+        display: block;
+        z-index: 1;
+    }
 
+    .example-modal .modal {
+        background: transparent !important;
+    }
+</style>

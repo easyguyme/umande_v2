@@ -1,7 +1,7 @@
 <?php
 include('dbcon.php');
 
-
+error_reporting(E_ALL);
 
 if (isset($_POST['change'])) {
 
