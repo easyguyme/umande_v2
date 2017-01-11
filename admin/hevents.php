@@ -1,17 +1,17 @@
-<p class="text-center">
-    <?php
-    $query = $conn->query("select * from hevents");
-    while ($row = $query->fetch()) {
-    ?>
-    <strong><?php echo $row['title']; ?></strong>
-    <?php } ?>
-</p>
+
 
 <div class="box box-success">
-    <div class="box-header ">
-
-        <div class="box-tools">
-
+    <div class="box-header with-border" style="text-align: center;">
+        <?php
+        $query = $conn->query("select * from hevents");
+        while ($row = $query->fetch()) {
+            ?>
+            <h3 class="box-title"> <strong><?php echo $row['title']; ?></strong></dt></h3>
+        <?php } ?>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
         </div>
     </div>
     <!-- /.box-header -->
@@ -22,7 +22,8 @@
             <tr>
                 <th>Event</th>
                 <th>Venue</th>
-                <th>Date(from-to)</th>
+                <th>Start date</th>
+                <th>End date</th>
                 <th>Status</th>
 
             </tr>
@@ -36,7 +37,8 @@
                 <tr>
                     <td><?php echo $row['event']; ?></td>
                     <td><?php echo $row['venue']; ?></td>
-                    <td><?php echo $row['datere']; ?></td>
+                    <td><?php echo $row['sdate']; ?></td>
+                    <td><?php echo $row['edate']; ?></td>
                     <td><span class="label label-success"><?php echo $row['status']; ?></span></td>
 
                 </tr>

@@ -60,7 +60,7 @@
                     <li><a href="#"><i class="fa fa-female"></i>Laini Saba</a></li>
                 </ul>
             </li>
-            <li><a href="/pages/calendar.html"><i class="fa fa-calendar"></i> <span>Calendar</span></a></li>
+            <li><a href="calendar.php"><i class="fa fa-calendar"></i> <span>Calendar</span></a></li>
             <li><a href="contact.php"><i class="fa fa-envelope"></i> <span>Contact Us</span></a></li>
         </ul>
         <!-- /.sidebar-menu -->

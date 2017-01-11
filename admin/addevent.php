@@ -64,7 +64,8 @@
                                                 <th></th>
                                                 <th>Event</th>
                                                 <th>Venue</th>
-                                                <th>Date</th>
+                                                <th>Start date</th>
+                                                <th>End date</th>
                                                 <th>Status</th>
                                                 <th></th>
                                             </tr>
@@ -82,7 +83,8 @@
                                                     </td>
                                                     <td><?php echo $row['event']; ?></td>
                                                     <td><?php echo $row['venue']; ?></td>
-                                                    <td><?php echo $row['datere']; ?></td>
+                                                    <td><?php echo $row['sdate']; ?></td>
+                                                    <td><?php echo $row['edate']; ?></td>
                                                     <td><?php echo $row['status']; ?></td>
                                                     <td width="30"><a href="editevent.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
@@ -217,6 +219,9 @@
 
         //Date picker
         $('#datepicker').datepicker({
+            autoclose: true
+        });
+        $('#datepicker2').datepicker({
             autoclose: true
         });
 

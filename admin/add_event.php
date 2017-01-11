@@ -16,8 +16,6 @@
                     <input type="text" name="event" class="form-control" id="event" placeholder="Event name" required>
                 </div>
 
-
-                <!-- /.input group -->
             </div>
             <div class="form-group col-sm-10">
                 <label>Event Venue:</label>
@@ -27,20 +25,30 @@
                     <input type="text" name="venue" class="form-control" id="venue" placeholder="Event venue" required>
                 </div>
 
-
-                <!-- /.input group -->
             </div>
 
             <div class="form-group col-sm-7">
-                <label>Event Date:From-To:</label>
+                <label>Start Date:</label>
 
                 <div class="input-group">
                     <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="text" name="tarehe" class="form-control pull-right" id="reservation" required>
+                    <input type="text" name="sdate" class="form-control pull-right" id="datepicker" placeholder="Start Date" required>
                 </div>
-                <div class="form-group col-sm-7">
+            </div>
+            <div class="form-group col-sm-7">
+                <label>End Date:</label>
+
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <input type="text" name="edate" class="form-control pull-right" id="datepicker2" placeholder="End Date" required>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-7">
                     <label>Event Status</label>
                     <select name="status" class="form-control" required>
                         <option></option>
@@ -48,9 +56,9 @@
                         <option>Upcoming</option>
                         <option>Cancelled</option>
                     </select>
-                </div>
-                <!-- /.input group -->
             </div>
+                <!-- /.input group -->
+
 
         </div>
         <!-- /.box-body -->
@@ -66,12 +74,13 @@ include('dbcon.php');
 if (isset($_POST['save'])){
     $event = $_POST['event'];
     $venue = $_POST['venue'];
-    $tarehe = $_POST['tarehe'];
+    $sdate = $_POST['sdate'];
+    $edate = $_POST['edate'];
     $status = $_POST['status'];
 
 
 
-        $conn->query("insert into hevents (event,venue,datere,status) values('$event','$venue','$tarehe','$status')")or die(mysql_error());
+        $conn->query("insert into hevents (event,venue,sdate,edate,status) values('$event','$venue','$sdate','$edate','$status')")or die(mysql_error());
         ?>
         <script>
             window.location = "addevent.php";

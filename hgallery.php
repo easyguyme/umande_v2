@@ -1,6 +1,6 @@
 <div class="col-md-6">
-    <div class="box box-solid">
-        <div class="box-header with-border">
+    <div class="box box-danger">
+        <div class="box-header with-border" style="text-align: center;">
             <?php
             $query = $conn->query("select * from hgallery where id=1");
             while ($row = $query->fetch()) {
