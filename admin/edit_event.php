@@ -90,7 +90,7 @@ if (isset($_POST['update'])){
 
     ?>
     <script>
-        window.location = "addevent.php";
+        window.location = "editevent.php<?php echo '?id='.$get_id; ?>";
     </script>
     <?php
 

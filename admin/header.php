@@ -44,6 +44,8 @@
             background: transparent !important;
         }
     </style>
+    <script src="assets/DT_bootstrap.js"></script>
+    <script src="vendors/datatables/css/demo_table.css"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

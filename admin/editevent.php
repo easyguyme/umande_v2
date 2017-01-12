@@ -86,6 +86,8 @@
                                                     <td><?php echo $row['venue']; ?></td>
                                                     <td><?php echo $row['sdate']; ?></td>
                                                     <td><?php echo $row['edate']; ?></td>
+                                                    <td><?php echo $row['status']; ?></td>
+
                                                     <td width="30"><a href="editevent.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
