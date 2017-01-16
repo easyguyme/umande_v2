@@ -198,7 +198,7 @@
                     <!-- timeline time label -->
 
                     <?php
-                    $query = $conn->query("select * from downloads limit 3");
+                    $query = $conn->query("select * from downloads order by date desc limit 3");
                     while ($row = $query->fetch()) {
 
                     ?>
@@ -213,7 +213,7 @@
                                 <?php echo $row['des']; ?>
                             </div>
                             <div class="timeline-footer">
-                                <a href="<?php echo $row['link']; ?>" class="btn  fa fa-download " > Download</a>
+                                <a href="<?php echo $row['link']; ?>" class="btn  fa fa-download " target="_blank"> Download</a>
 
                             </div>
                         </div>
