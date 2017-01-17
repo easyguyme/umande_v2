@@ -222,7 +222,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text"> <a href="#">Facebook</a></span>
-                                <span class="info-box-number"> <a href="#">Edit</a></span>
+                                <span class="info-box-number"> <a data-toggle="modal" href="#facebook">Edit</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
@@ -236,7 +236,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text"> <a href="#">Twitter</a></span>
-                                <span class="info-box-number"> <a href="#">Edit</a></span>
+                                <span class="info-box-number"> <a data-toggle="modal" href="#twitter">Edit</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
@@ -254,7 +254,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text"> <a href="#">Instagram</a></span>
-                                    <span class="info-box-number"> <a href="#">Edit</a></span>
+                                    <span class="info-box-number"> <a data-toggle="modal" href="#instagram">Edit</a></span>
                                 </div>
 
                             <!-- /.info-box-content -->
@@ -268,7 +268,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text"> <a href="#">Youtube</a></span>
-                                    <span class="info-box-number"> <a href="#">Edit</a></span>
+                                    <span class="info-box-number"> <a data-toggle="modal" href="#youtube">Edit</a></span>
 
                                 </div>
 
@@ -300,7 +300,7 @@
 
 <!-- jQuery 2.2.3 -->
 <?php include('hscripts.php'); ?>
-
+<?php include('modal_delete.php'); ?>
 
 <script type="text/javascript">
     $("#read").click(function() {
