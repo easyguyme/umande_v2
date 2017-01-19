@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<?php  include('session.php'); ?>
+<?php include('header.php'); ?>
 <!-- daterange picker -->
 <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
 <!-- bootstrap datepicker -->
@@ -15,8 +15,7 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
 <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
-<?php include('header.php'); ?>
-<?php  include('session.php'); ?>
+
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 

@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-<?php include('header.php'); ?>
 <?php  include('session.php'); ?>
+<?php include('header.php'); ?>
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 

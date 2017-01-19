@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <?php include('header.php'); ?>
 
 <body class="layout-top-nav skin-red hold-transition login-page">

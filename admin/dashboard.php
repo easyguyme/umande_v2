@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<html>
-<?php include('header.php'); ?>
 <?php  include('session.php'); ?>
+<?php include('header.php'); ?>
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 
@@ -222,7 +220,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text"> <a href="#">Facebook</a></span>
-                                <span class="info-box-number"> <a data-toggle="modal" href="#facebook">Edit</a></span>
+                                <span class="info-box-number"> <a data-toggle="modal" href="#social_update">Edit</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
@@ -236,7 +234,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text"> <a href="#">Twitter</a></span>
-                                <span class="info-box-number"> <a data-toggle="modal" href="#twitter">Edit</a></span>
+                                <span class="info-box-number"> <a data-toggle="modal" href="#social_update">Edit</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
@@ -254,7 +252,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text"> <a href="#">Instagram</a></span>
-                                    <span class="info-box-number"> <a data-toggle="modal" href="#instagram">Edit</a></span>
+                                    <span class="info-box-number"> <a data-toggle="modal" href="#social_update">Edit</a></span>
                                 </div>
 
                             <!-- /.info-box-content -->
@@ -267,8 +265,8 @@
                             <span class="info-box-icon bg-red-active"><i class="fa fa-youtube"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text"> <a href="#">Youtube</a></span>
-                                    <span class="info-box-number"> <a data-toggle="modal" href="#youtube">Edit</a></span>
+                                    <span class="info-box-text"> <a href="#social_update">Youtube</a></span>
+                                    <span class="info-box-number"> <a data-toggle="modal" href="#social_update">Edit</a></span>
 
                                 </div>
 

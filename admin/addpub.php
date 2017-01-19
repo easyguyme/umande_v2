@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<?php  include('session.php'); ?>
+<?php include('header.php'); ?>
 <!-- daterange picker -->
 <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
 <!-- bootstrap datepicker -->

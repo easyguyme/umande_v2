@@ -103,7 +103,7 @@
 
 										<div class="input-group  col-sm-8">
 
-											<input type="text" name="youtubes" class="form-control" id="event" placeholder="Publication Heading" value="<?php echo $row['link']; ?>" required>
+											<input type="url" name="youtubes" class="form-control" id="event" placeholder="Publication Heading" value="<?php echo $row['link']; ?>" required>
 										</div>
 
 									</div>
@@ -134,7 +134,7 @@
 
 										<div class="input-group  col-sm-8">
 
-											<input type="text" name="instagrams" class="form-control" id="event" placeholder="Publication Heading" value="<?php echo $row['link']; ?>" required>
+											<input type="url" name="instagrams" class="form-control" id="event" placeholder="Publication Heading" value="<?php echo $row['link']; ?>" required>
 										</div>
 
 									</div>
@@ -165,7 +165,7 @@
 
 										<div class="input-group  col-sm-8">
 
-											<input type="text" name="facebooks" class="form-control" id="event" placeholder="Publication Heading" value="<?php echo $row['link']; ?>" required>
+											<input type="url" name="facebooks" class="form-control" id="event" placeholder="Publication Heading" value="<?php echo $row['link']; ?>" required>
 										</div>
 
 									</div>
@@ -196,7 +196,7 @@
 
 										<div class="input-group  col-sm-8">
 
-											<input type="text" name="twitters" class="form-control" id="event" placeholder="Publication Heading" value="<?php echo $row['link']; ?>" required>
+											<input type="url" name="twitters" class="form-control" id="event" placeholder="Publication Heading" value="<?php echo $row['link']; ?>" required>
 										</div>
 
 									</div>

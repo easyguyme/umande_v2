@@ -1,63 +1,37 @@
-<?php
-include('dbcon.php');
-if (isset($_POST['facebook'])){
+<div style="display: none;">
+    <img data-u="image" src="scroller/img/12.PNG" />
+</div>
+<div style="display: none;">
+    <img data-u="image" src="scroller/img/11.PNG" />
+</div>
+<div style="display: none;">
+    <img data-u="image" src="scroller/img/10.PNG" />
+</div>
+<div style="display: none;">
+    <img data-u="image" src="scroller/img/9.PNG" />
+</div>
+<div style="display: none;">
+    <img data-u="image" src="scroller/img/8.PNG" />
+</div>
+<div style="display: none;">
+    <img data-u="image" src="scroller/img/7.PNG" />
+</div>
+<div style="display: none;">
+    <img data-u="image" src="scroller/img/6.PNG" />
+</div>
 
-    $link = $_POST['facebooks'];
-
-
-
-    $conn->query("update social set link = '$link' where account = 'facebook' ")or die(mysql_error());
-
-
-    ?>
-    <script>
-        window.location = "dashboard.php";
-    </script>
-    <?php
-
-}elseif (isset($_POST['twitter'])){
-    $link = $_POST['twitters'];
-
-
-
-    $conn->query("update social set link = '$link' where account = 'twitter' ")or die(mysql_error());
-
-
-    ?>
-    <script>
-        window.location = "dashboard.php";
-    </script>
-    <?php
-
-
-}elseif (isset($_POST['instagram'])){
-    $link = $_POST['instagrams'];
-
-
-
-    $conn->query("update social set link = '$link' where account = 'instagram' ")or die(mysql_error());
-
-
-    ?>
-    <script>
-        window.location = "dashboard.php";
-    </script>
-    <?php
-
-}elseif (isset($_POST['youtube'])) {
-    $link = $_POST['youtubes'];
-
-
-
-    $conn->query("update social set link = '$link' where account = 'youtube' ")or die(mysql_error());
-
-
-    ?>
-    <script>
-        window.location = "dashboard.php";
-    </script>
-    <?php
-}
-
-?>
-
+<div style="display: none;">
+    <img data-u="image" src="scroller/img/5.PNG" />
+</div>
+<div style="display: none;">
+    <img data-u="image" src="scroller/img/4.PNG" />
+</div>
+<div style="display: none;">
+    <img data-u="image" src="scroller/img/3.PNG" />
+</div>
+<div style="display: none;">
+    <img data-u="image" src="scroller/img/1.PNG" />
+</div>
+<div style="display: none;">
+    <img data-u="image" src="scroller/img/2.PNG" />
+</div>
