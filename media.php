@@ -89,9 +89,72 @@
                         <i class="fa fa-times"></i></button>
                 </div>
                 <!-- /. tools -->
+                <?php
+                require ('PHPMailer/PHPMailerAutoload.php');
+
+                if(isset($_POST['submit'])) {
+
+                    $email = $_POST["emailto"];
+                    $message = $_POST["message"];
+                    $subject = $_POST["subject"];
+
+//Create a new PHPMailer instance
+                    $mail = new PHPMailer;
+//Tell PHPMailer to use SMTP
+                    $mail->isSMTP();
+//Enable SMTP debugging
+// 0 = off (for production use)
+// 1 = client messages
+// 2 = client and server messages
+                    $mail->SMTPDebug = 0;
+//Ask for HTML-friendly debug output
+                    $mail->Debugoutput = 'html';
+//Set the hostname of the mail server
+                    $mail->Host = 'mail.womenvoicesictchoices.org';
+// use
+// $mail->Host = gethostbyname('smtp.gmail.com');
+// if your network does not support SMTP over IPv6
+//Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+                    $mail->Port = 2525;
+//Set the encryption system to use - ssl (deprecated) or tls
+                    $mail->SMTPSecure = 'tls';
+//Whether to use SMTP authentication
+                    $mail->SMTPAuth = true;
+//Username to use for SMTP authentication - use full email address for gmail
+                    $mail->Username = "feedback@womenvoicesictchoices.org";
+//Password to use for SMTP authentication
+                    $mail->Password = "feedback@umande2017";
+//Set who the message is to be sent from
+                    $mail->setFrom($email,"In the Media Page Feedback" );
+//Set an alternative reply-to address
+                    $mail->addReplyTo($email, "Dear Sir/Madam");
+//Set who the message is to be sent to
+                    $mail->addAddress("feedback@womenvoicesictchoices.org", "Umande Dashboard");
+//Set the subject line
+                    $mail->Subject = $subject;
+//Read an HTML message body from an external file, convert referenced images to embedded,
+//convert HTML into a basic plain-text alternative body
+                    $mail->Body="Dear Admin you have a mail from Umande Dashboard Media Page!  "  .  "\n\n" . $message;
+//Replace the plain text body with one created manually
+
+//Attach an image file
+                    // $mail->addAttachment('images/phpmailer_mini.png');
+//send the message, check for errors
+                    if (!$mail->send()) {
+                        echo "Mailer Error: " . $mail->ErrorInfo;
+                    } else {
+                        echo '<p class="center" style="color: red">Mail Sent. Thank you ' . $email . ', we will contact you shortly.</p>';
+                    }
+
+
+
+                }
+
+                ?>
+
             </div>
             <div class="box-body">
-                <form action="#" method="post">
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                     <div class="form-group">
                         <input type="email" class="form-control" name="emailto" placeholder="Your mail:" required>
                     </div>
@@ -99,14 +162,15 @@
                         <input type="text" class="form-control" name="subject" placeholder="Subject" required>
                     </div>
                     <div>
-                        <textarea class="textarea" placeholder="Your feedback" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required></textarea>
+                        <textarea class="textarea" name="message" placeholder="Your feedback" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required></textarea>
                     </div>
-                </form>
+
             </div>
             <div class="box-footer clearfix">
-                <button type="button" class="pull-right btn btn-default" id="sendEmail">Send
+                <button type="submit" name="submit" class="pull-right btn btn-default" id="sendEmail">Send
                     <i class="fa fa-arrow-circle-right"></i></button>
             </div>
+            </form>
         </div>
             <!-- /.box-footer -->
         </div>
