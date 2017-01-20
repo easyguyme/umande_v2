@@ -36,7 +36,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text"> <a href="#">To Edit Community Based Orgs</a></span>
-                                <span class="info-box-number"> <a data-toggle="modal" href="#facebook">click me</a></span>
+                                <span class="info-box-number"> <a data-toggle="modal" href="#">click me</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
