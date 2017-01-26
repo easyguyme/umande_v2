@@ -7,7 +7,7 @@ if (isset($_POST['facebook'])) {
 
     $conn->query("update social set link = '$link' where account = 'facebook' ") or die(mysql_error());
 
-    header('Location: dashboard.php');
+    header('Location: home.php');
     exit;
 }
 
@@ -18,7 +18,7 @@ if (isset($_POST['instagram'])){
 
 
     $conn->query("update social set link = '$linka' where account = 'instagram' ")or die(mysql_error());
-    header('Location: dashboard.php');
+    header('Location: home.php');
     exit;
 }
 
@@ -28,7 +28,7 @@ if (isset($_POST['twitter'])){
 
 
     $conn->query("update social set link = '$linkb' where account = 'twitter' ")or die(mysql_error());
-    header('Location: dashboard.php');
+    header('Location: home.php');
     exit;
 
 }
@@ -39,6 +39,6 @@ if (isset($_POST['youtube'])) {
 
 
     $conn->query("update social set link = '$linkc' where account = 'youtube' ")or die(mysql_error());
-    header('Location: dashboard.php');
+    header('Location: home.php');
     exit;
 }

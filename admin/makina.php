@@ -36,7 +36,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text"> <a href="#">To Edit Community Based Orgs</a></span>
-                                <span class="info-box-number"> <a data-toggle="modal" href="#">click me</a></span>
+                                <span class="info-box-number"> <a data-toggle="modal" href="#cbo">click me</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
@@ -50,7 +50,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text"> <a href="#">To Edit N.G.O</a></span>
-                                <span class="info-box-number"> <a data-toggle="modal" href="#facebook">click me</a></span>
+                                <span class="info-box-number"> <a data-toggle="modal" href="#ngo">click me</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
@@ -68,7 +68,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text"> <a href="#">To Edit Environmental Based Orgs</a></span>
-                                <span class="info-box-number"> <a data-toggle="modal" href="#facebook">click me</a></span>
+                                <span class="info-box-number"> <a data-toggle="modal" href="#env">click me</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
@@ -95,7 +95,7 @@
                         <div class="icon">
                             <i class="ion ion-camera"></i>
                         </div>
-                        <a href="#myModal" data-toggle="modal" data-target="#myModal" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="makina_champs.php"  class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -110,7 +110,7 @@
                         <div class="icon">
                             <i class="ion ion-information"></i>
                         </div>
-                        <a href="#pdmyModal" data-toggle="modal" data-target="#pdModal" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="#pdMakina" data-toggle="modal" data-target="#pdMakina" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
 
                     </div>
                 </div>
@@ -344,6 +344,7 @@
 </body>
 </html>
 <?php include('logo_modal.php'); ?>
+<?php include('modals.php'); ?>
 <style>
     .example-modal .modal {
         position: relative;

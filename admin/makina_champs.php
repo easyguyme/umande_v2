@@ -27,61 +27,64 @@
         <section class="content">
 
             <div class="row">
-                <div class="col-md-6">
-                <?php include ('mgallery.php')?>
-</div>
-                <div class="col-md-6">
-                    <div class="box box-info">
-                        <a href="#edit" class="btn  btn-danger">Click to edit uploaded sliders</a>
 
+                    <div class="col-md-6" id="profile" >
+                    <div class="box box-danger">
                         <div class="box-header with-border">
-                            <?php
-                            $query = $conn->query("select * from mediaimg where id='1'");
-                            while ($row = $query->fetch()) {
+                            <h3 class="box-title"><dt>Women Champions</dt></h3>
 
-                            ?>
-                            <h3 class="box-title">Update <?php echo $row['maintitle']; ?></h3>
+                            <div class="box-tools pull-right">
+                                <?php
 
-                        </div>
-                        <!-- main header title -->
-                        <form method="post" class="form-horizontal">
-
-                            <div class="box-body">
-
-                                <div class="form-group">
-
-                                    <label for="name" class="col-sm-2 control-label">Main Title:</label>
-
-                                    <div class="col-sm-10 input-sm">
-
-                                        <input type="text" name="title" class="form-control " id="title" placeholder="Name" value="<?php echo $row['maintitle']; ?>" required>
-                                    </div>
-                                    <?php } ?>
-                                </div>
-
-                            </div>
-                            <!-- /.box-body -->
-                            <div class="box-footer">
-
-                                <button name="update" class="btn btn-success">Update</button>
-                            </div>
-                            <?php
-                            include('dbcon.php');
-                            if (isset($_POST['update'])){
-                                $title = $_POST['title'];
-
-                                $conn->query("update mediaimg set maintitle='$title' where id = '1' ")or die(mysql_error());
+                                $query = $conn->query("select * from profiles where page='makina'") or die(mysql_error());
+                                $count = $query->rowcount();
 
 
                                 ?>
-                                <script>
-                                    window.location = "home.php";
-                                </script>
+
+                                <span class="label label-danger"><?php  echo $count;  ?> Champions</span>
+
+                                </button>
+
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body no-padding">
+                            <ul class="users-list clearfix">
+
                                 <?php
 
-                            }
-                            ?>
-                        </form>
+                                $query = $conn->query("select * from profiles where page='makina'") or die(mysql_error());
+                                while ($row = $query->fetch()) {
+
+
+                                ?>
+                                <li>
+                                    <img src="../makina/champs/<?php echo $row['image']; ?>" alt="User Image">
+                                    <a class="users-list-name" href="#"><?php echo $row['jina']; ?></a>
+                                    <span class="users-list-date"><?php echo $row['age']; ?> Years</span>
+                                </li>
+                                                        <?php }?>
+                            </ul>
+                            <!-- /.users-list -->
+                        </div>
+                        <!-- /.box-body -->
+
+                        <!-- /.box-footer -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+
+                <div class="col-md-6">
+                    <div class="box box-info">
+                        <a href="#edit" class="btn  btn-danger">Click to edit Update women champions</a>
+
+                        <div class="box-header with-border">
+
+
+                        </div>
+                        <!-- main header title -->
+
 
                         <!-- content -->
                         <form method="post" class="form-horizontal" enctype="multipart/form-data">
@@ -90,18 +93,18 @@
 
                                 <div class="form-group">
 
-                                    <label for="name" class="col-sm-2 control-label">Title:</label>
+                                    <label for="name" class="col-sm-2 control-label">Name:</label>
 
                                     <div class="col-sm-10 input-sm">
 
-                                        <input type="text" name="title" class="form-control " id="title" placeholder="Name"  required>
+                                        <input type="text" name="name" class="form-control " id="title" placeholder="Name"  required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="type" class="col-sm-2 control-label">Description:</label>
+                                    <label for="type" class="col-sm-2 control-label">Age:</label>
 
                                     <div class="col-sm-10 input-sm">
-                                        <input type="text" name="desc" class="form-control" id="desc" placeholder="Type of quote" required>
+                                        <input type="text" name="age" class="form-control" id="desc" placeholder="Age of the woman champion" required>
                                     </div>
                                 </div>
 
@@ -140,28 +143,29 @@
                             <!-- block -->
                             <div id="block_bg" class="block">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Edit Uploaded Pics</h3>
+                                    <h3 class="box-title">Edit Uploaded Champions</h3>
                                 </div>
                                 <div class="block-content collapse in">
                                     <div class="span12">
-                                        <form action="delete_media.php" method="post">
+                                        <form method="post" action="delchamps.php" >
                                             <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
-                                                <a data-toggle="modal" href="#mediadelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
+                                                <a data-toggle="modal" href="#makinachampdel" id="delete"  class="btn btn-sm btn-danger">Delete</a>
 
-                                                <?php include('modal_delete.php'); ?>
+                                                <?php include('modals.php'); ?>
                                                 <thead>
                                                 <tr>
                                                     <th></th>
-                                                    <th>Title</th>
-                                                    <th>Description</th>
+                                                    <th>Name</th>
+                                                    <th>Age</th>
                                                     <th>Image Name</th>
                                                     <th>Date Uploaded</th>
                                                     <th></th>
                                                 </tr>
                                                 </thead>
+
                                                 <tbody>
                                                 <?php
-                                                $query = $conn->query("select * from mediaimg order by date desc");
+                                                $query = $conn->query("select * from profiles where page='makina' order by date desc");
                                                 while ($row = $query->fetch()) {
                                                     $id = $row['id'];
                                                     ?>
@@ -170,11 +174,11 @@
                                                         <td width="30">
                                                             <input id="optionsCheckbox" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id; ?>">
                                                         </td>
-                                                        <td><?php echo $row['title']; ?></td>
-                                                        <td><?php echo $row['descp']; ?></td>
+                                                        <td><?php echo $row['jina']; ?></td>
+                                                        <td><?php echo $row['age']; ?></td>
                                                         <td><?php echo $row['image']; ?></td>
                                                         <td><?php echo $row['date']; ?></td>
-                                                        <td width="30"><a href="edit_mgallery.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                                        <td width="30"><a href="editmakchamps.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
                                                     </tr>
@@ -200,7 +204,7 @@
 
 
                 </div>
-                <!--third row-->
+            <!--third row-->
 
 
 
@@ -239,24 +243,26 @@
 <?php
 include('dbcon.php');
 if (isset($_POST['save'])){
-    $title = $_POST['title'];
-    $descp = $_POST['desc'];
-
+    $name = $_POST['name'];
+    $age = $_POST['age'];
+    $page='makina';
 
     $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
     $image_name = addslashes($_FILES['image']['name']);
     $image_size = getimagesize($_FILES['image']['tmp_name']);
 
-    move_uploaded_file($_FILES["image"]["tmp_name"], "media/" . $_FILES["image"]["name"]);
+    move_uploaded_file($_FILES["image"]["tmp_name"], "../makina/champs/" . $_FILES["image"]["name"]);
     $location =  $_FILES["image"]["name"];
 
 
 
-    $conn->query("insert into mediaimg (title,descp,image) values('$title','$descp','$location')")or die(mysql_error());
+    $conn->query("insert into profiles (jina,age,image,page) values('$name','$age','$location','$page')")or die(mysql_error());
 
-    mysql_close($conn);
-    exit;
-
+    ?>
+    <script>
+        window.location = "makina_champs.php";
+    </script>
+    <?php
 
 }
 ?>

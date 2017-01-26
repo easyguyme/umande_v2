@@ -142,12 +142,22 @@ if (isset($_POST['save'])){
 
 
 
-    $conn->query("update quotes set title='$title' , cate='$cate',neno='$neno',who='$who' where id = '$get_id' ")or die(mysql_error());
+    $query="update quotes set title=:title , cate=:cate,neno=:neno,who=:who where id = '$get_id' ";
+
+
+    $stmt=$conn->prepare($query);
+    $stmt->bindParam(':title', $_POST['title'], PDO::PARAM_STR);
+    $stmt->bindParam(':cate', $_POST['cate'], PDO::PARAM_STR);
+    $stmt->bindParam(':neno', $_POST['neno'], PDO::PARAM_STR);
+    $stmt->bindParam(':who', $_POST['who'], PDO::PARAM_STR);
+    $stmt->execute();
+
+
 
 
     ?>
     <script>
-        window.location = "dashboard.php";
+        window.location = "home.php";
     </script>
     <?php
 

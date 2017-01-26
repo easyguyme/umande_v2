@@ -51,7 +51,18 @@ if (isset($_POST['update'])){
 
 
 
-    $conn->query("update testimony set message = '$message', name='$name' where id = '$get_id' ")or die(mysql_error());
+    $query="update testimony set message = :message, name=:name where id = '$get_id' ";
+
+
+    $stmt=$conn->prepare($query);
+    $stmt->bindParam(':message', $_POST['message'], PDO::PARAM_STR);
+    $stmt->bindParam(':name', $_POST['who'], PDO::PARAM_STR);
+
+    $stmt->execute();
+
+
+
+
 
 
     ?>

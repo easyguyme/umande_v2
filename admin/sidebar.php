@@ -31,7 +31,7 @@
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active treeview"><a href="dashboard.php"><i class="fa fa-home"></i> <span>Home</span></a></li>
+            <li class="active treeview"><a href="home.php"><i class="fa fa-home"></i> <span>Home</span></a></li>
 
             <li class="treeview">
                 <a href="#"><i class="fa fa-plus-square-o"></i> <span>Project Areas</span>

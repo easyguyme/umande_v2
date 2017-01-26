@@ -44,7 +44,7 @@
                                 $.jGrowl("Loading Please Wait......", { sticky: true });
                                 $.jGrowl("Welcome to the admin panel", { header: 'Access Granted' });
                                 var delay = 2000;
-                                setTimeout(function(){ window.location = 'dashboard.php'  }, delay);
+                                setTimeout(function(){ window.location = 'home.php'  }, delay);
                             }
                             else
                             {

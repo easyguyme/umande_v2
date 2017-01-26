@@ -219,8 +219,8 @@
                             <span class="info-box-icon bg-blue"><i class="fa fa-facebook"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text"> <a href="#">Facebook</a></span>
-                                <span class="info-box-number"> <a data-toggle="modal" href="#social_update">Edit</a></span>
+                                <span class="info-box-text"> <a href="#facebook">Facebook</a></span>
+                                <span class="info-box-number"> <a data-toggle="modal" href="#facebook">Edit</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
@@ -233,8 +233,8 @@
                             <span class="info-box-icon bg-teal"><i class="fa fa-twitter"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text"> <a href="#">Twitter</a></span>
-                                <span class="info-box-number"> <a data-toggle="modal" href="#social_update">Edit</a></span>
+                                <span class="info-box-text"> <a href="#twitter">Twitter</a></span>
+                                <span class="info-box-number"> <a data-toggle="modal" href="#twitter">Edit</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
@@ -251,8 +251,8 @@
                             <span class="info-box-icon bg"><i class="fa fa-instagram"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text"> <a href="#">Instagram</a></span>
-                                    <span class="info-box-number"> <a data-toggle="modal" href="#social_update">Edit</a></span>
+                                    <span class="info-box-text"> <a href="#instagram">Instagram</a></span>
+                                    <span class="info-box-number"> <a data-toggle="modal" href="#instagram">Edit</a></span>
                                 </div>
 
                             <!-- /.info-box-content -->
@@ -265,8 +265,8 @@
                             <span class="info-box-icon bg-red-active"><i class="fa fa-youtube"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text"> <a href="#social_update">Youtube</a></span>
-                                    <span class="info-box-number"> <a data-toggle="modal" href="#social_update">Edit</a></span>
+                                    <span class="info-box-text"> <a href="#youtube">Youtube</a></span>
+                                    <span class="info-box-number"> <a data-toggle="modal" href="#youtube">Edit</a></span>
 
                                 </div>
 

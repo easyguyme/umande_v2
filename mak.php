@@ -124,7 +124,7 @@
                                 ?>
                                 <li>
                                     <img src="makina/champs/<?php echo $row['image']; ?>" alt="User Image">
-                                    <a class="users-list-name" href="#"><?php echo $row['name']; ?></a>
+                                    <a class="users-list-name" href="#"><?php echo $row['jina']; ?></a>
                                     <span class="users-list-date"><?php echo $row['age']; ?></span>
                                 </li>
                                                         <?php }?>

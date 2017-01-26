@@ -22,7 +22,7 @@ if (isset($_POST['change'])) {
     ?>
 
     <script>
-        window.location = "dashboard.php";
+        window.location = "home.php";
     </script>
 
 <?php     }  ?>

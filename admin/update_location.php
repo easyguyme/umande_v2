@@ -142,7 +142,7 @@ if (isset($_POST['update'])){
 
     ?>
     <script>
-        window.location = "dashboard.php";
+        window.location = "home.php";
     </script>
     <?php
 

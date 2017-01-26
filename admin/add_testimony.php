@@ -46,7 +46,13 @@ if (isset($_POST['save'])){
 
 
 
-    $conn->query("insert into testimony (message,name) values('$message','$name')")or die(mysql_error());
+    $query="insert into testimony (message,name) values(:message,:name)";
+    $stmt=$conn->prepare($query);
+    $stmt->bindParam(':message', $_POST['message'], PDO::PARAM_STR);
+    $stmt->bindParam(':name', $_POST['who'], PDO::PARAM_STR);
+
+    $stmt->execute();
+
     ?>
     <script>
         window.location = "addtestimony.php";

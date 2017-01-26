@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!isset($_SESSION)){
+    session_start();
+}
+
 $conn = new PDO('mysql:host=localhost;dbname=umande', 'root', 'password');
 //Check whether the session variable SESS_MEMBER_ID is present or not
 if (!isset($_SESSION['id']) || (trim($_SESSION['id']) == '')) { ?>

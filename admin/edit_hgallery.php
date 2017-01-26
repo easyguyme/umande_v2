@@ -74,7 +74,7 @@
 
                                 ?>
                                 <script>
-                                    window.location = "dashboard.php";
+                                    window.location = "home.php";
                                 </script>
                                 <?php
 
@@ -119,10 +119,11 @@
                                     <label for="who" class="col-sm-2 control-label">Image upload:</label>
                                     <div class="col-sm-10 input-sm">
                                         <input name="image" class="input-file uniform_on" id="fileInput" type="file" required>
+                                        <p class="help-block">Click to upload a new image.</p>
                                     </div>
 
 
-                                    <p class="help-block">Click to upload image.</p>
+
                                 </div>
 <?php }?>
 

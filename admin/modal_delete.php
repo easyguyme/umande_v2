@@ -48,7 +48,7 @@
 					<button name="delete_media" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
 					</div>
 					</div>
-					
+					<!-- makina champion delete modal -->
 											<!-- student delete modal -->
 					<div id="testimony_delete" class="modal  fade modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-header">
@@ -85,25 +85,36 @@
 					</div>
 					
 					
-					                 	<!--  Social modal -->
-					<div id="youtube" class="modal  fade modal-primary modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+
+					<!--  Organisation names and numbers-->
+					<div id="cbo" class="modal  fade modal-primary modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-							<h3 id="myModalLabel">Update Youtube Link?</h3>
+							<h3 id="myModalLabel">Update Organisation?</h3>
 						</div>
 						<div class="modal-body">
-							<form method="post" action="save_social.php">
+							<form method="post" action="makina_top.php">
 								<?php
-								$query = $conn->query("select * from social where account ='youtube'");
+								$query = $conn->query("select * from ptop where page ='makina'");
 								while ($row = $query->fetch()) {
 
 									?>
 									<div class="form-group col-sm-10">
-										<label>Link:</label>
+										<label>Type of Org:</label>
 
 										<div class="input-group  col-sm-8">
 
-											<input type="url" name="youtubes" class="form-control" id="event" placeholder="Publication Heading" value="<?php echo $row['link']; ?>" required>
+											<input type="text" name="cbohead" class="form-control" id="event" placeholder="Type of Organisation" value="<?php echo $row['lh']; ?>" required>
+										</div>
+
+									</div>
+									<div class="form-group col-sm-10">
+										<label>Number of Orgs:</label>
+
+										<div class="input-group  col-sm-8">
+
+											<input type="text" name="cbonum" class="form-control" id="event" placeholder="The number of such organizations in the area" value="<?php echo $row['ln']; ?>" required>
 										</div>
 
 									</div>
@@ -113,28 +124,37 @@
 						</div>
 						<div class="modal-footer">
 							<button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> No</button>
-							<button name="youtube" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
+							<button name="updatecbo" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
 						</div>
 						</form>
 					</div>
-					<div id="instagram" class="modal  fade modal-primary modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div id="ngo" class="modal  fade modal-danger modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-							<h3 id="myModalLabel">Update Instagram Link?</h3>
+							<h3 id="myModalLabel">Update Organisation?</h3>
 						</div>
 						<div class="modal-body">
-							<form method="post" action="save_social.php">
+							<form method="post" action="makina_top.php">
 								<?php
-								$query = $conn->query("select * from social where account ='instagram'");
+								$query = $conn->query("select * from ptop where page ='makina'");
 								while ($row = $query->fetch()) {
 
 									?>
 									<div class="form-group col-sm-10">
-										<label>Link:</label>
+										<label>Type of Org:</label>
 
 										<div class="input-group  col-sm-8">
 
-											<input type="url" name="instagrams" class="form-control" id="event" placeholder="Publication Heading" value="<?php echo $row['link']; ?>" required>
+											<input type="text" name="ngohead" class="form-control" id="event" placeholder="Type of Organisation" value="<?php echo $row['mh']; ?>" required>
+										</div>
+
+									</div>
+									<div class="form-group col-sm-10">
+										<label>Number of Orgs:</label>
+
+										<div class="input-group  col-sm-8">
+
+											<input type="text" name="ngonum" class="form-control" id="event" placeholder="The number of such organizations in the area" value="<?php echo $row['mn']; ?>" required>
 										</div>
 
 									</div>
@@ -144,28 +164,37 @@
 						</div>
 						<div class="modal-footer">
 							<button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> No</button>
-							<button name="instagram" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
+							<button name="updatengo" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
 						</div>
 						</form>
 					</div>
-					<div id="facebook" class="modal  fade modal-primary modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div id="env" class="modal  fade modal-success modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-							<h3 id="myModalLabel">Update Facebook Link?</h3>
+							<h3 id="myModalLabel">Update Organisation?</h3>
 						</div>
 						<div class="modal-body">
-							<form method="post" action="save_social.php">
+							<form method="post" action="makina_top.php">
 								<?php
-								$query = $conn->query("select * from social where account ='facebook'");
+								$query = $conn->query("select * from ptop where page ='makina'");
 								while ($row = $query->fetch()) {
 
 									?>
 									<div class="form-group col-sm-10">
-										<label>Link:</label>
+										<label>Type of Org:</label>
 
 										<div class="input-group  col-sm-8">
 
-											<input type="url" name="facebooks" class="form-control" id="event" placeholder="Publication Heading" value="<?php echo $row['link']; ?>" required>
+											<input type="text" name="envhead" class="form-control" id="event" placeholder="Type of Organisation" value="<?php echo $row['rh']; ?>" required>
+										</div>
+
+									</div>
+									<div class="form-group col-sm-10">
+										<label>Number of Orgs:</label>
+
+										<div class="input-group  col-sm-8">
+
+											<input type="text" name="envnum" class="form-control" id="event" placeholder="The number of such organizations in the area" value="<?php echo $row['rn']; ?>" required>
 										</div>
 
 									</div>
@@ -175,38 +204,7 @@
 						</div>
 						<div class="modal-footer">
 							<button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> No</button>
-							<button name="facebook" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
-						</div>
-						</form>
-					</div>
-					<div id="twitter" class="modal  fade modal-primary modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-							<h3 id="myModalLabel">Update Twitter Link?</h3>
-						</div>
-						<div class="modal-body">
-							<form method="post" action="save_social.php">
-								<?php
-								$query = $conn->query("select * from social where account ='twitter'");
-								while ($row = $query->fetch()) {
-
-									?>
-									<div class="form-group col-sm-10">
-										<label>Link:</label>
-
-										<div class="input-group  col-sm-8">
-
-											<input type="url" name="twitters" class="form-control" id="event" placeholder="Publication Heading" value="<?php echo $row['link']; ?>" required>
-										</div>
-
-									</div>
-								<?php }?>
-
-
-						</div>
-						<div class="modal-footer">
-							<button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> No</button>
-							<button name="twitter" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
+							<button name="updateenv" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
 						</div>
 						</form>
 					</div>
