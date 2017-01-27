@@ -41,7 +41,7 @@
         <!--todo add editable heading-->
         <section class="content">
             <div class="col-md-6">
-                <?php include('addmcc.php'); ?>
+                <?php include('edit_mccp.php'); ?>
 
             </div>
             <div class="col-md-6">
@@ -80,7 +80,7 @@
                                                         <input id="optionsCheckbox" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id; ?>">
                                                     </td>
                                                     <td><?php echo $row['name']; ?></td>
-                                                   
+
                                                     <td><?php echo $row['sdate']; ?></td>
                                                     <td><?php echo $row['edate']; ?></td>
                                                     <td><?php echo $row['status']; ?></td>

@@ -126,7 +126,7 @@ if (isset($_POST['save'])){
     $sdate = $_POST['sdate'];
     $edate = $_POST['edate'];
     $status = 'complete';
-    $org = 'county';
+    $org = 'ngo';
 
 
     $conn->query("insert into makina_cproject (name,sdate,edate,status,org) values('$name','$sdate','$edate','$status','$org')")or die(mysql_error());

@@ -41,7 +41,7 @@
         <!--todo add editable heading-->
         <section class="content">
             <div class="col-md-6">
-                <?php include('addmcc.php'); ?>
+                <?php include('addmcnp.php'); ?>
 
             </div>
             <div class="col-md-6">
@@ -50,13 +50,13 @@
                         <!-- block -->
                         <div id="block_bg" class="block">
                             <div class="box-header with-border">
-                                <h3 class="box-title">View Complete County Projects</h3>
+                                <h3 class="box-title">View Complete NGO Projects</h3>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
-                                    <form action="delete_mccp.php" method="post">
+                                    <form action="delete_mcnp.php" method="post">
                                         <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
-                                            <a data-toggle="modal" href="#mccpdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
+                                            <a data-toggle="modal" href="#mcnpdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
                                             <?php include('modal_delete.php'); ?>
                                             <thead>
                                             <tr>
@@ -70,7 +70,7 @@
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $query = $conn->query("select * from makina_cproject where org='county' ");
+                                            $query = $conn->query("select * from makina_cproject where org='ngo' ");
                                             while ($row = $query->fetch()) {
                                                 $id = $row['id'];
                                                 ?>
@@ -80,11 +80,11 @@
                                                         <input id="optionsCheckbox" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id; ?>">
                                                     </td>
                                                     <td><?php echo $row['name']; ?></td>
-                                                   
+
                                                     <td><?php echo $row['sdate']; ?></td>
                                                     <td><?php echo $row['edate']; ?></td>
                                                     <td><?php echo $row['status']; ?></td>
-                                                    <td width="30"><a href="editmccp.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                                    <td width="30"><a href="editmcnp.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
                                                 </tr>

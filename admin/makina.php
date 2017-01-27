@@ -169,7 +169,7 @@
                                 <div class="icon">
                                     <i class="ion ion-grid"></i>
                                 </div>
-                                <a href="#pdmyModal" data-toggle="modal" data-target="#pdModal" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="mcnp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
 
                             </div>
                         </div>
