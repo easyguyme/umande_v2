@@ -1,4 +1,4 @@
-					<!-- user delete modal -->
+					<!-- user delete home gallery pics -->
 					<div id="picsdelete" class="modal  fade modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
@@ -6,7 +6,7 @@
 					</div>
 					<div class="modal-body">
 					<div class="alert alert-danger">
-					<p>Are you sure you want to delete the image(s) you check?.</p>
+					<p>Are you sure you want to delete the image(s) you checked?</p>
 					</div>
 					</div>
 					<div class="modal-footer">
@@ -14,8 +14,24 @@
 					<button name="delete_pics" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
 					</div>
 					</div>
+                    <!-- user delete makina gallery pics -->
+					<div id="makinadelete" class="modal  fade modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+							<h3 id="myModalLabel">Delete Makina image(s)?</h3>
+						</div>
+						<div class="modal-body">
+							<div class="alert alert-danger">
+								<p>Are you sure you want to delete the image(s) you checked?</p>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> Close</button>
+							<button name="makina_pics" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
+						</div>
+					</div>
 					
-					<!-- department delete modal -->
+					<!-- Event delete modal -->
 					<div id="eventdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
@@ -31,8 +47,26 @@
 					<button name="delete_event" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
 					</div>
 					</div>
-					
-								<!-- class delete modal -->
+
+
+                    <!-- Makina complete project delete modal -->
+
+                    <div id="mccpdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                            <h3 id="myModalLabel">Delete Department?</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="alert alert-danger">
+                                <p>Are you sure you want to delete the project you checked?.</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> No</button>
+                            <button name="delete_mccp" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
+                        </div>
+                    </div
+																				<!-- class delete modal -->
 					<div id="mediadelete" class="modal fade modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
