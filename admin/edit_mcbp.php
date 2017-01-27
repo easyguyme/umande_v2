@@ -3,7 +3,7 @@
 <div class="box box-info">
 
     <div class="box-header with-border">
-        <h3 class="box-title">Edit Complete NGO Project</h3>
+        <h3 class="box-title">Edit Complete CBO Project</h3>
     </div>
     <!-- /.box-header -->
     <!-- form start -->
@@ -70,7 +70,7 @@ if (isset($_POST['update'])){
 
     ?>
     <script>
-        window.location = "editmcnp.php<?php echo '?id='.$get_id; ?>";
+        window.location = "editmcbp.php<?php echo '?id='.$get_id; ?>";
     </script>
     <?php
 

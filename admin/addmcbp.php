@@ -1,7 +1,7 @@
 <div class="box box-info">
 
     <div class="box-header with-border">
-        <h3 class="box-title">Add Complete NGO Project</h3>
+        <h3 class="box-title">Add Complete CBO Project</h3>
     </div>
     <!-- /.box-header -->
     <!-- form start -->
@@ -126,7 +126,7 @@ if (isset($_POST['save'])){
     $sdate = $_POST['sdate'];
     $edate = $_POST['edate'];
     $status = 'complete';
-    $org = 'ngo';
+    $org = 'cbo';
 
 
     $conn->query("insert into makina_cproject (name,sdate,edate,status,org) values('$name','$sdate','$edate','$status','$org')")or die(mysql_error());

@@ -35,7 +35,7 @@
 <div id="eventdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-        <h3 id="myModalLabel">Delete Department?</h3>
+        <h3 id="myModalLabel">Delete Event?</h3>
     </div>
     <div class="modal-body">
         <div class="alert alert-danger">
@@ -54,7 +54,7 @@
 <div id="mccpdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-        <h3 id="myModalLabel">Delete Department?</h3>
+        <h3 id="myModalLabel">Delete Project?</h3>
     </div>
     <div class="modal-body">
         <div class="alert alert-danger">
@@ -72,7 +72,7 @@
 <div id="mcnpdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-        <h3 id="myModalLabel">Delete Department?</h3>
+        <h3 id="myModalLabel">Delete Project?</h3>
     </div>
     <div class="modal-body">
         <div class="alert alert-danger">
@@ -82,6 +82,24 @@
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> No</button>
         <button name="delete_mcnp" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
+    </div>
+</div>
+
+<!-- Makina complete cbo project delete modal -->
+
+<div id="mcbpdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3 id="myModalLabel">Delete Project?</h3>
+    </div>
+    <div class="modal-body">
+        <div class="alert alert-danger">
+            <p>Are you sure you want to delete the project you checked?.</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> No</button>
+        <button name="delete_mcbp" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
     </div>
 </div>
 
