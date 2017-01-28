@@ -493,7 +493,7 @@
                                                             </div>
                                                             <div class="product-info">
                                                                 <a href="javascript:void(0)" class="product-title"><?php echo $row['name']; ?>
-                                                                    <span class="label label-warning pull-right"><?php echo $row['complete']; ?></span></a>
+                                                                    <span class="label label-warning pull-right"><?php echo $row['per']; ?> Complete</span></a>
                                                                 <div class="progress progress-xxs">
                                                                     <div class="progress-bar progress-bar-danger" style="width: <?php echo $row['per']; ?>"></div>
                                                                 </div>
@@ -531,7 +531,7 @@
                                                             </div>
                                                             <div class="product-info">
                                                                 <a href="javascript:void(0)" class="product-title"><?php echo $row['name']; ?>
-                                                                    <span class="label label-warning pull-right"><?php echo $row['complete']; ?></span></a>
+                                                                    <span class="label label-warning pull-right"><?php echo $row['per']; ?> Complete</span></a>
                                                                 <div class="progress progress-xxs">
                                                                     <div class="progress-bar progress-bar-danger" style="width: <?php echo $row['per']; ?>"></div>
                                                                 </div>
@@ -569,15 +569,17 @@
                                                             </div>
                                                             <div class="product-info">
                                                                 <a href="javascript:void(0)" class="product-title"><?php echo $row['name']; ?>
-                                                                    <span class="label label-warning pull-right"><?php echo $row['complete']; ?></span></a>
+                                                                    <span class="label label-warning pull-right"><?php echo $row['per']; ?> Complete</span></a>
                                                                 <div class="progress progress-xxs">
                                                                     <div class="progress-bar progress-bar-danger" style="width: <?php echo $row['per']; ?>"></div>
                                                                 </div>
                         <span class="product-description">
                           <?php echo $row['des']; ?>
                         </span>
+                                                                
                                                                 <?php }?>
                                                             </div>
+                                                            
                                                         </li>
 
                                                         <!-- /.item -->
