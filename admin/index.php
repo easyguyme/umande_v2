@@ -1,15 +1,25 @@
 <?php include('header.php'); ?>
 
+<?PHP
+include("php_functions.php");
+include("dbcon.php");
+include("login_class.php");
+$Login = new login($conn);
+if( !isset($_SESSION) ){
+    session_start();
+}
+?>
 <body class="layout-top-nav skin-red hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
         <a href="index.php"><b>Admin</b>Umande</a>
     </div>
     <!-- /.login-logo -->
+    <?PHP if(!$Login->is_user_ip_banned()): ?>
     <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
-
-        <form  id="login_form" method="post">
+        <?PHP if(!isset($_SESSION["logged_in"])): ?>
+        <form  id="login_form" method="post" action="index.php">
             <div class="form-group has-feedback">
                 <input type="text" class="form-control"  name="username" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -29,34 +39,17 @@
                 <!-- /.col -->
             </div>
         </form>
-        <script>
-            jQuery(document).ready(function(){
-                jQuery("#login_form").submit(function(e){
-                    e.preventDefault();
-                    var formData = jQuery(this).serialize();
-                    $.ajax({
-                        type: "POST",
-                        url: "login.php",
-                        data: formData,
-                        success: function(html){
-                            if(html=='true')
-                            {
-                                $.jGrowl("Loading Please Wait......", { sticky: true });
-                                $.jGrowl("Welcome to the admin panel", { header: 'Access Granted' });
-                                var delay = 2000;
-                                setTimeout(function(){ window.location = 'home.php'  }, delay);
-                            }
-                            else
-                            {
-                                $.jGrowl("Please Check your username and Password", { header: 'Login Failed' });
-                            }
-                        }
+        <?PHP else:
+            header("location: home.php");
+            ?>
 
-                    });
-                    return false;
-                });
-            });
-        </script>
+
+        <?PHP endif ?>
+
+        <?PHP else: ?>
+            Your IP address has been blocked.
+        <?PHP endif; ?>
+
 
         <!-- /.social-auth-links -->
 
@@ -69,6 +62,5 @@
 
 
 </body>
-<?php include('hscripts.php'); ?>
-<?php include('script.php'); ?>
+
 </html>

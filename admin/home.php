@@ -1,4 +1,5 @@
-<?php  include('session.php'); ?>
+<?PHP include("login_class.php");?>
+<?PHP include("session.php");?>
 <?php include('header.php'); ?>
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">

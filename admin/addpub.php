@@ -15,8 +15,7 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
 <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
-<?php include('header.php'); ?>
-<?php  include('session.php'); ?>
+
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 
@@ -103,7 +102,7 @@
 
 
                 </div>
-
+</div>
 
         </section>
         <!-- /.content -->

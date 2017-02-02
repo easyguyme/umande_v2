@@ -807,7 +807,7 @@
                                                             </div>
                                                             <div class="product-info">
                                                                 <a href="javascript:void(0)" class="product-title"><?php echo $row['name']; ?>
-                                                                    <span class="label label-warning pull-right">Ksh.<?php echo $row['budget']; ?></span></a>
+                                                                    <span class="label label-warning pull-right">Ksh.<?php echo $row['budget']; ?> M.</span></a>
                                                                 <p>
                                                                     <?php echo $row['des']; ?>
                                                                 </p>
