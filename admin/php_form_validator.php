@@ -1,5 +1,5 @@
 <?PHP
-
+require ('../PHPMailer/PHPMailerAutoload.php');
 	
 	class RegistrationValidator{
 	
@@ -18,15 +18,15 @@
 			
 			if(isset($_POST["register_button"])){
 			
-				if( (!empty($_POST["sname"]))		and
-					(!empty($_POST["fname"]))		and
+				if( (!empty($_POST["fname"]))		and
+					(!empty($_POST["sname"]))		and
 					(!empty($_POST["email"])) 			and
 					(!empty($_POST["password_one"]))	and
 					(!empty($_POST["password_two"]))	and
 					(!empty($_POST["captcha"])) ) {
 					
 					$this->fname				= trim($_POST["fname"]);
-					$this->fname				= trim($_POST["sname"]);
+					$this->sname				= trim($_POST["sname"]);
 					$this->email				= $_POST["email"];
 					$this->password_one			= $_POST["password_one"];
 					$this->password_two			= $_POST["password_two"];
@@ -43,12 +43,13 @@
 		//This is the method where returned value from other methods is checked.
 		function check_returns(){
 		
-			$validate_username						= $this->validate_username();
+			$validate_fname						= $this->validate_fname();
+			$validate_sname						= $this->validate_sname();
 			$validate_email							= $this->validate_email();
 			$validate_password						= $this->validate_password();
 			$is_captcha_right						= RegistrationValidator::is_captcha_right();
 			
-			if($validate_username && $validate_email && $validate_password && $is_captcha_right){
+			if($validate_fname && $validate_sname && $validate_email && $validate_password && $is_captcha_right){
 				if($this->is_it_new_account()){
 					$was_registration_sucessful = $this->has_registered_sucessfully();
 					if($was_registration_sucessful){	
@@ -64,7 +65,7 @@
 		static function display_captcha(){
 		
 			//possible letters that can can come in captcha.
-			$possible_letter = array("a", "z", "b", "t", "kpp", "sj", "mx", "l", "d", "z", "l", "bbl", "l");
+			$possible_letter = array("I", "m", "r", "a", "wan", "ga", "ra", "k", "h", "z", "l", "bbl", "l");
 
 			//just random number.
 			$random_letter = rand(0, 12);
@@ -106,33 +107,58 @@
 		
 		//Checks true if the email is sucessfully sent, else otherwise.
 		function is_confirmation_mail_sent(){
-		
+            $message ="http://phpdev54321.890m.com/registration/confirmation_page.php?fname=$this->fname&confirmation_code=$this->confirmation_code";
+			//Create a new PHPMailer instance
+			$mail = new PHPMailer;
+//Tell PHPMailer to use SMTP
+            $mail->isSMTP();
+//Enable SMTP debugging
+// 0 = off (for production use)
+// 1 = client messages
+// 2 = client and server messages
+			$mail->SMTPDebug = 0;
+//Ask for HTML-friendly debug output
+			$mail->Debugoutput = 'html';
+//Set the hostname of the mail server
+			$mail->Host = 'mail.womenvoicesictchoices.org';
+// use
+// $mail->Host = gethostbyname('smtp.gmail.com');
+// if your network does not support SMTP over IPv6
+//Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+			$mail->Port = 2525;
+//Set the encryption system to use - ssl (deprecated) or tls
+			$mail->SMTPSecure = 'tls';
+//Whether to use SMTP authentication
+			$mail->SMTPAuth = true;
+//Username to use for SMTP authentication - use full email address for gmail
+			$mail->Username = "donotreply@womenvoicesictchoices.org";
+//Password to use for SMTP authentication
+			$mail->Password = "donotreply@umande2017";
+
+			$mail->setFrom('donotreply@womenvoicesictchoices.org', 'WOMEN VOICES DASHBOARD');
+			//$mail->addReplyTo($this->email, $this->fname);
 			//Registerer email.
-			$to 										= $this->email;
 			
-			//To what email registerer should replay if he decides to.
-			$reply_to 									= 'sami1@live.com.pt';
-			
-			//Website name, for example, www.webdevtown.com. This will be our From: header. You can remove the .com.
-			$from 										= 'Webdevtown.com';
+			$mail->addAddress($this->email, $this->fname);
+
+
+
+
 			
 			//Your website address. We will put our address in the subject whole subject. For example, Register your account for www.webdevtown.com
-			$website_address							= 'http://www.webdevtown.com';
+			$website_address							= 'www.womenvoicesictchoices.org';
 		
 			//This is our sibject.
-			$subject									= "Confirm your account for $website_address";
-			
-			$message = "Please click the link below to verify your account for $website_address" . "\r\n";
-			$message .= "http://phpdev54321.890m.com/registration/confirmation_page.php?username=$this->username&confirmation_code=$this->confirmation_code";
-			$headers = "From: $from" . "\r\n" .
-				"Reply-To: $reply_to" . "\r\n" .
-				'X-Mailer: PHP/' . phpversion();
+			$mail->Subject= "Confirm your account for $website_address";
+			$mail->Body="Please click the link below to verify your admin account for $website_address" . "\r\n" . $message;
 
-			if(mail($to, $subject, $message, $headers)){
-				return true;
-			}else{
-				echo "<i> Verification mail couldn't be sent, contact admin.</i>";
-				return false;
+
+            if ($mail->send()) {
+                return true;
+            }else{
+                echo "Mailer Error: " . $mail->ErrorInfo;
+				echo "<i> Verification mail couldn't be sent, contact admin on +254729790289.</i>";
+
 			}
 			
 		}
@@ -141,11 +167,12 @@
 		//Returns true if registered/inserted data, false if failed.
 		function has_registered_sucessfully(){
 		
-			$insert_data_query = $this->conn->prepare("INSERT INTO registration(username, email, password, registration_date, current_ip, confirmation_code) VALUES(:username, :email, :password, :registration_date, :current_ip, :confirmation_code)");
+			$insert_data_query = $this->conn->prepare("INSERT INTO registration(fname,sname,email, password, registration_date, current_ip, confirmation_code) VALUES(:fname,:sname, :email, :password, :registration_date, :current_ip, :confirmation_code)");
 			
 			$is_secussfully_inserted = $insert_data_query->execute(
 			array(
-				':username'=>$this->username,
+				':fname'=>$this->fname,
+				':sname'=>$this->sname,
 				':email'=>$this->email,
 				':password'=>$this->encrypted_password,
 				':registration_date'=>$this->date_today,
@@ -164,17 +191,30 @@
 		}
 	
 		//Regular username validation. Only numbers and letters allowed. Will return true if valid.
-		function validate_username(){
+		function validate_fname(){
 		
-			$username_pattern					= '/^[0-9a-zA-Z]+$/';
-			$is_username_valid = preg_match($username_pattern, $this->username);
-			if($is_username_valid){
+			$fname_pattern					= '/^[0-9a-zA-Z]+$/';
+			$is_fname_valid = preg_match($fname_pattern, $this->fname);
+			if($is_fname_valid){
 				return true;
 			}else{
-				echo "<i> Invalid username. Only letters and numbers allowed. </i> </br>";
+				echo "<i> Invalid First name. Only letters and numbers allowed. </i> </br>";
 				return false;
 			}
 			
+		}
+
+		function validate_sname(){
+
+			$sname_pattern					= '/^[0-9a-zA-Z]+$/';
+			$is_sname_valid = preg_match($sname_pattern, $this->sname);
+			if($is_sname_valid){
+				return true;
+			}else{
+				echo "<i> Invalid Second name. Only letters and numbers allowed. </i> </br>";
+				return false;
+			}
+
 		}
 	
 		//Email validation, returns true if valid.
@@ -210,14 +250,14 @@
 		//This functions checks if the username or the email user is registering with is new. Returns true if it's a new email and username.
 		function is_it_new_account(){
 		
-			$user_email_query = $this->conn->prepare("SELECT username, email FROM registration WHERE username = :username or email = :email");
-			$user_email_query->execute(array(':username'=>$this->username, ':email'=>$this->email));
+			$user_email_query = $this->conn->prepare("SELECT fname, email FROM registration WHERE fname = :fname or email = :email");
+			$user_email_query->execute(array(':fname'=>$this->fname, ':email'=>$this->email));
 			$user_email = $user_email_query->fetch(PDO::FETCH_ASSOC);
 			if( empty($user_email) ){
 				return true;
 			}else{
-				if($user_email["username"] == $this->username ){
-					echo "<i>Username {$user_email["username"]} is already registered</i>";
+				if($user_email["fname"] == $this->fname ){
+					echo "<i>Sorry {$user_email["fname"]} is already registered</i>";
 				}elseif( $user_email["email"] = $this->email ){
 					echo "<i>Email {$user_email["email"]} is already registered</i>";
 				}
@@ -246,34 +286,34 @@
 		//This function is used to GET confirmation code and account name from GET variable. 
 		//It checks if confirmation code in GET variable is valid and so is account, it will remove the confirmation code from confirmation_code field in the table. Which means account has been confirmed.
 		function confirm_account($conn){
-		
+
 			if( isset($_GET["confirmation_code"])	&&
-			isset($_GET["username"])				&&
-			!empty($_GET["confirmation_code"])		&& 
-			!empty($_GET["username"]) ){
-			
-				$select_confirmation_code_query = $conn->prepare("SELECT username, confirmation_code FROM registration WHERE username = :username AND confirmation_code = :confirmation_code");
-				$select_confirmation_code_query->execute(array(':username'=>$_GET["username"], 
-				':confirmation_code'=>$_GET["confirmation_code"]));
+				isset($_GET["email"])				&&
+				!empty($_GET["confirmation_code"])		&&
+				!empty($_GET["email"]) ){
+
+				$select_confirmation_code_query = $conn->prepare("SELECT email, confirmation_code FROM registration WHERE email = :email AND confirmation_code = :confirmation_code");
+				$select_confirmation_code_query->execute(array(':email'=>$_GET["email"],
+					':confirmation_code'=>$_GET["confirmation_code"]));
 
 				$confirmation_code = $select_confirmation_code_query->fetch(PDO::FETCH_ASSOC);
-				
+
 				if(count($confirmation_code) == 2){
-					
+
 					$remove_confirmation_query = $conn->prepare("UPDATE registration SET confirmation_code = '' WHERE confirmation_code = :confirmation_code");
 					if($remove_confirmation_query->execute(array(':confirmation_code'=>$_GET["confirmation_code"]))){
-						echo $_GET["username"] . ' <i>has been confirmed</i>';
+						echo $_GET["email"] . ' <i>has been confirmed</i>';
 					}else{
 						echo "<i>Your account couldn't be confirmed. Sontact admin.</i>";
 					}
-					
+
 				}else{
 					echo "<i>This page doesn't exist. couldn't find valid info in db</i>";
 				}
 			}else{
 				echo "<i>This page doesn't exist. parameters not valid</i>";
 			}
-			
+
 		}
 		
 	}

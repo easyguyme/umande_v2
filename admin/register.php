@@ -45,10 +45,7 @@
                 <div class="col-md-6">
                     <div class="box box-info">
                         <?PHP
-                        //Credits must stay intact
-                        //Script by Samiuddin. Samiuddin phpdevsami@gmail.com | samiun_@hotmail.com
-                        //For more scripts or tutorials visit http://www.webdevtown.com
-                        //If this script is uploaded on any website without credits, it will be taken down.
+
 
 
                         include("dbcon.php");
@@ -133,7 +130,7 @@
                                 </div>
 
                                 <div class="box-footer">
-                                    <button  name="register_button" class="btn btn-info">Save changes</button>
+                                    <button  name="register_button" class="btn btn-info" type="submit">Save changes</button>
                                 </div>
                             </form>
 
@@ -185,7 +182,7 @@
                                                             <input id="optionsCheckbox" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id; ?>">
                                                         </td>
                                                         <td><?php echo $row['fname']; ?></td>
-                                                        <td><?php echo $row['lname']; ?></td>
+                                                        <td><?php echo $row['sname']; ?></td>
 
                                                         <td><?php echo $row['email']; ?></td>
 
