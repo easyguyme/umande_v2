@@ -11,7 +11,7 @@
 	$is_user_ip_banned					= $RegistrationValidator->is_user_ip_banned();	
 	
 	if(!$is_user_ip_banned){
-		$RegistrationValidator->confirm_account($dbh);
+		$RegistrationValidator->confirm_account($conn);
 	}
 	
 

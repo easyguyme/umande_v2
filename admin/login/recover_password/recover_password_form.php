@@ -29,7 +29,7 @@
 			</fieldset>
 		</form>
 		
-		<!--<script type="text/javascript" src="js_recover_password_validation.js"></script>-->
+	
 		
 	</body>
 </html>

@@ -107,7 +107,7 @@ require ('../PHPMailer/PHPMailerAutoload.php');
 		
 		//Checks true if the email is sucessfully sent, else otherwise.
 		function is_confirmation_mail_sent(){
-            $message ="http://phpdev54321.890m.com/registration/confirmation_page.php?fname=$this->fname&confirmation_code=$this->confirmation_code";
+            $message ="http://localhost/umande/admin/confirmation_page.php?fname=$this->fname&confirmation_code=$this->confirmation_code";
 			//Create a new PHPMailer instance
 			$mail = new PHPMailer;
 //Tell PHPMailer to use SMTP
@@ -288,12 +288,12 @@ require ('../PHPMailer/PHPMailerAutoload.php');
 		function confirm_account($conn){
 
 			if( isset($_GET["confirmation_code"])	&&
-				isset($_GET["email"])				&&
+				isset($_GET["fname"])				&&
 				!empty($_GET["confirmation_code"])		&&
-				!empty($_GET["email"]) ){
+				!empty($_GET["fname"]) ){
 
-				$select_confirmation_code_query = $conn->prepare("SELECT email, confirmation_code FROM registration WHERE email = :email AND confirmation_code = :confirmation_code");
-				$select_confirmation_code_query->execute(array(':email'=>$_GET["email"],
+				$select_confirmation_code_query = $conn->prepare("SELECT fname, confirmation_code FROM registration WHERE fname = :fname AND confirmation_code = :confirmation_code");
+				$select_confirmation_code_query->execute(array(':fname'=>$_GET["fname"],
 					':confirmation_code'=>$_GET["confirmation_code"]));
 
 				$confirmation_code = $select_confirmation_code_query->fetch(PDO::FETCH_ASSOC);
@@ -302,16 +302,18 @@ require ('../PHPMailer/PHPMailerAutoload.php');
 
 					$remove_confirmation_query = $conn->prepare("UPDATE registration SET confirmation_code = '' WHERE confirmation_code = :confirmation_code");
 					if($remove_confirmation_query->execute(array(':confirmation_code'=>$_GET["confirmation_code"]))){
-						echo $_GET["email"] . ' <i>has been confirmed</i>';
+						echo $_GET["fname"] . ' <i >Your Acount has been confirmed </br> Please go to http://www.womenvoicesictchoices.org if you are not redirected</i>'.
+                        header("Location: http://www.womenvoicesictchoices.org/umande/admin"); /* Redirect browser */
+exit();
 					}else{
-						echo "<i>Your account couldn't be confirmed. Sontact admin.</i>";
+						echo "<i >Your account couldn't be confirmed. Contact admin.</i>";
 					}
 
 				}else{
-					echo "<i>This page doesn't exist. couldn't find valid info in db</i>";
+					echo "<i >This token doesn't exist. Maybe you already used it. Contact System Admin</i>";
 				}
 			}else{
-				echo "<i>This page doesn't exist. parameters not valid</i>";
+				echo "<i >This page doesn't exist. parameters not valid</i>";
 			}
 
 		}
