@@ -30,7 +30,7 @@ class RecoverPassword{
             if($this->does_email_exist()){
                 if($this->store_new_password_temp()){
                     if($this->send_recovery_email()){
-                        echo "<i> Email sent. Please click the link and you will receive another email with new password. </i>";
+                        echo "<i style='color: red;font-size: x-large'> Reset code sent. Please check your email and click the link and you will receive another email with a new password. </i>";
                     }
                 }
             }
@@ -100,7 +100,7 @@ class RecoverPassword{
             return true;
         }else{
             echo "Mailer Error: " . $mail->ErrorInfo;
-            echo "<i> Account couldn't be recovered. Contact admin.</i>";
+            echo "<i style='color: red;font-size: x-large'> Account couldn't be recovered. Contact admin.</i>";
 
         }
 
@@ -114,7 +114,7 @@ class RecoverPassword{
         if(!empty($email_from_db)){
             return true;
         }else{
-            echo "<i> That's not a registered email.</i>";
+            echo "<i style='color: red;font-size: x-large'> That's not a registered email.</i>";
             return false;
         }
     }
@@ -126,7 +126,7 @@ class RecoverPassword{
         if($is_email_valid){
             return true;
         }else{
-            echo "<i> Invalid email.</i> </br>";
+            echo "<i style='color: red;font-size: x-large'> Invalid email.</i> </br>";
             return false;
         }
 
@@ -166,7 +166,7 @@ class RecoverPassword{
         if(!empty($mail_and_pass)){
             return true;
         }else{
-            echo "<i>Page doesn't exist (NO valid match)</i>";
+            echo "<i style='color: blue;font-size: x-large'>Page doesn't exist (NO valid match)</i>";
             return false;
         }
     }
@@ -177,7 +177,7 @@ class RecoverPassword{
         if($set_new_pass_query->execute(array(':password'=>md5($this->new_password), ':email'=>$this->email))){
             return true;
         }else{
-            echo "<i> Inserting new password in registration failed.</i>";
+            echo "<i style='color: red;font-size: x-large'> Inserting new password in registration failed.</i>";
             return false;
         }
     }
@@ -230,7 +230,7 @@ class RecoverPassword{
             return true;
         }else{
             echo "Mailer Error: " . $mail->ErrorInfo;
-            echo "<i> Account couldn't be recovered. Contact admin.</i>";
+            echo "<i style='color: red;font-size: x-large'> Account couldn't be recovered. Contact admin.</i>";
 
         }
     }
@@ -240,9 +240,9 @@ class RecoverPassword{
     private function remove_all_duplications(){
         $remove_dublications_query = $this->conn->prepare("DELETE FROM recover_password WHERE email = :email");
         if($remove_dublications_query->execute(array(':email'=>$this->email))){
-            echo "<i> Email with new password sent</i>";
+            echo "<i style='color: blue;font-size: x-large'> Email with new password sent</i>";
         }else{
-            echo "<i> Failed to remove duplicate entries from database </i>";
+            echo "<i style='color: red;font-size: x-large'> Failed to remove duplicate entries from database </i>";
             return false;
         }
     }

@@ -64,7 +64,7 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-warning ">Change Password</a>
+                                <a href="change_pass.php" class="btn btn-warning ">Change Password</a>
                             </div>
 
                             <div class="pull-right">

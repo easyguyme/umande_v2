@@ -53,7 +53,7 @@ if( !isset($_SESSION) ){
 
         <!-- /.social-auth-links -->
 
-        <a href="#">I forgot my password</a><br>
+        <a href="recover.php">I forgot my password</a><br>
 
 
     </div>

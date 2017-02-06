@@ -33,7 +33,7 @@ class changePassword{
         if($select_current_pass_and_username->execute(array(':password'=>md5($this->new_password),':username'=>$this->username))){
             return true;
         }else{
-            echo "<i>Sorry but your current password is not correct.</i>";
+            echo "<i style='color: red;font-size: x-large'>Sorry but your current password is not correct.</i>";
             return false;
         }
     }
@@ -43,7 +43,7 @@ class changePassword{
         if((strlen($this->new_password) > 5) and (strlen($this->new_password_two) > 5) and (strlen($this->old_password) > 5) ){
 return true;
         }else{
-            echo "<i>Fill all the fields. Make sure passwords are atleast 5 characters long.</i>";
+            echo "<i style='color: red;font-size: x-large'>Fill all the fields. Make sure passwords are atleast 5 characters long.</i>";
             return false;
         }
     }
@@ -61,7 +61,7 @@ $old_pass_check->bindParam(":username",$this->username,PDO::PARAM_STR, 15);
 
         if ($query->password<>md5($this->old_password)){
 
-            echo "<i>Your old password  is not matching as per our record.</i>";
+            echo "<i style='color: red;font-size: x-large'>Your old password  is not matching as per our record.</i>";
             return false;
         }else{
             return true;
@@ -77,7 +77,7 @@ $old_pass_check->bindParam(":username",$this->username,PDO::PARAM_STR, 15);
             if($this->new_password	 == $this->new_password_two ){
                 return true;
             }else{
-                echo "<i>Passwords do not match</i>";
+                echo "<i style='color: red;font-size: x-large'>Passwords do not match</i>";
                 return false;
             }
 

@@ -53,7 +53,7 @@ class Login{
         if( ((strlen($this->password) > 5)) and ((strlen($this->username) >= 1)) ){
             return true;
         }else{
-            echo "<i> Enter correct password and username. Password cannot be less than 5 characters</i>";
+            echo "<i style='align-content: center; color: red; font-size: x-large;> Enter correct password and username. Password cannot be less than 5 characters</i>";
             return false;
         }
     }
@@ -67,7 +67,8 @@ class Login{
         if(count($returned_user_and_pass) == 2){
             return true;
         }else{
-            echo "<i>Wrong username or password</i>";
+
+            echo "<i style='align-content: center; color: red; font-size: x-large;'>Wrong username or password!!</i>";
             return false;
         }
 
@@ -79,7 +80,7 @@ class Login{
         $returned_ban_info = $is_user_banned_query->fetch(PDO::FETCH_ASSOC);
         if($returned_ban_info["is_account_banned"] == 1){
             $account_unban_date = $returned_ban_info["account_unban_date"];
-            echo "<i>Your account is banned till $account_unban_date</i>";
+            echo "<i style='align-content: center; color: red; font-size: x-large;>Your account is banned till $account_unban_date</i>";
             return false;
         }else{
             return true;
