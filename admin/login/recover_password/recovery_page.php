@@ -6,9 +6,4 @@
 	$RecoverPassword = new RecoverPassword($dbh);
 	$RecoverPassword->generate_new_password();
 
-
-
-
-
-
 ?>

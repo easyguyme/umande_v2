@@ -1,6 +1,6 @@
 <?PHP
 
-
+require ('../PHPMailer/PHPMailerAutoload.php');
 class RecoverPassword{
     //Check if email exists in database.
     //If exists, store that email in recover_password table. And generate random string.
@@ -51,33 +51,57 @@ class RecoverPassword{
     }
 
     function send_recovery_email(){
+        $message = "http://localhost/umande/admin/recovery_page.php?email=$this->email&recovery_code=$this->recovery_code";
+        //Create a new PHPMailer instance
+        $mail = new PHPMailer;
+//Tell PHPMailer to use SMTP
+        $mail->isSMTP();
+//Enable SMTP debugging
+// 0 = off (for production use)
+// 1 = client messages
+// 2 = client and server messages
+        $mail->SMTPDebug = 0;
+//Ask for HTML-friendly debug output
+        $mail->Debugoutput = 'html';
+//Set the hostname of the mail server
+        $mail->Host = 'mail.womenvoicesictchoices.org';
+// use
+// $mail->Host = gethostbyname('smtp.gmail.com');
+// if your network does not support SMTP over IPv6
+//Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+        $mail->Port = 2525;
+//Set the encryption system to use - ssl (deprecated) or tls
+        $mail->SMTPSecure = 'tls';
+//Whether to use SMTP authentication
+        $mail->SMTPAuth = true;
+//Username to use for SMTP authentication - use full email address for gmail
+        $mail->Username = "donotreply@womenvoicesictchoices.org";
+//Password to use for SMTP authentication
+        $mail->Password = "donotreply@umande2017";
+
+        $mail->setFrom('donotreply@womenvoicesictchoices.org', 'WOMEN VOICES DASHBOARD PASS RECOVERY');
+       
+
+        $mail->addAddress($this->email, 'YOU');
 
         //Registerer email.
-        $to 										= $this->email;
-
-        //To what email registerer should replay if he decides to.
-        $reply_to 									= 'sami1@live.com.pt';
-
-        //Website name, for example, www.webdevtown.com. This will be our From: header. You can remove the .com.
-        $from 										= 'Webdevtown.com';
-
-        //Your website address. We will put our address in the subject whole subject. For example, Register your account for www.webdevtown.com
-        $website_address							= 'http://www.webdevtown.com';
+        $website_address							= 'www.womenvoicesictchoices.org';
 
         //This is our sibject.
-        $subject									= "Recovery account for $website_address";
+        $mail->Subject= "Recovery account for $website_address";
 
-        $message = "Please click the link below if you're trying to recovery your password for $website_address" . "\r\n";
-        $message .= "http://phpdev54321.890m.com/recover_password/recovery_page.php?email=$this->email&recovery_code=$this->recovery_code";
-        $headers = "From: $from" . "\r\n" .
-            "Reply-To: $reply_to" . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
 
-        if(mail($to, $subject, $message, $headers)){
+       
+
+        $mail->Body="Please click the link below if you're trying to reset your password for $website_address" .  "\r\n" . $message;
+
+
+        if ($mail->send()) {
             return true;
         }else{
+            echo "Mailer Error: " . $mail->ErrorInfo;
             echo "<i> Account couldn't be recovered. Contact admin.</i>";
-            return false;
+
         }
 
     }
@@ -159,32 +183,55 @@ class RecoverPassword{
     }
 
     private function send_new_password(){
+        $message = "Your new password is $this->new_password";
+        //Create a new PHPMailer instance
+        $mail = new PHPMailer;
+//Tell PHPMailer to use SMTP
+        $mail->isSMTP();
+//Enable SMTP debugging
+// 0 = off (for production use)
+// 1 = client messages
+// 2 = client and server messages
+        $mail->SMTPDebug = 0;
+//Ask for HTML-friendly debug output
+        $mail->Debugoutput = 'html';
+//Set the hostname of the mail server
+        $mail->Host = 'mail.womenvoicesictchoices.org';
+// use
+// $mail->Host = gethostbyname('smtp.gmail.com');
+// if your network does not support SMTP over IPv6
+//Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+        $mail->Port = 2525;
+//Set the encryption system to use - ssl (deprecated) or tls
+        $mail->SMTPSecure = 'tls';
+//Whether to use SMTP authentication
+        $mail->SMTPAuth = true;
+//Username to use for SMTP authentication - use full email address for gmail
+        $mail->Username = "donotreply@womenvoicesictchoices.org";
+//Password to use for SMTP authentication
+        $mail->Password = "donotreply@umande2017";
+
+        $mail->setFrom('donotreply@womenvoicesictchoices.org', 'WOMEN VOICES DASHBOARD PASS RECOVERY');
+
+
+        $mail->addAddress($this->email, 'YOU');
+
         //Registerer email.
-        $to 										= $this->email;
-
-        //To what email registerer should replay if he decides to.
-        $reply_to 									= 'sami1@live.com.pt';
-
-        //Website name, for example, www.webdevtown.com. This will be our From: header. You can remove the .com.
-        $from 										= 'Webdevtown.com';
-
-        //Your website address. We will put our address in the subject whole subject. For example, Register your account for www.webdevtown.com
-        $website_address							= 'http://www.webdevtown.com';
+        $website_address							= 'www.womenvoicesictchoices.org';
 
         //This is our sibject.
-        $subject									= "New password for $website_address";
 
-        $message = "Your new password is $this->new_password";
+        $mail->Subject= "New password for $website_address";
 
-        $headers = "From: $from" . "\r\n" .
-            "Reply-To: $reply_to" . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
 
-        if(mail($to, $subject, $message, $headers)){
+        $mail->Body="Hi Admin" .  "\r\n" . $message;
+
+        if ($mail->send()) {
             return true;
         }else{
+            echo "Mailer Error: " . $mail->ErrorInfo;
             echo "<i> Account couldn't be recovered. Contact admin.</i>";
-            return false;
+
         }
     }
 

@@ -65,7 +65,7 @@ require ('../PHPMailer/PHPMailerAutoload.php');
 		static function display_captcha(){
 		
 			//possible letters that can can come in captcha.
-			$possible_letter = array("I", "m", "r", "a", "wan", "ga", "ra", "k", "h", "z", "l", "bbl", "l");
+			$possible_letter = array("P", "m", "r", "a", "wan", "ga", "ra", "k", "h", "z", "G", "bbQ", "H");
 
 			//just random number.
 			$random_letter = rand(0, 12);
@@ -181,7 +181,7 @@ require ('../PHPMailer/PHPMailerAutoload.php');
 			));
 			
 			if($is_secussfully_inserted){
-				echo "<i>user sucessfully registered. Go check your email and verify your account.</i>";
+				echo "<i>user sucessfully registered. Tell them to check their email and verify the account.</i>";
 				return true;
 			}else{
 				echo "<i> Something unexpected occured. Contact site admin.</i>";

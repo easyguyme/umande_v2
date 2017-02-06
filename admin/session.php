@@ -14,5 +14,5 @@ $session_id=$_SESSION['logged_in'];
 
 $user_query = $conn->query("select * from registration where user_id = '$session_id'")or die(mysql_error());
 $user_row = $user_query->fetch();
-$user_username = $user_row['username'];
+$user_username = $user_row['email'];
 ?>

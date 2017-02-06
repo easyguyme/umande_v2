@@ -1,17 +1,7 @@
 <?php  include('session.php'); ?>
 <?php include('header.php'); ?>
 <!-- daterange picker -->
-<link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
-<!-- bootstrap datepicker -->
-<link rel="stylesheet" href="../plugins/datepicker/datepicker3.css">
-<!-- iCheck for checkboxes and radio inputs -->
-<link rel="stylesheet" href="../plugins/iCheck/all.css">
-<!-- Bootstrap Color Picker -->
-<link rel="stylesheet" href="../plugins/colorpicker/bootstrap-colorpicker.min.css">
-<!-- Bootstrap time Picker -->
-<link rel="stylesheet" href="../plugins/timepicker/bootstrap-timepicker.min.css">
-<!-- Select2 -->
-<link rel="stylesheet" href="../plugins/select2/select2.min.css">
+
 <!-- Theme style -->
 <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
 <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
@@ -91,7 +81,7 @@
                                     <div class="form-group col-sm-10">
                                         <label>Email:</label>
                                         <div class="input-group  col-sm-8">
-                                            <input id = "email" name = "email" class="form-control" value = "<?PHP echo is_value_set("email"); ?>" />                                            <div id="error_username"></div>
+                                            <input id = "email" name = "email" class="form-control" value = "<?PHP echo is_value_set("email"); ?>" />
                                         </div>
                                         <div id="error_email"></div>
 
@@ -100,7 +90,7 @@
                                     <div class="form-group col-sm-10">
                                         <label>Password:</label>
                                         <div class="input-group  col-sm-8">
-                                            <input id = "password_one" name = "password_one" class="form-control" type = "password"/>                                            <div id="error_username"></div>
+                                            <input id = "password_one" name = "password_one" class="form-control" type = "password"/>
                                         </div>
 
 
@@ -109,7 +99,7 @@
                                     <div class="form-group col-sm-10">
                                         <label>Repeat Password:</label>
                                         <div class="input-group  col-sm-8">
-                                            <input id = "password_two" name = "password_two" class="form-control" type = "password"/>                                            <div id="error_username"></div>
+                                            <input id = "password_two" name = "password_two" class="form-control" type = "password"/>
                                         </div>
                                         <div id="error_password"></div>
 
@@ -117,7 +107,7 @@
                                     <div class="form-group col-sm-10">
                                         <label>Enter Captcha:</label>
                                         <div class="input-group  col-sm-8">
-                                            <input id = "captcha" name = "captcha" class="form-control" type = "text"/>                                            <div id="error_username"></div>
+                                            <input id = "captcha" name = "captcha" class="form-control" type = "text"/> 
                                         </div>
                                         <div id="error_captcha"></div>
                                         <?PHP RegistrationValidator::display_captcha(); ?> </br>
@@ -156,9 +146,9 @@
                                 </div>
                                 <div class="block-content collapse in">
                                     <div class="span12">
-                                        <form action="delete_cbp.php" method="post">
+                                        <form action="user_del.php" method="post">
                                             <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
-                                                &nbsp;&nbsp;<a data-toggle="modal" href="#cbpdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
+                                                &nbsp;&nbsp;<a data-toggle="modal" href="#userdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
                                                 <?php include('modal_delete.php'); ?>
                                                 <thead>
                                                 <tr>
