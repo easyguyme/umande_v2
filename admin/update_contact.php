@@ -148,13 +148,7 @@
                                         <input type="email" name="email" class="form-control" id="email" placeholder="email" value="<?php echo $row['mail']; ?>" required>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="url" class="col-sm-2 control-label">Working hours:</label>
 
-                                    <div class="col-sm-10 input-sm">
-                                        <input type="text" name="hours" class="form-control" id="email" placeholder="email" value="<?php echo $row['hours']; ?>" required>
-                                    </div>
-                                </div>
                                 <?php } ?>
                             </div>
                             <!-- /.box-body -->
@@ -215,11 +209,11 @@ if (isset($_POST['save'])){
     $loc = $_POST['loc'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
-    $hours = $_POST['hours'];
 
 
 
-    $conn->query("update contact set pob = '$pob', loc='$loc', phone ='$phone', mail='$email' , hours='$hours' where id = '1' ")or die(mysql_error());
+
+    $conn->query("update contact set pob = '$pob', loc='$loc', phone ='$phone', mail='$email' where id = '1' ")or die(mysql_error());
 
     ?>
     <script>

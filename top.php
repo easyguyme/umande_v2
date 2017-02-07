@@ -30,18 +30,18 @@
                     <!-- Menu Toggle Button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <!-- The user image in the navbar-->
-                        <img src="dist/img/UmandeLogo.png" class="user-image" alt="User Image">
+                        <img src="dist/img/logo.jpg" class="user-image" alt="User Image">
                         <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                        <span class="hidden-xs">Umande Trust</span>
+                        <span class="hidden-xs">Powered By</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- The user image in the menu -->
                         <li class="user-header">
-                            <img src="dist/img/UmandeLogo.png" class="img-circle" alt="User Image">
+                            <img src="dist/img/logo.jpg"  alt="User Image">
 
                             <p>
-                                Umande Trust Nairobi
-                                <small>"New Dawn:Nascent start"</small>
+                                Making All Voices Count
+                                <small>A grand challenge for development</small>
                             </p>
                         </li>
                         <!-- Menu Body -->
@@ -71,9 +71,7 @@
                     </ul>
                 </li>
                 <!-- Control Sidebar Toggle Button -->
-                <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-bell"></i></a>
-                </li>
+                
             </ul>
         </div>
     </nav>
