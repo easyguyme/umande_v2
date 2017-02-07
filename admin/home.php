@@ -157,31 +157,13 @@
                             <span class="info-box-icon bg-purple"><i class="ion ion-android-hangout"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Inspirational Quotes</span>
-                                <a href="update_quote.php<?php echo '?id=1'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                <span class="info-box-text">Daily Quotes</span>
+                                <a href="update_quote.php" class="uppercase"><dt>Click to edit details</dt></a>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
                         <!-- /.description-block -->
-                        <div class="info-box">
-                            <span class="info-box-icon bg-green"><i class="ion ion-android-hangout"></i></span>
 
-                            <div class="info-box-content">
-                                <span class="info-box-text">Popular Quotes</span>
-                                <a href="update_quote.php<?php echo '?id=2'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.description-block -->
-                        <div class="info-box">
-                            <span class="info-box-icon bg-blue"><i class="ion ion-android-hangout"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">Motivational Quotes</span>
-                                <a href="update_quote.php<?php echo '?id=3'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
                         <!-- /.description-block -->
                        
 
