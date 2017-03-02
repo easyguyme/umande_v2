@@ -38,16 +38,49 @@
                 </div>
             </div>
             <div class="form-group col-sm-7">
+                <div class="bootstrap-timepicker">
+                    <div class="form-group">
+                        <label>Start Time:</label>
+
+                        <div class="input-group">
+                            <input type="text" class="form-control timepicker">
+
+                            <div class="input-group-addon">
+                                <i class="fa fa-clock-o"></i>
+                            </div>
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+                    <!-- /.form group -->
+                </div>
+            </div>
+            <div class="form-group col-sm-7">
                 <label>End Date:</label>
 
                 <div class="input-group">
                     <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="text" name="edate" class="form-control pull-right" id="datepicker2" placeholder="End Date" required>
+                    <input type="text" name="edate" class="form-control pull-right timepicker" id="datepicker2" placeholder="End Date" required>
                 </div>
             </div>
+            <div class="form-group col-sm-7">
+            <div class="bootstrap-timepicker">
+                <div class="form-group">
+                    <label>End Time:</label>
 
+                    <div class="input-group">
+                        <input type="text" class="form-control timepicker">
+
+                        <div class="input-group-addon">
+                            <i class="fa fa-clock-o"></i>
+                        </div>
+                    </div>
+                    <!-- /.input group -->
+                </div>
+                <!-- /.form group -->
+            </div>
+            </div>
             <div class="form-group col-sm-7">
                     <label>Event Status</label>
                     <select name="status" class="form-control" required>
@@ -74,34 +107,18 @@
         $(".select2").select2();
 
         //Datemask dd/mm/yyyy
-        $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+        $("#datemask").inputmask("yyyy/mm/dd", {"placeholder": "yyyy/mm/dd"});
         //Datemask2 mm/dd/yyyy
-        $("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
+        $("#datemask2").inputmask("yyyy/mm/dd", {"placeholder": "yyyy/mm/dd"});
         //Money Euro
         $("[data-mask]").inputmask();
 
         //Date range picker
         $('#reservation').daterangepicker();
         //Date range picker with time picker
-        $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
+        $('#reservationtime').timepicker({ 'scrollDefault': 'now' });
         //Date range as a button
-        $('#daterange-btn').daterangepicker(
-            {
-                ranges: {
-                    'Today': [moment(), moment()],
-                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                    'This Month': [moment().startOf('month'), moment().endOf('month')],
-                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                },
-                startDate: moment().subtract(29, 'days'),
-                endDate: moment()
-            },
-            function (start, end) {
-                $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-            }
-        );
+
 
         //Date picker
         $('#datepicker').datepicker({
@@ -138,6 +155,7 @@
         });
     });
 </script>
+
 <?php
 include('dbcon.php');
 if (isset($_POST['save'])){
@@ -146,10 +164,14 @@ if (isset($_POST['save'])){
     $sdate = $_POST['sdate'];
     $edate = $_POST['edate'];
     $status = $_POST['status'];
+$split=explode("/", $sdate);
+    $sday=$split[0];
+    $smonth=$split[1];
+    $syear=$split[2];
 
 
 
-        $conn->query("insert into hevents (event,venue,sdate,edate,status) values('$event','$venue','$sdate','$edate','$status')")or die(mysql_error());
+        $conn->query("insert into hevents (event,venue,sday,smonth,syear,edate,status) values('$event','$venue','$sday','$smonth','$syear','$edate','$status')")or die(mysql_error());
         ?>
         <script>
             window.location = "addevent.php";
@@ -157,6 +179,7 @@ if (isset($_POST['save'])){
         <?php
 
 }
+
 ?>
 
 

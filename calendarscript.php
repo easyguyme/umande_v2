@@ -34,6 +34,7 @@
         var d = date.getDate(),
             m = date.getMonth(),
             y = date.getFullYear();
+
         $('#calendar').fullCalendar({
             header: {
                 left: 'prev,next today',
@@ -57,10 +58,10 @@
            ?>
                     {
                         title: '<?php echo $event_row['event']; ?> ',
-                        start: '<?php echo $event_row['sdate']; ?>',
+                        start:new Date("<?php echo $event_row['syear']; ?>","<?php echo $event_row['smonth']; ?>"-1,"<?php echo $event_row['sday']; ?>",10,20),
                         end: '<?php echo $event_row['edate']; ?>',
                         url: 'index.php',
-                        allDay: true,
+                        allDay: false,
                         backgroundColor: "#f56954", //red
                         borderColor: "#f56954" //red
                     },
