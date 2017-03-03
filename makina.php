@@ -48,8 +48,8 @@
                         <span class="info-box-icon bg-aqua"><i class="fa fa-calendar-check-o"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-number" style="font-size: large"><strong><a href="#" class="uppercase">Events & Activities</a></strong></span>
-                            <span class="info-box-number" style="font-size: x-small;"><a href="#" class="uppercase">Upcoming | Ongoing | Cancelled</a></span>
+                            <span class="info-box-number" style="font-size: large"><strong><a href="event/makina.php" class="uppercase">Events & Activities</a></strong></span>
+                            <span class="info-box-number" style="font-size: x-small;"><a href="event/makina.php" class="uppercase">Upcoming | Ongoing | Cancelled</a></span>
 
                         </div>
                         <!-- /.info-box-content -->

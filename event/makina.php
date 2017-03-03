@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php include('header.php'); ?>
-<link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
+<link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
 <body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
 
@@ -15,14 +15,14 @@
         <section class="content-header">
             <h1>
                 Women Voices, ICT Choices |
-                MAKINA Ward | Plans & Budget
+                MAKINA Ward | Events
                 <small>Version 1.0</small>
 
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li><a href="makina.php"><i class="fa  fa-sticky-note"></i> Makina</a></li>
-                <li class="active">Plans</li>
+                <li class="active">Events</li>
             </ol>
         </section>
 
@@ -33,7 +33,7 @@
                 <div class="col-md-7">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title"><dt>County Government Priorities</dt></h3>
+                            <h3 class="box-title"><dt>EVENTS</dt></h3>
 
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -49,11 +49,11 @@
                                 <thead>
                                 <tr>
                                     <th><span class="badge bg-aqua">#</span></th>
-                                    <th><span class="badge bg-light-blue">Project Name/Type</span></th>
-                                    <th><span class="badge bg-red">Project period</span></th>
-                                    <th><span class="badge bg-green">Project Location</span></th>
-                                    <th><span class="badge bg-purple">Project Budget</span></th>
-
+                                    <th><span class="badge bg-light-blue">Event Name</span></th>
+                                    <th><span class="badge bg-red">Event Venue</span></th>
+                                    <th><span class="badge bg-green">Event Date</span></th>
+                                    <th><span class="badge bg-purple">Event Time</span></th>
+                                    <th><span class="badge bg-yellow">Event Status</span></th>
 
                                 </tr>
                                 </thead>
@@ -70,21 +70,7 @@
                                     </td>
                                     <td>12:45 pm
                                     </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>1.
-                                    </td>
-                                    <td>Facebook Live
-                                    </td>
-                                    <td>Facebook
-                                    </td>
-                                    <td>02/03/2017
-                                    </td>
-                                    <td>12:45 pm
-                                    </td>
-
+                                    <td>Cancelled</td>
 
                                 </tr>
                                 <tr>
@@ -98,21 +84,7 @@
                                     </td>
                                     <td>12:45 pm
                                     </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>1.
-                                    </td>
-                                    <td>Facebook Live
-                                    </td>
-                                    <td>Facebook
-                                    </td>
-                                    <td>02/03/2017
-                                    </td>
-                                    <td>12:45 pm
-                                    </td>
-
+                                    <td>Cancelled</td>
 
                                 </tr>
                                 <tr>
@@ -126,21 +98,7 @@
                                     </td>
                                     <td>12:45 pm
                                     </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>1.
-                                    </td>
-                                    <td>Facebook Live
-                                    </td>
-                                    <td>Facebook
-                                    </td>
-                                    <td>02/03/2017
-                                    </td>
-                                    <td>12:45 pm
-                                    </td>
-
+                                    <td>Cancelled</td>
 
                                 </tr>
                                 <tr>
@@ -154,7 +112,49 @@
                                     </td>
                                     <td>12:45 pm
                                     </td>
+                                    <td>Cancelled</td>
 
+                                </tr>
+                                <tr>
+                                    <td>1.
+                                    </td>
+                                    <td>Facebook Live
+                                    </td>
+                                    <td>Facebook
+                                    </td>
+                                    <td>02/03/2017
+                                    </td>
+                                    <td>12:45 pm
+                                    </td>
+                                    <td>Cancelled</td>
+
+                                </tr>
+                                <tr>
+                                    <td>1.
+                                    </td>
+                                    <td>Facebook Live
+                                    </td>
+                                    <td>Facebook
+                                    </td>
+                                    <td>02/03/2017
+                                    </td>
+                                    <td>12:45 pm
+                                    </td>
+                                    <td>Cancelled</td>
+
+                                </tr>
+                                <tr>
+                                    <td>1.
+                                    </td>
+                                    <td>Facebook Live
+                                    </td>
+                                    <td>Facebook
+                                    </td>
+                                    <td>02/03/2017
+                                    </td>
+                                    <td>12:45 pm
+                                    </td>
+                                    <td>Cancelled</td>
 
                                 </tr>
 
@@ -170,7 +170,7 @@
                 <div class="col-md-5">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title"><dt>COMMUNITY PRIORITIES PROJECTS</dt></h3>
+                            <h3 class="box-title"><dt>EVENTS DESCRIPTION</dt></h3>
 
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -186,8 +186,8 @@
                                 <thead>
                                 <tr>
                                     <th><span class="badge bg-aqua">#</span></th>
-                                    <th><span class="badge bg-light-blue">Priority</span></th>
-                                    <th><span class="badge bg-red">Priority Description</span></th>
+                                    <th><span class="badge bg-light-blue">Event Name</span></th>
+                                    <th><span class="badge bg-red">Event Description</span></th>
 
 
                                 </tr>
@@ -250,50 +250,7 @@
                 </div>
 
             </div>
-            <div class="row">
 
-                <div class="col-md-12">
-                    <h1>
-                        Downloads and Publications
-
-                    </h1>
-                    <!-- The time line -->
-                    <ul class="timeline">
-                        <!-- timeline time label -->
-                        <li class="time-label">
-                  <span class="bg-red">
-                    10 Feb. 2014
-                  </span>
-                        </li>
-                        <!-- /.timeline-label -->
-                        <!-- timeline item -->
-                        <li>
-                            <i class="fa fa-envelope bg-blue"></i>
-
-                            <div class="timeline-item">
-                                <span class="time">Posted by: <i class="fa fa-user"></i> Admin</span>
-
-                                <h3 class="timeline-header"><a href="#">Newsletter</a> Download our monthly newsketter</h3>
-
-                                <div class="timeline-body">
-                                    Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-                                    weebly ning heekya handango imeem plugg dopplr jibjab, movity
-                                    jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-                                    quora plaxo ideeli hulu weebly balihoo...
-                                </div>
-                                <div class="timeline-footer">
-                                    <a class="btn btn-primary btn-xs">Download</a>
-
-                                </div>
-                            </div>
-                        </li>
-                        <!-- END timeline item -->
-                        <!-- timeline item -->
-
-                    </ul>
-                </div>
-                <!-- /.col -->
-            </div>
             <div class="row">
                 <h2 class="page-header text-center"><dt>OUR PARTNERS</dt></h2>
                 <div class="box-default">
@@ -305,47 +262,47 @@
                         </div>
                         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 980px; height: 100px; overflow: hidden;">
                             <div>
-                                <img data-u="image" src="scroller/img/13.PNG" />
+                                <img data-u="image" src="../scroller/img/13.PNG" />
                             </div>
                             <div style="display: none;">
-                                <img data-u="image" src="scroller/img/14.PNG" />
+                                <img data-u="image" src="../scroller/img/14.PNG" />
                             </div>
                             <div style="display: none;">
-                                <img data-u="image" src="scroller/img/12.PNG" />
+                                <img data-u="image" src="../scroller/img/12.PNG" />
                             </div>
                             <div style="display: none;">
-                                <img data-u="image" src="scroller/img/11.PNG" />
+                                <img data-u="image" src="../scroller/img/11.PNG" />
                             </div>
                             <div style="display: none;">
-                                <img data-u="image" src="scroller/img/10.PNG" />
+                                <img data-u="image" src="../scroller/img/10.PNG" />
                             </div>
                             <div style="display: none;">
-                                <img data-u="image" src="scroller/img/9.PNG" />
+                                <img data-u="image" src="../scroller/img/9.PNG" />
                             </div>
                             <div style="display: none;">
-                                <img data-u="image" src="scroller/img/8.PNG" />
+                                <img data-u="image" src="../scroller/img/8.PNG" />
                             </div>
                             <div style="display: none;">
-                                <img data-u="image" src="scroller/img/7.PNG" />
+                                <img data-u="image" src="../scroller/img/7.PNG" />
                             </div>
                             <div style="display: none;">
-                                <img data-u="image" src="scroller/img/6.PNG" />
+                                <img data-u="image" src="../scroller/img/6.PNG" />
                             </div>
                             <a data-u="any" href="http://www.jssor.com" style="display:none">Our Partners</a>
                             <div style="display: none;">
-                                <img data-u="image" src="scroller/img/5.PNG" />
+                                <img data-u="image" src="../scroller/img/5.PNG" />
                             </div>
                             <div style="display: none;">
-                                <img data-u="image" src="scroller/img/4.PNG" />
+                                <img data-u="image" src="../scroller/img/4.PNG" />
                             </div>
                             <div style="display: none;">
-                                <img data-u="image" src="scroller/img/3.PNG" />
+                                <img data-u="image" src="../scroller/img/3.PNG" />
                             </div>
                             <div style="display: none;">
-                                <img data-u="image" src="scroller/img/1.PNG" />
+                                <img data-u="image" src="../scroller/img/1.PNG" />
                             </div>
                             <div style="display: none;">
-                                <img data-u="image" src="scroller/img/2.PNG" />
+                                <img data-u="image" src="../scroller/img/2.PNG" />
                             </div>
 
                         </div>
@@ -451,20 +408,20 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
 <!-- DataTables -->
-<script src="plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
 <!-- SlimScroll -->
-<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script src="plugins/fastclick/fastclick.js"></script>
+<script src="../plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/app.min.js"></script>
+<script src="../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+<script src="../dist/js/demo.js"></script>
 <!-- page script -->
 <script>
     $(function () {
@@ -494,7 +451,7 @@
         });
     });
 </script>
-<script src="scroller/js/jssor.slider-21.1.6.min.js" type="text/javascript"></script>
+<script src="../scroller/js/jssor.slider-21.1.6.min.js" type="text/javascript"></script>
 
 
 <script type="text/javascript">
