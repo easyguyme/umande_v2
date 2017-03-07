@@ -68,8 +68,8 @@
 
                         <div class="info-box-content">
 
-                            <span class="info-box-number" style="font-size: large"><strong> <a href="#" class="uppercase">Plans & Budgets</a></strong></span>
-                            <span class="info-box-number" style="font-size: x-small;"><a href="#" class="uppercase">Community priorities | County priorities</a></span>
+                            <span class="info-box-number" style="font-size: large"><strong> <a href="plans/makina.php" class="uppercase">Plans & Budgets</a></strong></span>
+                            <span class="info-box-number" style="font-size: x-small;"><a href="plans/makina.php" class="uppercase">Community priorities | County priorities</a></span>
                         </div>
 
                         <!-- /.info-box-content -->
@@ -82,8 +82,8 @@
 
                         <div class="info-box-content">
 
-                            <span class="info-box-number" style="font-size: large"><strong><a href="#" class="uppercase">Contact us</a></strong></span>
-                            <span class="info-box-number" style="font-size: x-small;"><a href="#" class="uppercase">Email | Location | Phone </a></span>
+                            <span class="info-box-number" style="font-size: large"><strong><a href="contact.php" class="uppercase">Contact us</a></strong></span>
+                            <span class="info-box-number" style="font-size: x-small;"><a href="contact.php" class="uppercase">Email | Location | Phone </a></span>
 
                         </div>
 
