@@ -106,18 +106,18 @@
                         <div class="widget-user-header bg-aqua">
 
                             <!-- /.widget-user-image -->
-                            <h3 class="widget-user-username"><a href="#" style="color: white;">BUDGET ALLOCATIONS</a></h3>
+                            <h3 class="widget-user-username"><a href="../budget/makina.php" style="color: white;">BUDGET ALLOCATIONS</a></h3>
 
                         </div>
                         <div class="box-footer no-padding">
                             <ul class="nav nav-stacked">
-                                <li><a href="#">Budget Allocation <span class="pull-right badge bg-blue">Millions</sup></span></a></li>
-                                <li><a href="#"> <span class="pull-right badge bg-aqua"></span></a></li>
-                                <li><a href="#"> <span class="pull-right badge bg-green"></span></a></li>
-                                <li><a href="#"><span class="pull-right badge bg-red"></span></a></li>
-                                <li><a href="#"> <span class="pull-right badge bg-aqua"></span></a></li>
-                                <li><a href="#"> <span class="pull-right badge bg-green"></span></a></li>
-                                <li><a href="#"><span class="pull-right badge bg-red"></span></a></li>
+                                <li><a href="../budget/makina.php">Budget Allocation <span class="pull-right badge bg-blue">Millions</sup></span></a></li>
+                                <li><a href="../budget/makina.php"> <span class="pull-right badge bg-aqua"></span></a></li>
+                                <li><a href="../budget/makina.php"> <span class="pull-right badge bg-green"></span></a></li>
+                                <li><a href="../budget/makina.php"><span class="pull-right badge bg-red"></span></a></li>
+                                <li><a href="../budget/makina.php"> <span class="pull-right badge bg-aqua"></span></a></li>
+                                <li><a href="../budget/makina.php"> <span class="pull-right badge bg-green"></span></a></li>
+                                <li><a href="../budget/makina.php"><span class="pull-right badge bg-red"></span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -206,79 +206,6 @@
     </footer>
 
     <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Create the tabs -->
-        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-            <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <!-- Home tab content -->
-            <div class="tab-pane" id="control-sidebar-home-tab">
-                <h3 class="control-sidebar-heading">Recent Activity</h3>
-                <ul class="control-sidebar-menu">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                                <p>Will be 23 on April 24th</p>
-                            </div>
-                        </a>
-                    </li>
-
-
-
-                </ul>
-                <!-- /.control-sidebar-menu -->
-
-
-                <!-- /.control-sidebar-menu -->
-
-            </div>
-            <!-- /.tab-pane -->
-
-            <!-- Settings tab content -->
-            <div class="tab-pane" id="control-sidebar-settings-tab">
-                <form method="post">
-                    <h3 class="control-sidebar-heading">General Settings</h3>
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Report panel usage
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-
-                        <p>
-                            Some information about this general settings option
-                        </p>
-                    </div>
-                    <!-- /.form-group -->
-
-
-                    <!-- /.form-group -->
-
-
-                    <!-- /.form-group -->
-
-
-
-
-                    <!-- /.form-group -->
-
-
-                    <!-- /.form-group -->
-
-
-                    <!-- /.form-group -->
-                </form>
-            </div>
-            <!-- /.tab-pane -->
-        </div>
-    </aside>
     <!-- /.control-sidebar -->
     <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->
