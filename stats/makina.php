@@ -60,7 +60,7 @@
                         <div class="widget-user-header bg-red">
 
                             <!-- /.widget-user-image -->
-                            <h3 class="widget-user-username"><a href="#" style="color: white;">PROJECT PRIORITIES</a></h3>
+                            <h3 class="widget-user-username"><a href="../prior.php" style="color: white;">PROJECT PRIORITIES</a></h3>
 
                         </div>
                         <div class="box-footer no-padding">
@@ -84,15 +84,15 @@
                         <div class="widget-user-header bg-green">
 
                             <!-- /.widget-user-image -->
-                            <h3 class="widget-user-username"><a href="#" style="color: white;">DEVELOPMENT PROJECTS</a></h3>
+                            <h3 class="widget-user-username"><a href="../dev/makina.php" style="color: white;">DEVELOPMENT PROJECTS</a></h3>
 
                         </div>
                         <div class="box-footer no-padding">
                             <ul class="nav nav-stacked">
-                                <li><a href="#">Ongoing Projects <span class="pull-right badge bg-blue"></sup></span></a></li>
-                                <li><a href="#">Planned Projects <span class="pull-right badge bg-aqua"></a></li>
-                                <li><a href="#">Projects Implementers <span class="pull-right badge bg-green"></sup></span></a></li>
-                                <li><a href="#">Projects Status<span class="pull-right badge bg-red"></a></li>
+                                <li><a href="../dev/makina.php">Ongoing Projects <span class="pull-right badge bg-blue"></sup></span></a></li>
+                                <li><a href="../dev/makina.php">Planned Projects <span class="pull-right badge bg-aqua"></a></li>
+                                <li><a href="../dev/makina.php">Projects Implementers <span class="pull-right badge bg-green"></sup></span></a></li>
+                                <li><a href="../dev/makina.php">Projects Status<span class="pull-right badge bg-red"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -132,62 +132,7 @@
                 <!-- /.col -->
             </div>
             <div class="row">
-                <h2 class="page-header text-center"><dt>OUR PARTNERS</dt></h2>
-                <div class="box-default">
-                    <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 980px; height: 100px; overflow: hidden; visibility: hidden;">
-                        <!-- Loading Screen -->
-                        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
-                            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-                            <div style="position:absolute;display:block;background:url('scroller/img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
-                        </div>
-                        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 980px; height: 100px; overflow: hidden;">
-                            <div>
-                                <img data-u="image" src="../scroller/img/13.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/14.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/12.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/11.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/10.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/9.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/8.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/7.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/6.PNG" />
-                            </div>
-                            <a data-u="any" href="http://www.jssor.com" style="display:none">Our Partners</a>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/5.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/4.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/3.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/1.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/2.PNG" />
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+              <?php include ('partners.php');?>
             </div>
 
             <!-- /.row -->

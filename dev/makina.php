@@ -18,14 +18,14 @@
         <section class="content-header">
             <h1>
                 Women Voices, ICT Choices |
-                MAKINA Ward | Budget Allocation
+                MAKINA Ward | Development Projects
                 <small>Version 1.0</small>
 
             </h1>
             <ol class="breadcrumb">
                 <li><a href="../index.php"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li><a href="../makina.php"><i class="fa  fa-sticky-note"></i> Makina</a></li>
-                <li class="active">Budget Allocation</li>
+                <li class="active">Development Projects</li>
             </ol>
         </section>
 
@@ -33,10 +33,10 @@
         <section class="content">
             <!-- Top Info boxes -->
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title"><dt>Budget Allocation</dt></h3>
+                            <h3 class="box-title"><dt>Development Projects</dt></h3>
 
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -52,60 +52,50 @@
                                 <thead>
                                 <tr>
                                     <th><span class="badge bg-blue">No.</span></th>
-                                    <th><span class="badge bg-light-blue">Project</span></th>
-                                    <th><span class="badge bg-red">Estimated Cost</span></th>
-                                    <th><span class="badge bg-green">Amount Allocated</span></th>
-                                    <th><span class="badge bg-purple">Amount Used</span></th>
-                                    <th><span class="badge bg-yellow">Budget Variance</span></th>
+                                    <th><span class="badge bg-light-blue">Planned</span></th>
+                                    <th><span class="badge bg-red">Ongoing</span></th>
+
 
                                 </tr>
                                 </thead>
                                 <tbody>
 
                                 <tr>
-
-
                                     <th>1.</th>
-                                    <th>Water</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
-
-
                                     <th>2.</th>
-                                    <th>Health</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
-
-
                                     <th>3.</th>
-                                    <th>Education</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
-
-
                                     <th>4.</th>
-                                    <th>Sanitation</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
+                                <tr>
+                                    <th>5.</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>6.</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>7.</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
 
 
 
@@ -119,6 +109,301 @@
 
                     </div>
 
+                </div>
+                <div class="col-md-6">
+                    <!-- Custom Tabs (Pulled to the right) -->
+                    <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs pull-right">
+                            <li class="active"><a href="#tab_1-1" data-toggle="tab">County</a></li>
+                            <li><a href="#tab_2-2" data-toggle="tab">C.B.O</a></li>
+                            <li><a href="#tab_3-2" data-toggle="tab">N.G.O</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Compare <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Lindi</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Laini Saba</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sarang'ombe</a></li>
+
+                                    <li role="presentation" class="divider"></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Go Back</a></li>
+                                </ul>
+                            </li>
+                            <li class="pull-left header"><i class="fa fa-cubes"></i> Project status</li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab_1-1">
+                                <div class="progress-group">
+                                    <span class="progress-text"><i class="fa fa-tint"></i>Water</span>
+                                    <span class="progress-number"><b>60%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-aqua progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <span class="progress-text"><i class="fa fa-hospital-o"></i>Health</span>
+                                    <span class="progress-number"><b>50%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                                            <span class="sr-only">50% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <i class="fa fa-university"></i>Education</span>
+                                    <span class="progress-number"><b>30%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-aqua progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                            <span class="sr-only">30% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <i class="fa fa-recycle"></i>Sanitation</span>
+                                    <span class="progress-number"><b>40%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress-group">
+                                    <i class="fa fa-trash"></i>Solid Waste</span>
+                                    <span class="progress-number"><b>60%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <i class="fa fa-ship"></i>Drainage</span>
+                                    <span class="progress-number"><b>70%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                            <span class="sr-only">70% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <i class="fa fa-sun-o"></i>Energy</span>
+                                    <span class="progress-number"><b>80%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <i class="fa fa-road"></i>Roads</span>
+                                    <span class="progress-number"><b>40%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-aqua progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.tab-pane -->
+                            <div class="tab-pane" id="tab_2-2">
+                                <div class="progress-group">
+                                    <span class="progress-text"><i class="fa fa-tint"></i>Water</span>
+                                    <span class="progress-number"><b>60%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-aqua progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <span class="progress-text"><i class="fa fa-hospital-o"></i>Health</span>
+                                    <span class="progress-number"><b>50%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                                            <span class="sr-only">50% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <i class="fa fa-university"></i>Education</span>
+                                    <span class="progress-number"><b>30%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-aqua progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                            <span class="sr-only">30% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <i class="fa fa-recycle"></i>Sanitation</span>
+                                    <span class="progress-number"><b>40%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress-group">
+                                    <i class="fa fa-trash"></i>Solid Waste</span>
+                                    <span class="progress-number"><b>60%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <i class="fa fa-ship"></i>Drainage</span>
+                                    <span class="progress-number"><b>70%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                            <span class="sr-only">70% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <i class="fa fa-sun-o"></i>Energy</span>
+                                    <span class="progress-number"><b>80%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <i class="fa fa-road"></i>Roads</span>
+                                    <span class="progress-number"><b>40%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-aqua progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.tab-pane -->
+                            <div class="tab-pane" id="tab_3-2">
+                                <div class="progress-group">
+                                    <span class="progress-text"><i class="fa fa-tint"></i>Water</span>
+                                    <span class="progress-number"><b>60%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-aqua progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <span class="progress-text"><i class="fa fa-hospital-o"></i>Health</span>
+                                    <span class="progress-number"><b>50%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                                            <span class="sr-only">50% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <i class="fa fa-university"></i>Education</span>
+                                    <span class="progress-number"><b>30%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-aqua progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                            <span class="sr-only">30% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <i class="fa fa-recycle"></i>Sanitation</span>
+                                    <span class="progress-number"><b>40%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress-group">
+                                    <i class="fa fa-trash"></i>Solid Waste</span>
+                                    <span class="progress-number"><b>60%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <i class="fa fa-ship"></i>Drainage</span>
+                                    <span class="progress-number"><b>70%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                            <span class="sr-only">70% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <i class="fa fa-sun-o"></i>Energy</span>
+                                    <span class="progress-number"><b>80%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <i class="fa fa-road"></i>Roads</span>
+                                    <span class="progress-number"><b>40%</b> Complete</span>
+
+                                    <div class="progress progress-sm active">
+                                        <div class="progress-bar progress-bar-aqua progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.tab-pane -->
+                        </div>
+                        <!-- /.tab-content -->
+                    </div>
+                    <!-- nav-tabs-custom -->
                 </div>
 
 
@@ -142,7 +427,7 @@
                         <div class="box-body">
 
                             <div class="box-pane">
-                                <canvas id="pieright" style="height:300px"></canvas>
+                                <canvas id="bar" style="height:300px"></canvas>
                             </div>
 
 
@@ -170,74 +455,33 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <!-- Info Boxes Style 2 -->
-                            <div class="info-box bg-yellow">
-                                <span class="info-box-icon"><i class="ion ion-ios-rainy"></i></span>
-
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Water</span>
-                                    <span class="info-box-number">5,200</span>
-
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 50%"></div>
-                                    </div>
-                  <span class="progress-description">
-                    50% Increase in 5 years
-                  </span>
-                                </div>
-                                <!-- /.info-box-content -->
-                            </div>
-                            <!-- /.info-box -->
-                            <div class="info-box bg-green">
-                                <span class="info-box-icon"><i class="ion ion-ios-medkit"></i></span>
-
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Health</span>
-                                    <span class="info-box-number">92,050</span>
-
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 20%"></div>
-                                    </div>
-                  <span class="progress-description">
-                    20% Increase in 30 Days
-                  </span>
-                                </div>
-                                <!-- /.info-box-content -->
-                            </div>
-                            <!-- /.info-box -->
-                            <div class="info-box bg-red">
-                                <span class="info-box-icon"><i class="ion ion-ios-briefcase"></i></span>
-
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Education</span>
-                                    <span class="info-box-number">114,381</span>
-
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 70%"></div>
-                                    </div>
-                  <span class="progress-description">
-                    70% Increase in 30 Days
-                  </span>
-                                </div>
-                                <!-- /.info-box-content -->
-                            </div>
-                            <!-- /.info-box -->
                             <div class="info-box bg-aqua">
-                                <span class="info-box-icon"><i class="ion-ios-trash"></i></span>
+                                <span class="info-box-icon"><i class="ion-ios-pulse-strong"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text">Sanitation</span>
+                                    <span class="info-box-text">ONGOING</span>
                                     <span class="info-box-number">163,921</span>
 
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 40%"></div>
-                                    </div>
-                  <span class="progress-description">
-                    40% Increase in 30 Days
-                  </span>
+
+
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
+                            <!-- /.info-box -->
+                            <div class="info-box bg-orange">
+                                <span class="info-box-icon"><i class="ion ion-load-a"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">PLANNED</span>
+                                    <span class="info-box-number">114,381</span>
+
+
+
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+
                             <!-- /.info-box -->
 
                             <!-- /.row -->
@@ -274,7 +518,7 @@
     </div>
     <!-- /.content-wrapper -->
 
-    <?php include('footer.php'); ?>
+    <?php include('../footer.php'); ?>
     <!-- Control Sidebar -->
 
     <!-- /.control-sidebar -->
@@ -331,61 +575,66 @@
     });
 </script>
 
+
+<!-- page script -->
 <script>
+
+    var color = Chart.helpers.color;
+    var barChartData = {
+        labels: ["Makina", "Sarang'ombe", "Lindi", "Laini saba"],
+        datasets: [
+            {
+                label: "Ongoing",
+                backgroundColor: color(window.chartColors.blue).rgbString(),
+                borderColor: window.chartColors.green,
+                borderWidth: 1,
+                data: [65, 59, 60, 81]
+            },
+            {
+                label: "Planned",
+                backgroundColor: color(window.chartColors.orange).rgbString(),
+                borderColor: window.chartColors.red,
+                borderWidth: 1,
+                data: [50, 48, 75,70]
+            }
+        ]
+    };
+
 
     window.onload = function () {
         <!--load left pie chart -->
 
         <!--load left pie chart -->
-        var ct = document.getElementById("pieright").getContext("2d");
-        window.myPieR = new Chart(ct, configs);
-
-    };
 
 
-</script>
-<!-- page script -->
-<script>
+        var cx = document.getElementById("bar").getContext("2d");
+        window.myBarChart = new Chart(cx, {
+            type: 'bar',
+            data:  barChartData,
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Projects Graph'
+                },
+                scales: {
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Number of projects '
 
+                        }
 
-    var configs = {
-        type: 'pie',
-        data: {
-            datasets: [{
-                data: [120, 70, 50, 60],
-                backgroundColor: [
-                    window.chartColors.red,
-                    window.chartColors.orange,
-                    window.chartColors.yellow,
-                    window.chartColors.green,
-                    window.chartColors.blue
+                    }
 
-                ],
-                label: 'Dataset'
-            }],
-            labels: [
-                "Water",
-                "Health",
-                "Education",
-                "Sanitation"
-
-
-            ]
-        },
-        options: {
-            responsive: true,
-            legend: {
-                position: 'top',
-            },
-            title: {
-                display: true,
-                text: 'Project Based Resources Distribution'
+                    ]
+                }
             }
-        }
+        });
     };
-
-
-    var colorNames = Object.keys(window.chartColors);
 
 
 </script>

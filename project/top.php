@@ -29,10 +29,10 @@
                 <li class="dropdown user user-menu">
                     <!-- Menu Toggle Button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <!-- The user image in the navbar-->
-                        <img src="../dist/img/logo.jpg" class="user-image" alt="User Image">
-                        <!-- hidden-xs hides the username on small devices so only the image appears. -->
                         <span class="hidden-xs">Powered By</span>
+                        <img src="../dist/img/logo.jpg"  class="profile-user-img" alt="User Image">
+                        <!-- hidden-xs hides the username on small devices so only the image appears. -->
+
                     </a>
                     <ul class="dropdown-menu">
                         <!-- The user image in the menu -->
@@ -71,7 +71,7 @@
                     </ul>
                 </li>
                 <!-- Control Sidebar Toggle Button -->
-                
+
             </ul>
         </div>
     </nav>
