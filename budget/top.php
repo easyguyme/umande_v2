@@ -1,7 +1,7 @@
 <header class="main-header">
 
     <!-- Logo -->
-    <a href="index.php" class="logo">
+    <a href="../index.php" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>UT</b>D</span>
         <!-- logo for regular state and mobile devices -->
@@ -29,15 +29,15 @@
                 <li class="dropdown user user-menu">
                     <!-- Menu Toggle Button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="hidden-xs">Powered By</span>
-                        <img src="dist/img/logo.jpg"  class="profile-user-img" alt="User Image">
+                        <!-- The user image in the navbar-->
+                        <img src="../dist/img/logo.jpg" class="user-image" alt="User Image">
                         <!-- hidden-xs hides the username on small devices so only the image appears. -->
-
+                        <span class="hidden-xs">Powered By</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- The user image in the menu -->
                         <li class="user-header">
-                            <img src="dist/img/logo.jpg"  alt="User Image">
+                            <img src="../dist/img/logo.jpg"  alt="User Image">
 
                             <p>
                                 Making All Voices Count
